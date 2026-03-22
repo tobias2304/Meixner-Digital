@@ -228,12 +228,17 @@ nav.navbar {
 @media (max-width: 768px) {
 
 
-  .calendly-inline-widget {
-    height: 950px;        /* mehr Platz */
-    transform: scale(0.95);
-    transform-origin: top center;
-    margin-left: -5px;
-  }
+/* Calendly mobile fix */
+.calendly-inline-widget {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Verhindert horizontales Scrollen generell */
+.info-section {
+  overflow-x: hidden;
+}
 
   /*Überschrift Datenschutzerklärung*/
   h1 {
