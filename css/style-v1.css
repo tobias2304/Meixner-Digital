@@ -228,10 +228,12 @@ nav.navbar {
 @media (max-width: 768px) {
 
 
-.calendly-inline-widget {
-  width: calc(100% + 24px);
-  margin-left: -12px;
-}
+  .calendly-inline-widget {
+    height: 950px;        /* mehr Platz */
+    transform: scale(0.95);
+    transform-origin: top center;
+    margin-left: -5px;
+  }
 
   /*Überschrift Datenschutzerklärung*/
   h1 {
