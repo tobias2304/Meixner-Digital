@@ -1,307 +1,738 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tobias Meixner – Persönliche Website</title>
+<!-- 1. Consent Mode v2 Defaults – MUSS zuerst stehen -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage':     'denied',
+    'ad_storage':            'denied',
+    'ad_user_data':          'denied',
+    'ad_personalization':    'denied',
+    'functionality_storage': 'denied',
+    'security_storage':      'granted',
+    'wait_for_update':       500
+  });
+</script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style-v1.css">
+<!-- 2. CookieScript – übernimmt Consent Mode v2 automatisch -->
+<script type="text/javascript" charset="UTF-8"
+  src="//cdn.cookie-script.com/s/d261fb8134670358b6795a49b5d04574.js">
+</script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="Meixner">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+<!-- 3. GTM (GTM-XXXXXXX ersetzen sobald du eine ID hast) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tobias Meixner – Digital. Strategy. Excellence.</title>
+  <meta name="description" content="Tobias Meixner – E-Commerce-Student & Freelancer aus Würzburg. Ich helfe kleinen Unternehmen und Startups bei Websites, Tracking-Setup und digitalen Prozessen.">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style-v1.css">
+
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════ */
+    .hero {
+      position: relative; overflow: hidden; background: var(--bg);
+      min-height: 100vh; min-height: 100svh;
+    }
+    #hero-canvas { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+    .blob { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+    .blob-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(91,108,248,.11) 0%, transparent 70%);
+      top: -120px; right: -80px; filter: blur(60px);
+    }
+    .blob-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(91,108,248,.07) 0%, transparent 70%);
+      bottom: 40px; left: -100px; filter: blur(50px);
+    }
+
+    .hero-grid {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 55% 1fr;
+      align-items: center; gap: 48px;
+      padding-block: calc(var(--nav-h) + 64px) 72px;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--indigo-soft); border: 1px solid var(--indigo-mid); color: var(--indigo);
+      padding: 5px 14px 5px 10px; border-radius: 99px;
+      font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .hero-h1 {
+      font-family: var(--fd);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 800; color: var(--navy);
+      line-height: 1.1; letter-spacing: -.025em; margin-bottom: 10px;
+    }
+    .hero-h1 .ac { color: var(--indigo); }
+
+    .hero-sub {
+      font-family: var(--fd);
+      font-size: clamp(.85rem, 1.6vw, 1.05rem);
+      font-weight: 500; color: var(--muted);
+      margin-bottom: 22px; letter-spacing: .01em;
+    }
+
+    .hero-p {
+      font-size: clamp(.875rem, 1.5vw, 1.05rem);
+      color: var(--muted); line-height: 1.75; margin-bottom: 34px; max-width: 500px;
+    }
+    .hero-p strong { color: var(--text); font-weight: 600; }
+
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+
+    .trust { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+    .trust-chip { display: flex; align-items: center; gap: 7px; font-size: .79rem; font-weight: 500; color: var(--muted); }
+    .trust-chip svg { color: var(--indigo); flex-shrink: 0; }
+    .trust-div { width: 1px; height: 13px; background: var(--border); flex-shrink: 0; }
+
+    .hero-img-wrap { display: flex; justify-content: center; align-items: center; }
+    .hero-img-frame { position: relative; width: 100%; max-width: 390px; margin-inline: auto; }
+    .img-blob {
+      position: absolute; inset: -18px; z-index: 0;
+      background: linear-gradient(135deg, var(--indigo-soft) 0%, #DDE1FD 100%);
+      border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+      animation: morph 9s ease-in-out infinite;
+    }
+    @keyframes morph {
+      0%,100% { border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%; }
+      33%      { border-radius: 42% 58% 47% 53% / 55% 45% 55% 45%; }
+      66%      { border-radius: 55% 45% 38% 62% / 45% 55% 57% 43%; }
+    }
+    .hero-img-frame img {
+      position: relative; z-index: 1;
+      width: 100%; border-radius: 36px;
+      aspect-ratio: 4/5; object-fit: cover; object-position: top center;
+      box-shadow: var(--sh-lg);
+    }
+
+    .fc {
+      position: absolute; z-index: 2;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 11px 15px; box-shadow: var(--sh-md);
+      display: flex; align-items: center; gap: 11px;
+      font-size: .77rem; font-weight: 600; white-space: nowrap;
+    }
+    .fc-1 { bottom: 18%; right: -26px; animation: floaty 4s ease-in-out infinite; }
+    .fc-2 { top: 20%;  left: -26px;  animation: floaty 4s ease-in-out infinite 2s; }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .fi { width: 33px; height: 33px; border-radius: 9px; display: grid; place-items: center; font-size: 1rem; flex-shrink: 0; }
+    .fi-ind { background: var(--indigo-soft); }
+    .fi-grn { background: #ECFDF5; }
+    .fc-lbl { color: var(--navy); line-height: 1.3; }
+    .fc-meta { color: var(--muted); font-weight: 400; font-size: .69rem; margin-top: 1px; }
+
+    /* ═══════════════════════════════════════════════════
+       ABOUT (dark strip)
+    ═══════════════════════════════════════════════════ */
+    .about-strip { background: var(--navy); padding-block: clamp(48px, 7vw, 80px); }
+    .about-grid  { display: grid; grid-template-columns: 55% 1fr; gap: clamp(36px, 6vw, 72px); align-items: start; }
+
+    .about-h2 {
+      font-family: var(--fd); font-size: clamp(1.45rem, 3vw, 2rem);
+      font-weight: 700; color: #fff; line-height: 1.22; letter-spacing: -.02em; margin-bottom: 18px;
+    }
+    .about-h2 em { color: var(--indigo-mid); font-style: normal; }
+    .about-p { color: rgba(255,255,255,.62); font-size: clamp(.86rem, 1.4vw, 1rem); line-height: 1.75; margin-bottom: 12px; }
+    .about-p strong { color: rgba(255,255,255,.88); font-weight: 600; }
+    .about-lbl { color: rgba(199,203,253,.85) !important; margin-bottom: 12px; }
+
+    .about-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-top: 18px; }
+    .about-list li { display: flex; align-items: flex-start; gap: 10px; color: rgba(255,255,255,.7); font-size: .88rem; line-height: 1.5; }
+    .chk { width: 18px; height: 18px; border-radius: 50%; background: var(--indigo); flex-shrink: 0; margin-top: 2px; display: grid; place-items: center; }
+    .chk svg { color: #fff; }
+
+    .about-cert {
+      margin-top: 22px; display: flex; align-items: center; gap: 13px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r); padding: 13px 15px;
+    }
+    .about-cert img { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
+    .cert-txt { font-size: .8rem; color: rgba(255,255,255,.55); line-height: 1.45; }
+    .cert-txt strong { display: block; color: rgba(255,255,255,.88); font-size: .84rem; margin-bottom: 2px; }
+
+    /* ═══════════════════════════════════════════════════
+       STATS
+    ═══════════════════════════════════════════════════ */
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .stat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--r); padding: 20px 16px; text-align: center; }
+    .stat-n { font-family: var(--fd); font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
+    .stat-n em { color: var(--indigo-mid); font-style: normal; }
+    .stat-lbl { font-size: .77rem; color: rgba(255,255,255,.45); line-height: 1.45; font-weight: 500; }
+
+    /* ═══════════════════════════════════════════════════
+       SERVICES (homepage 2x2 grid)
+    ═══════════════════════════════════════════════════ */
+    .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+    .svc-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+      padding: clamp(22px, 3vw, 30px) clamp(18px, 2.5vw, 26px);
+      position: relative; overflow: hidden; cursor: default;
+      transition: transform .35s, box-shadow .35s, border-color .35s;
+      will-change: transform;
+    }
+    .svc-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--indigo-soft) 0%, transparent 55%);
+      opacity: 0; transition: opacity .35s; pointer-events: none;
+    }
+    .svc-card:hover { box-shadow: var(--sh-lg); border-color: var(--indigo-mid); }
+    .svc-card:hover::before { opacity: 1; }
+
+    .svc-icon { width: 48px; height: 48px; border-radius: 13px; background: var(--indigo-soft); display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 16px; position: relative; }
+    .svc-h { font-family: var(--fd); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; position: relative; }
+    .svc-p { font-size: .875rem; color: var(--muted); line-height: 1.65; position: relative; }
+    .svc-foot { text-align: center; margin-top: 38px; }
+
+    /* ═══════════════════════════════════════════════════
+       PROJECTS (homepage preview)
+    ═══════════════════════════════════════════════════ */
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .proj-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+      padding: clamp(22px, 3vw, 34px) clamp(18px, 2.5vw, 30px);
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+    }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); border-color: var(--indigo-mid); }
+
+    .proj-logo { height: 34px; width: auto; max-width: 130px; object-fit: contain; object-position: left; margin-bottom: 16px; filter: grayscale(1) opacity(.6); transition: filter .3s; }
+    .proj-card:hover .proj-logo { filter: none; }
+
+    .proj-h { font-family: var(--fd); font-size: clamp(.95rem, 1.8vw, 1.12rem); font-weight: 700; color: var(--navy); margin-bottom: 9px; }
+    .proj-p { font-size: .875rem; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+
+    .proj-list { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 20px; }
+    .proj-list li { font-size: .83rem; color: var(--muted); display: flex; align-items: flex-start; gap: 7px; line-height: 1.45; }
+    .proj-list li::before { content: '→'; color: var(--indigo); font-weight: 700; font-size: .84rem; flex-shrink: 0; margin-top: 1px; }
+
+    .proj-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--fd); font-size: .76rem; font-weight: 700; color: var(--indigo); letter-spacing: .05em; text-transform: uppercase; transition: gap .2s; }
+    .proj-link:hover { gap: 10px; }
+    .proj-foot { text-align: center; margin-top: 30px; }
+
+    /* ═══════════════════════════════════════════════════
+       WHY ME
+    ═══════════════════════════════════════════════════ */
+    .why-box {
+      background: linear-gradient(155deg, #EEF0FE 0%, #F5F7FA 65%);
+      border: 1px solid var(--indigo-soft); border-radius: var(--r-lg);
+      padding: clamp(32px, 6vw, 68px) clamp(22px, 5vw, 60px);
+    }
+    .why-inner { display: grid; grid-template-columns: 40% 1fr; gap: clamp(28px, 5vw, 60px); align-items: start; }
+
+    .why-item { display: flex; gap: 16px; align-items: flex-start; padding: 17px 0; border-bottom: 1px solid rgba(91,108,248,.12); }
+    .why-item:first-child { padding-top: 0; }
+    .why-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+    .why-n { font-family: var(--fd); font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; color: var(--indigo-mid); line-height: 1; flex-shrink: 0; width: 42px; }
+    .why-h { font-family: var(--fd); font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .why-p { font-size: .86rem; color: var(--muted); line-height: 1.65; }
+    .why-p strong { color: var(--text); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════════════
+       RESPONSIVE — 1024px
+    ═══════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-grid  { grid-template-columns: 1fr 1fr; gap: 32px; padding-block: calc(var(--nav-h) + 44px) 60px; }
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .why-inner  { grid-template-columns: 40% 1fr; gap: 36px; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       RESPONSIVE — 768px
+    ═══════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr; gap: 28px;
+        padding-block: calc(var(--nav-h) + 28px) 52px;
+        text-align: center;
+      }
+      .hero-img-wrap  { order: -1; }
+      .hero-img-frame { max-width: 260px; }
+      .hero-badge, .hero-p { margin-inline: auto; }
+      .hero-btns, .trust   { justify-content: center; }
+      .fc         { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .proj-grid  { grid-template-columns: 1fr; }
+      .why-inner  { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       RESPONSIVE — 560px
+    ═══════════════════════════════════════════════════ */
+    @media (max-width: 560px) {
+      .svc-grid         { grid-template-columns: 1fr; }
+      .stats            { grid-template-columns: 1fr 1fr; }
+      .hero-btns .btn   { flex: 1 1 130px; justify-content: center; }
+      .hero-img-frame   { max-width: 230px; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       RESPONSIVE — 390px
+    ═══════════════════════════════════════════════════ */
+    @media (max-width: 390px) {
+      .hero-img-frame { max-width: 200px; }
+      .hero-h1        { font-size: 1.85rem; }
+      .stats          { gap: 10px; }
+      .stat           { padding: 16px 12px; }
+      .stat-n         { font-size: 1.5rem; }
+      .why-n          { font-size: 1.55rem; width: 34px; }
+      .why-item       { gap: 12px; }
+      .cta-box        { padding: 36px 18px; }
+    }
+  </style>
 </head>
 
-<body class="page-home">
+<body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- LOGO LINKS -->
-      <a href="/" class="navbar-brand" aria-label="Startseite">
-        <svg class="navbar-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="site-logo-title-home site-logo-subtitle-home">
-          <title id="site-logo-title-home">Tobias Meixner</title>
-          <desc id="site-logo-subtitle-home">Digital. Strategy. Excellence.</desc>
-          <g transform="translate(8 6)">
-            <circle class="logo-dot" cx="50" cy="108" r="18"></circle>
-            <line class="logo-stroke" x1="68" y1="62" x2="98" y2="118"></line>
-            <line class="logo-stroke" x1="136" y1="62" x2="166" y2="118"></line>
-            <text class="logo-title" x="208" y="136">eixner</text>
-            <text class="logo-subtitle" x="380" y="188">DIGITAL. STRATEGY. EXCELLENCE.</text>
-          </g>
-        </svg>
-      </a>
+<!-- ═══ NAVBAR ══════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Tobias Meixner – Startseite">
+      <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="logo-t">
+        <title id="logo-t">Tobias Meixner</title>
+        <g transform="translate(8 6)">
+          <circle class="logo-dot" cx="50" cy="108" r="18"/>
+          <line class="logo-stroke" x1="68" y1="62" x2="98" y2="118"/>
+          <line class="logo-stroke" x1="136" y1="62" x2="166" y2="118"/>
+          <text class="logo-t" x="208" y="136">eixner</text>
+          <text class="logo-s" x="380" y="188">DIGITAL. STRATEGY. EXCELLENCE.</text>
+        </g>
+      </svg>
+    </a>
 
-    <!-- BURGER RECHTS -->
-    <button class="navbar-toggler ms-auto"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Über mich</a></li>
+      <li><a href="/leistungen/">Leistungen</a></li>
+      <li><a href="/projekte/">Projekte</a></li>
+      <li><a href="/kontakt/" class="nav-cta">Kontakt aufnehmen</a></li>
+    </ul>
+
+    <button class="burger" id="burger" aria-label="Navigation öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
-
-    <!-- MOBILE / DESKTOP NAV -->
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Über mich</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/journey/">Journey</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/leistungen/">Leistungen</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/projekte/">Projekte</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank">Lebenslauf</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/kontakt/">Kontakt</a>
-        </li>
-      </ul>
-    </div>
-
   </div>
 </nav>
 
+<nav class="drawer" id="drawer" aria-label="Mobile Navigation">
+  <ul>
+    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/" style="color:var(--indigo)">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+  </ul>
+</nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-bg"></div>
 
-  <div class="container hero-content">
-    <h1 class="hero-title">Tobias Meixner</h1>
+<!-- ═══ HERO ═════════════════════════════════════════════════════ -->
+<section class="hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
 
-    <p class="hero-subtitle">
-      Student E-Commerce · Selbstständig
-    </p>
+  <div class="container">
+    <div class="hero-grid">
 
-    <p class="hero-text">
-      Ich übernehme die technische Umsetzung von <span class="tablet-break">E-Commerce-Lösungen und digitalen Prozessen –</span>
-       von der Idee bis zur funktionierenden Anwendung.
-    </p>
+      <div>
+        <div class="hero-badge">
+          <span class="bdot" aria-hidden="true"></span>
+          Verfügbar für neue Projekte
+        </div>
 
-    <div class="hero-actions">
-      <a href="/kontakt/" class="btn btn-primary">Termin vereinbaren</a>
-      <a href="/leistungen/" class="btn btn-outline-secondary">Leistungen</a>
+        <h1 class="hero-h1">
+          Digitale Lösungen,<br>
+          die <span class="ac">wirklich</span> funktionieren.
+        </h1>
+
+        <p class="hero-sub">
+          Tobias Meixner &thinsp;·&thinsp; E-Commerce-Student &amp; Freelancer &thinsp;·&thinsp; Würzburg
+        </p>
+
+        <p class="hero-p">
+          Ich helfe kleinen Unternehmen und Startups dabei, ihre
+          <strong>digitale Infrastruktur aufzubauen</strong> – von der Website über
+          Tracking-Setups bis hin zu E-Commerce-Systemen.
+          Direkt, transparent und ohne Agentur-Overhead.
+        </p>
+
+        <div class="hero-btns">
+          <a href="/kontakt/" class="btn btn-primary">
+            Projekt besprechen
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/leistungen/" class="btn btn-outline">Leistungen ansehen</a>
+        </div>
+
+        <div class="trust">
+          <div class="trust-chip">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Gumb AG – GTM &amp; GA4
+          </div>
+          <div class="trust-div" aria-hidden="true"></div>
+          <div class="trust-chip">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Google Ads zertifiziert
+          </div>
+          <div class="trust-div" aria-hidden="true"></div>
+          <div class="trust-chip">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Selbstständig seit Feb. 2026
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <div class="hero-img-frame">
+          <div class="img-blob" aria-hidden="true"></div>
+          <img
+            src="/assets/img/Profilbild2.jpg"
+            alt="Tobias Meixner – E-Commerce-Student und Freelancer aus Würzburg"
+            width="390" height="488"
+            loading="eager" fetchpriority="high"
+          >
+          <div class="fc fc-1" aria-hidden="true">
+            <div class="fi fi-grn">📊</div>
+            <div><div class="fc-lbl">GA4 + GTM Setup</div><div class="fc-meta">Gumb AG · 2026</div></div>
+          </div>
+          <div class="fc fc-2" aria-hidden="true">
+            <div class="fi fi-ind">🌐</div>
+            <div><div class="fc-lbl">Website & Hosting</div><div class="fc-meta">stefaniemischka.com</div></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-  <div class="hero-image">
-    <img src="assets/img/Profilbild2.jpg" alt="Foto von mir in einem blauen Anzug mit weißem Hemd, 
-    lächelnd schaue ich leicht rechts an der Kamera vorbei">
-  </div>
-</header>
-
-<!-- KURZPROFIL -->
-<section class="page-section">
-  <div class="container">
-    <section class="info-section">
-      <div class="row">
-        <div class="col-lg-8">
-          <h2>Kurzprofil</h2>
-          <p>
-            Ich studiere E-Commerce und bin seit Februar 2026 selbstständig tätig.
-            Mein Schwerpunkt liegt auf der technischen und operativen Umsetzung digitaler Projekte – 
-            von Websites bis zu E-Commerce-Systemen.
-          </p>
-          <p>
-            Ich arbeite strukturiert und pragmatisch mit Fokus auf funktionale, wartbare Lösungen. 
-            Technik soll Probleme lösen, nicht neue schaffen.
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
 </section>
 
-<!-- WAS ICH MACHE -->
-<section class="page-section reveal">
+
+<!-- ═══ ABOUT ════════════════════════════════════════════════════ -->
+<div class="about-strip reveal">
   <div class="container">
-    <section class="info-section">
-      <h2>Was ich mache</h2>
+    <div class="about-grid">
 
-      <div class="row g-4">
-
-        <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Websites & Technik</h5>
-            <p class="card-text">
-              Aufbau, Pflege und technische Betreuung von Websites inklusive Hosting,
-              Domains, DNS-Konfiguration und Backend.
-            </p>
+      <div>
+        <span class="sec-label about-lbl">Wer bin ich</span>
+        <h2 class="about-h2">Student, Freelancer –<br><em>ehrlich &amp; praxisnah.</em></h2>
+        <p class="about-p">
+          Ich studiere E-Commerce und habe mich im Februar 2026 selbstständig gemacht.
+          Das bedeutet für dich: <strong>faire Preise ohne Agentur-Aufschlag,
+          ein direkter Ansprechpartner</strong> und echtes Engagement – weil mir jedes Projekt wichtig ist.
+        </p>
+        <p class="about-p">
+          Durch meine Arbeit bei der <strong>Gumb AG</strong> habe ich nicht nur theoretisches Wissen,
+          sondern ein vollständiges Tracking-Ecosystem real konzipiert und implementiert.
+        </p>
+        <ul class="about-list">
+          <li><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Kein Overhead – du sprichst direkt mit mir</li>
+          <li><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ich bin transparent, wenn etwas außerhalb meines Bereichs liegt</li>
+          <li><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Strukturiert, verlässlich, pragmatisch</li>
+        </ul>
+        <div class="about-cert">
+          <img src="/assets/img/badge.png" alt="Google Ads Suchmaschinen-Zertifizierung">
+          <div class="cert-txt">
+            <strong>Google Ads Suchmaschinen-Zertifizierung</strong>
+            Skillshop · Kampagnenaufbau, Keyword-Strategie &amp; Performance
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">E-Commerce & Shops</h5>
-            <p class="card-text">
-              Technische Umsetzung und Betreuung von Online-Shops mit gängigen
-              Shop-Systemen wie Shopify oder WordPress.
-            </p>
-          </div>
+      <div>
+        <div class="stats">
+          <div class="stat"><div class="stat-n">2<em>+</em></div><div class="stat-lbl">Reale Projekte mit echten Kunden</div></div>
+          <div class="stat"><div class="stat-n">GTM<em>/</em>GA4</div><div class="stat-lbl">Enhanced Conversions &amp; Consent Mode v2</div></div>
+          <div class="stat"><div class="stat-n">100<em>%</em></div><div class="stat-lbl">Direktkontakt – kein Zwischenhändler</div></div>
+          <div class="stat"><div class="stat-n">Feb<em>'26</em></div><div class="stat-lbl">Selbstständig seit Februar 2026</div></div>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Technische Unterstützung</h5>
-            <p class="card-text">
-              Unterstützung bei technischen Fragen, Anpassungen, Fehlerbehebung
-              und laufender Systempflege.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Automatisierung & E-Mail</h5>
-            <p class="card-text">
-              Einfache Automatisierungen und E-Mail-Prozesse zur Unterstützung
-              strukturierter digitaler Abläufe.
-            </p>
-          </div>
-        </div>
-      </div>
-    
-      <div class="mt-3">
-        <a href="/leistungen/" class="btn-outline-secon">
-          Alle Leistungen ansehen
-        </a>
-      </div>
-
-    </section>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- PRAXIS & PROJEKTE -->
-<section class="page-section reveal">
+
+<!-- ═══ SERVICES ═════════════════════════════════════════════════ -->
+<section class="section">
   <div class="container">
-    <section class="info-section">
-      <h2>Praxis & Projekte</h2>
+    <div class="sec-head reveal">
+      <span class="sec-label">Was ich mache</span>
+      <h2 class="sec-title">Meine Leistungen</h2>
+      <p class="sec-desc">Von der technischen Umsetzung bis zur laufenden Betreuung – ich übernehme die digitalen Aufgaben, die Zeit und Know-how kosten.</p>
+    </div>
 
-      <p>
-        Die Arbeit in realen Projekten ermöglicht mir natürlich, theoretische Inhalte aus dem
-        Studium direkt praktisch umzusetzen und Verantwortung zu übernehmen.
-      </p>
-      <p>
-        Zum Einen betreue die Website und technischen Systeme eines kleinen
-        Online-Business. Dazu gehören Website-Aufbau, Domain- und Hosting-Wechsel,
-        DNS-Konfigurationen sowie die laufende technische Betreuung.
-      </p>
+    <div class="svc-grid">
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-icon">📊</div>
+        <h3 class="svc-h">Tracking &amp; Analytics</h3>
+        <p class="svc-p">Saubere Daten als Grundlage für gute Entscheidungen. Ich richte GTM, GA4, Conversion-Tracking und Consent Mode v2 korrekt ein – DSGVO-konform.</p>
+        <div class="svc-tags"><span class="svc-tag">GTM</span><span class="svc-tag">GA4</span><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Pixel</span><span class="svc-tag">Consent Mode v2</span></div>
+      </div>
+      <div class="svc-card reveal" data-d="2">
+        <div class="svc-icon">🌐</div>
+        <h3 class="svc-h">Websites &amp; Technik</h3>
+        <p class="svc-p">Aufbau und Betreuung von Websites – von schlanken HTML-Seiten bis zu CMS-Lösungen. Inklusive Hosting, Domain, DNS und laufender Pflege.</p>
+        <div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span><span class="svc-tag">Hosting &amp; DNS</span></div>
+      </div>
+      <div class="svc-card reveal" data-d="3">
+        <div class="svc-icon">🛒</div>
+        <h3 class="svc-h">E-Commerce &amp; Shops</h3>
+        <p class="svc-p">Technische Umsetzung und Betreuung von Online-Shops. Grundkonfiguration, Struktur und laufende Pflege mit ausgewählten Shop-Systemen.</p>
+        <div class="svc-tags"><span class="svc-tag">Shopify</span><span class="svc-tag">WooCommerce</span><span class="svc-tag">Shop-Setup</span></div>
+      </div>
+      <div class="svc-card reveal" data-d="4">
+        <div class="svc-icon">⚙️</div>
+        <h3 class="svc-h">Automatisierung &amp; E-Mail</h3>
+        <p class="svc-p">Einfache Workflows und E-Mail-Prozesse, die manuelle Arbeit abnehmen. CRM-Unterstützung und strukturierte Abläufe.</p>
+        <div class="svc-tags"><span class="svc-tag">E-Mail-Automation</span><span class="svc-tag">CRM</span><span class="svc-tag">Workflows</span></div>
+      </div>
+    </div>
 
-      <p>
-        Zusätzlich arbeite ich bei der Gumb AG im Startup-Umfeld und verantworte dort das technische 
-        Tracking-Setup (GTM, GA4, Ads), unterstütze im Sales-Outreach, bei der CRM-Optimierung sowie bei 
-        datengestützten E-Mail-Kampagnen und technischen Prozessen.
-      </p>
-
-      <a href="/projekte/" class="btn btn-outline-secondary">
-        Zu den Projekten
-      </a>
-    </section>
-  </div>
-</section>
-
-<!-- AKTUELLER FOKUS -->
-<section class="page-section reveal">
-  <div class="container">
-    <section class="info-section">
-      <h2>Aktueller Fokus</h2>
-      <p>
-        Mein aktueller Schwerpunkt liegt nicht auf SEO, SEA oder Social Media, sondern
-        auf der technischen Umsetzung und dem Betrieb digitaler Systeme.
-      </p>
-      
-      <p>
-        Allerdings möchte ich auch genau diese Bereiche (SEO, SEA, Social Media Content und Analytics)
-        lernen und weiter ausbauen.
-      </p>
-    </section>
+    <div class="svc-foot reveal">
+      <a href="/leistungen/" class="btn btn-primary">Alle Leistungen &amp; Pakete ansehen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
 
 
-<!-- ZERTIFIZIERUNGEN -->
-<section class="page-section reveal reveal-cert">
+<!-- ═══ PROJECTS ═════════════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
   <div class="container">
-    <section class="info-section">
-      <h2>Zertifizierungen</h2>
+    <div class="sec-head reveal">
+      <span class="sec-label">Praxis &amp; Projekte</span>
+      <h2 class="sec-title">Echte Projekte, echte Erfahrung</h2>
+      <p class="sec-desc">Kein Testumfeld – ich habe in realen Projekten Verantwortung übernommen und messbare Ergebnisse geliefert.</p>
+    </div>
 
-      <div class="row align-items-center g-4">
-        <div class="col-md-3">
-          <a href="https://skillshop.credential.net/7c7f49fe-c3ff-481c-b22b-fb7470d94dd5#acc.iNgAdfj0" 
-             target="_blank" 
-             rel="noopener">
-            <img src="assets/img/badge.png"
-                 class="img-fluid certification-badge glow-once"
-                 alt="Google Ads Suchmaschinen-Zertifizierung">
-          </a>
+    <div class="proj-grid">
+      <div class="proj-card reveal" data-d="1">
+        <img src="/assets/img/gumb.png" alt="Gumb App" class="proj-logo">
+        <h3 class="proj-h">Gumb App – Tracking-Ecosystem</h3>
+        <p class="proj-p">Eigenverantwortliche Konzeption und Implementierung der gesamten Marketing-Technology-Infrastruktur.</p>
+        <ul class="proj-list">
+          <li>GTM-Setup für Website &amp; Web-App</li>
+          <li>GA4, Meta Pixel &amp; Google Ads Conversions</li>
+          <li>Enhanced Conversions &amp; Consent Mode v2</li>
+          <li>Sales-Outreach &amp; CRM-Management</li>
+        </ul>
+        <a href="/projekte/" class="proj-link">Mehr erfahren <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="proj-card reveal" data-d="2">
+        <img src="/assets/img/stefanie-mischka.png" alt="Stefanie Mischka" class="proj-logo">
+        <h3 class="proj-h">Stefanie Mischka – Website &amp; Technik</h3>
+        <p class="proj-p">Vollständige technische Umsetzung und laufende Betreuung der Website eines Online-Business.</p>
+        <ul class="proj-list">
+          <li>Website-Aufbau mit CMS-Lösung</li>
+          <li>Domain- und Hosting-Wechsel</li>
+          <li>DNS-Konfiguration &amp; technische Einstellungen</li>
+          <li>Laufende technische Betreuung</li>
+        </ul>
+        <a href="https://www.stefaniemischka.com/" target="_blank" rel="noopener" class="proj-link">Website ansehen <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="proj-foot reveal">
+      <a href="/projekte/" class="btn btn-outline">Alle Projekte ansehen</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WHY ME ═══════════════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="why-box reveal">
+      <div class="why-inner">
+        <div>
+          <span class="sec-label">Warum mit mir arbeiten?</span>
+          <h2 class="sec-title" style="max-width:320px;">Kein Agentur-Overhead. Direkter Kontakt.</h2>
+          <p class="sec-desc">Ich bin Student – das ist kein Nachteil, sondern Transparenz. Du weißt genau, mit wem du arbeitest.</p>
         </div>
-
-        <div class="col-md-9">
-          <p>
-            Google Ads Suchmaschinen-Zertifizierung (Skillshop).
-            Nachweis über grundlegende Kenntnisse in Kampagnenaufbau,
-            Keyword-Strategie, Anzeigenstruktur und Performance-Bewertung.
-          </p>
+        <div>
+          <div class="why-item"><div class="why-n">01</div><div><div class="why-h">Faire Preise, kein Agentur-Markup</div><div class="why-p">Du bezahlst für die Leistung – nicht für ein Büro und fünf Zwischenhändler. <strong>Ehrliche Kalkulation auf Anfrage.</strong></div></div></div>
+          <div class="why-item"><div class="why-n">02</div><div><div class="why-h">Echte Projekterfahrung, kein Lernfeld</div><div class="why-p">Meine Arbeit bei der Gumb AG war kein Schulprojekt – <strong>ich habe echte Systeme gebaut,</strong> die heute produktiv laufen.</div></div></div>
+          <div class="why-item"><div class="why-n">03</div><div><div class="why-h">Ich sage dir, wenn etwas nicht mein Gebiet ist</div><div class="why-p">Ehrlichkeit vor Selbstdarstellung. <strong>Ich kommuniziere direkt.</strong></div></div></div>
+          <div class="why-item"><div class="why-n">04</div><div><div class="why-h">Flexibel &amp; persönlich</div><div class="why-p">Kein Ticket-System. Du erreichst mich direkt – <strong>und ich reagiere schnell.</strong></div></div></div>
         </div>
       </div>
-
-    </section>
+    </div>
   </div>
 </section>
 
 
-
-
-<!-- CTA KONTAKT -->
-<section class="page-section text-center">
-  <h2>Kontakt</h2>
-  <p class="cta-text">
-    Bei Fragen oder Interesse an einer Zusammenarbeit freue ich mich über eine
-    Kontaktaufnahme.
-  </p>
-  <a href="/kontakt/" class="btn btn-primary">
-    Kontakt aufnehmen
-  </a>
+<!-- ═══ CTA ═══════════════════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-box reveal">
+      <p class="cta-lbl">Lass uns reden</p>
+      <h2 class="cta-h">Hast du ein Projekt?<br>Ich freue mich über eine Nachricht.</h2>
+      <p class="cta-p">Unverbindlich, direkt, ohne Buzzword-Bingo. Beschreib kurz, was du brauchst – ich melde mich.</p>
+      <div class="cta-btns">
+        <a href="/kontakt/" class="btn btn-white">Kontakt aufnehmen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/leistungen/" class="btn btn-ghost">Leistungen ansehen</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="bg-light py-4 mt-auto">
-  <div class="container text-center">
-    <small>
-      © 2026 Tobias Meixner ·
-      <a href="/impressum/">Impressum</a> ·
-      <a href="/datenschutz/">Datenschutz</a> ·
-      <a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download="Lebenslauf_Meixner">CV Download (Letzte Aktualisierung: Februar 2026)</a>
-</a>
 
-    </small>
+<!-- ═══ FOOTER ═══════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="footer-copy">© 2026 Tobias Meixner</span>
+      <ul class="footer-links">
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz/">Datenschutz</a></li>
+        <li><a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download>Lebenslauf (PDF)</a></li>
+        <li><a href="#" onclick="CookieScript.instance.show(); return false;">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
   </div>
-  
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/scroll.js"></script>
-<script src="/js/bild_mobile.js"></script>
-<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+
+<!-- ═══ SCRIPTS ══════════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ── Three.js hero background ── */
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+  camera.position.z = 5;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const hero = canvas.closest('.hero');
+  function resize() {
+    const w = hero.offsetWidth, h = hero.offsetHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  new ResizeObserver(resize).observe(hero);
+
+  const isMobile = window.innerWidth < 768;
+  const N   = isMobile ? 55 : 120;
+  const pos = new Float32Array(N * 3);
+  for (let i = 0; i < N * 3; i++) pos[i] = (Math.random() - .5) * 14;
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const pts = new THREE.Points(pGeo, new THREE.PointsMaterial({
+    color: 0x6366f1, size: .045,
+    transparent: true, opacity: isMobile ? .25 : .4,
+    sizeAttenuation: true,
+  }));
+  scene.add(pts);
+
+  if (!isMobile) {
+    const ico = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(2, 1),
+      new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: .07 })
+    );
+    ico.position.set(2.8, .4, -1.5);
+    scene.add(ico);
+
+    const tor = new THREE.Mesh(
+      new THREE.TorusGeometry(.9, .22, 12, 36),
+      new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: .05 })
+    );
+    tor.position.set(-3.2, -1.2, -.5);
+    scene.add(tor);
+  }
+
+  let t = 0;
+  (function loop() {
+    requestAnimationFrame(loop);
+    t += .004;
+    pts.rotation.y = t * .1;
+    pts.rotation.x = t * .04;
+    if (scene.children[1]) { scene.children[1].rotation.y = t * .22; scene.children[1].rotation.x = t * .12; }
+    if (scene.children[2]) { scene.children[2].rotation.z = t * .28; scene.children[2].rotation.x = t * .09; }
+    renderer.render(scene, camera);
+  })();
+})();
+
+/* ── Navbar scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+
+/* ── Mobile burger / drawer ── */
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+
+function closeDrawer() {
+  drawer.classList.remove('is-open');
+  burger.classList.remove('is-open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', () => {
+  const open = !drawer.classList.contains('is-open');
+  drawer.classList.toggle('is-open', open);
+  burger.classList.toggle('is-open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !drawer.contains(e.target)) closeDrawer(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Card 3D tilt ── */
+if (!window.matchMedia('(hover: none)').matches) {
+  document.querySelectorAll('.svc-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+      const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+      card.style.transform = `translateY(-6px) perspective(700px) rotateX(${-dy*6}deg) rotateY(${dx*6}deg)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+}
+</script>
+
+<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

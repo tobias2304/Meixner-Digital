@@ -1,185 +1,426 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tobias Meixner – Impressum</title>
+<!-- 1. Consent Mode v2 Defaults – MUSS zuerst stehen -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage':     'denied',
+    'ad_storage':            'denied',
+    'ad_user_data':          'denied',
+    'ad_personalization':    'denied',
+    'functionality_storage': 'denied',
+    'security_storage':      'granted',
+    'wait_for_update':       500
+  });
+</script>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- 2. CookieScript – übernimmt Consent Mode v2 automatisch -->
+<script type="text/javascript" charset="UTF-8"
+  src="//cdn.cookie-script.com/s/d261fb8134670358b6795a49b5d04574.js">
+</script>
 
-    <!-- Eigene Styles -->
-    <link rel="stylesheet" href="/css/style-v1.css">
+<!-- 3. GTM (GTM-XXXXXXX ersetzen sobald du eine ID hast) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
-        <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="Meixner">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum – Tobias Meixner</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #F5F7FA;
+      --bg-card:     #FFFFFF;
+      --navy:        #0D1B2A;
+      --indigo:      #5B6CF8;
+      --indigo-soft: #EEF0FE;
+      --indigo-mid:  #C7CBFD;
+      --text:        #1A2332;
+      --muted:       #64748B;
+      --border:      #E2E8F0;
+      --fd:          'Manrope', sans-serif;
+      --fb:          'DM Sans', sans-serif;
+      --nav-h:       68px;
+      --mw:          1160px;
+      --px:          clamp(20px, 5vw, 60px);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: var(--indigo); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--indigo-mid); border-radius: 99px; }
+
+    .container { width: 100%; max-width: var(--mw); margin-inline: auto; padding-inline: var(--px); }
+
+    /* ── Navbar ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--nav-h); transition: background .3s, box-shadow .3s; }
+    .nav.scrolled { background: rgba(245,247,250,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--border); }
+    .nav-inner { max-width: var(--mw); margin-inline: auto; padding-inline: var(--px); height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { height: 64px; width: auto; flex-shrink: 0; }
+    .logo-dot    { fill: #72c5e8; }
+    .logo-stroke { stroke: #0c147a; stroke-width: 42; stroke-linecap: round; fill: none; }
+    .logo-t      { font-family: var(--fd); font-size: 128px; font-weight: 800; letter-spacing: -0.03em; fill: var(--navy); }
+    .logo-s      { font-family: var(--fb); font-size: 24px; font-weight: 600; letter-spacing: 0.22em; text-anchor: middle; fill: #383c41; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--fd); font-size: .84rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); position: relative; transition: color .2s; white-space: nowrap; text-decoration: none; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 2px; background: var(--indigo); border-radius: 99px; transition: right .25s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover::after { right: 0; }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 9px 18px; border-radius: 99px; font-size: .8rem !important; transition: background .2s, transform .2s !important; }
+    .nav-cta:hover { background: var(--indigo) !important; transform: translateY(-1px); text-decoration: none !important; }
+    .nav-cta::after { display: none !important; }
+    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 10px; cursor: pointer; flex-shrink: 0; }
+    .burger span { display: block; width: 20px; height: 1.5px; background: var(--navy); border-radius: 99px; transition: transform .28s, opacity .28s; transform-origin: center; }
+    .burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .drawer { position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 199; background: rgba(245,247,250,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 6px var(--px) 20px; transform: translateY(-8px); opacity: 0; pointer-events: none; transition: transform .25s, opacity .25s; }
+    .drawer.is-open { transform: none; opacity: 1; pointer-events: all; }
+    .drawer ul { list-style: none; }
+    .drawer a { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-family: var(--fd); font-size: 1rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .drawer li:last-child a { border-bottom: none; }
+    .drawer a svg { color: var(--indigo); flex-shrink: 0; }
+
+    /* ── Legal Page Layout ── */
+    .legal-page {
+      padding-top: var(--nav-h);
+      min-height: 100vh;
+    }
+
+    .legal-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: start;
+      padding-block: clamp(40px, 6vw, 72px);
+    }
+
+    /* Sticky TOC sidebar */
+    .legal-toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 24px);
+    }
+
+    .toc-title {
+      font-family: var(--fd); font-size: .7rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 12px;
+    }
+
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+
+    .toc-list a {
+      display: block; padding: 5px 8px; border-radius: 7px;
+      font-size: .8rem; font-weight: 500; color: var(--muted);
+      transition: background .2s, color .2s; text-decoration: none;
+      line-height: 1.4;
+    }
+    .toc-list a:hover { background: var(--indigo-soft); color: var(--indigo); }
+
+    /* Main content */
+    .legal-content { min-width: 0; }
+
+    .legal-hero {
+      margin-bottom: clamp(32px, 4vw, 48px);
+      padding-bottom: clamp(24px, 3vw, 36px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--indigo-soft); border: 1px solid var(--indigo-mid); color: var(--indigo);
+      padding: 4px 12px; border-radius: 99px;
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .legal-title {
+      font-family: var(--fd); font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; color: var(--navy); line-height: 1.1;
+      letter-spacing: -.025em; margin-bottom: 10px;
+    }
+
+    .legal-meta { font-size: .85rem; color: var(--muted); }
+
+    /* Sections */
+    .legal-section {
+      scroll-margin-top: calc(var(--nav-h) + 24px);
+      margin-bottom: clamp(28px, 4vw, 40px);
+      padding-bottom: clamp(28px, 4vw, 40px);
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .legal-h2 {
+      font-family: var(--fd); font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 700; color: var(--navy); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+      scroll-margin-top: calc(var(--nav-h) + 20px);
+    }
+
+    .legal-h2-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      background: var(--indigo-soft); color: var(--indigo);
+      font-size: .8rem; font-weight: 800; flex-shrink: 0;
+    }
+
+    .legal-p { font-size: .9375rem; color: var(--text); line-height: 1.75; margin-bottom: 12px; }
+    .legal-p:last-child { margin-bottom: 0; }
+
+    .legal-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 20px; margin-top: 12px;
+      font-size: .9rem; line-height: 1.7;
+    }
+
+    .legal-block strong { display: block; font-family: var(--fd); font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding-block: 26px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: .79rem; color: var(--muted); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; }
+    .footer-links a { font-size: .79rem; color: var(--muted); transition: color .2s; }
+    .footer-links a:hover { color: var(--navy); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      :root { --nav-h: 60px; }
+      .nav-links { display: none; }
+      .burger    { display: flex; }
+      .legal-inner { grid-template-columns: 1fr; }
+      .legal-toc { display: none; }
+    }
+    @media (max-width: 390px) {
+      :root { --px: 16px; }
+      .footer-row { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
 </head>
-
 
 <body>
 
-<!-- Nav Bar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- LOGO LINKS -->
-      <a href="/" class="navbar-brand" aria-label="Startseite">
-        <svg class="navbar-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="site-logo-title-impressum site-logo-subtitle-impressum">
-          <title id="site-logo-title-impressum">Tobias Meixner</title>
-          <desc id="site-logo-subtitle-impressum">Digital. Strategy. Excellence.</desc>
-          <g transform="translate(8 6)">
-            <circle class="logo-dot" cx="50" cy="108" r="18"></circle>
-            <line class="logo-stroke" x1="68" y1="62" x2="98" y2="118"></line>
-            <line class="logo-stroke" x1="136" y1="62" x2="166" y2="118"></line>
-            <text class="logo-title" x="208" y="136">eixner</text>
-            <text class="logo-subtitle" x="308" y="188">DIGITAL. STRATEGY. EXCELLENCE.</text>
-          </g>
-        </svg>
-      </a>
-
-
-    <!-- BURGER RECHTS -->
-    <button class="navbar-toggler ms-auto"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Tobias Meixner – Startseite">
+      <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="logo-t">
+        <title id="logo-t">Tobias Meixner</title>
+        <g transform="translate(8 6)">
+          <circle class="logo-dot" cx="50" cy="108" r="18"/>
+          <line class="logo-stroke" x1="68" y1="62" x2="98" y2="118"/>
+          <line class="logo-stroke" x1="136" y1="62" x2="166" y2="118"/>
+          <text class="logo-t" x="208" y="136">eixner</text>
+          <text class="logo-s" x="380" y="188">DIGITAL. STRATEGY. EXCELLENCE.</text>
+        </g>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Über mich</a></li>
+      <li><a href="/leistungen/">Leistungen</a></li>
+      <li><a href="/projekte/">Projekte</a></li>
+      <li><a href="/kontakt/" class="nav-cta">Kontakt aufnehmen</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Navigation öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
-
-    <!-- MOBILE / DESKTOP NAV -->
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Über mich</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/journey/">Journey</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/leistungen/">Leistungen</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/projekte/">Projekte</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank">Lebenslauf</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/kontakt/">Kontakt</a>
-        </li>
-      </ul>
-    </div>
-
   </div>
 </nav>
 
-
-<main class="container my-5">
-    
-<!--Impressum-->
-<h1 class="mb-4">Impressum</h1>
-
-<p>
-  Angaben gemäß § 5 TMG
-</p>
-
-<p>
-  <strong>Tobias Meixner</strong><br>
-  Einzelunternehmer<br>
-  Annastraße 13<br>
-  97072 Würzburg<br>
-  Deutschland
-</p>
-
-<p>
-  <strong>Kontakt</strong><br>
-  E-Mail: <a href="mailto:contact@meixner-tobias.com">contact@meixner-tobias.com</a><br>
-</p>
-
-<p>
-  <strong>Tätigkeit</strong><br>
-  Technische Umsetzung und Betreuung digitaler Projekte, Websites und
-  E-Commerce-Systeme.
-</p>
-
-<p>
-  <strong>Umsatzsteuer</strong><br>
-  Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer erhoben.
-</p>
-
-<p>
-  <strong>Verantwortlicher für den Inhalt nach § 18 Abs. 2 MStV</strong><br>
-  Tobias Meixner<br>
-  Annastraße 13<br>
-  97072 Würzburg
-</p>
-
-<p>
-  <strong>Haftung für Inhalte</strong><br>
-  Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen
-  Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin
-  ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
-  gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
-  forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-</p>
+<nav class="drawer" id="drawer" aria-label="Mobile Navigation">
+  <ul>
+    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/" style="color:var(--indigo)">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+  </ul>
+</nav>
 
 
-<!--Haftung Links-->
-<p>
-  <strong>Haftung für Links</strong><br>
-  Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte
-  ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch
-  keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der
-  jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-</p>
+<div class="legal-page">
+  <div class="container">
+    <div class="legal-inner">
+
+      <!-- TOC Sidebar -->
+      <aside class="legal-toc" aria-label="Inhaltsverzeichnis">
+        <div class="toc-title">Inhalt</div>
+        <ul class="toc-list">
+          <li><a href="#angaben">1. Angaben</a></li>
+          <li><a href="#kontakt">2. Kontakt</a></li>
+          <li><a href="#taetigkeit">3. Tätigkeit</a></li>
+          <li><a href="#umsatzsteuer">4. Umsatzsteuer</a></li>
+          <li><a href="#verantwortlicher">5. Verantwortlicher</a></li>
+          <li><a href="#haftung-inhalte">6. Haftung Inhalte</a></li>
+          <li><a href="#haftung-links">7. Haftung Links</a></li>
+          <li><a href="#urheberrecht">8. Urheberrecht</a></li>
+          <li><a href="#streitbeilegung">9. Streitbeilegung</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <main class="legal-content">
+
+        <div class="legal-hero">
+          <div class="legal-badge">Rechtliche Angaben</div>
+          <h1 class="legal-title">Impressum</h1>
+          <p class="legal-meta">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</p>
+        </div>
+
+        <div class="legal-section" id="angaben">
+          <h2 class="legal-h2"><span class="legal-h2-num">1</span> Angaben zum Anbieter</h2>
+          <div class="legal-block">
+            <strong>Tobias Meixner</strong>
+            Einzelunternehmer<br>
+            Annastraße 13<br>
+            97072 Würzburg<br>
+            Deutschland
+          </div>
+        </div>
+
+        <div class="legal-section" id="kontakt">
+          <h2 class="legal-h2"><span class="legal-h2-num">2</span> Kontakt</h2>
+          <div class="legal-block">
+            E-Mail: <a href="mailto:contact@meixner-tobias.com">contact@meixner-tobias.com</a>
+          </div>
+        </div>
+
+        <div class="legal-section" id="taetigkeit">
+          <h2 class="legal-h2"><span class="legal-h2-num">3</span> Tätigkeit</h2>
+          <p class="legal-p">
+            Technische Umsetzung und Betreuung digitaler Projekte, Websites,
+            E-Commerce-Systeme sowie Tracking- und Analytics-Setups.
+          </p>
+        </div>
+
+        <div class="legal-section" id="umsatzsteuer">
+          <h2 class="legal-h2"><span class="legal-h2-num">4</span> Umsatzsteuer</h2>
+          <p class="legal-p">
+            Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer erhoben
+            und daher auch nicht ausgewiesen.
+          </p>
+        </div>
+
+        <div class="legal-section" id="verantwortlicher">
+          <h2 class="legal-h2"><span class="legal-h2-num">5</span> Verantwortlicher für den Inhalt</h2>
+          <p class="legal-p">Verantwortlicher nach § 18 Abs. 2 MStV (Medienstaatsvertrag):</p>
+          <div class="legal-block">
+            Tobias Meixner<br>
+            Annastraße 13<br>
+            97072 Würzburg
+          </div>
+        </div>
+
+        <div class="legal-section" id="haftung-inhalte">
+          <h2 class="legal-h2"><span class="legal-h2-num">6</span> Haftung für Inhalte</h2>
+          <p class="legal-p">
+            Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen
+            Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin
+            ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
+            fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
+            rechtswidrige Tätigkeit hinweisen.
+          </p>
+          <p class="legal-p">
+            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach
+            den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung
+            ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
+            möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese
+            Inhalte umgehend entfernen.
+          </p>
+        </div>
+
+        <div class="legal-section" id="haftung-links">
+          <h2 class="legal-h2"><span class="legal-h2-num">7</span> Haftung für Links</h2>
+          <p class="legal-p">
+            Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte
+            ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine
+            Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+            Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden
+            zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige
+            Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+          </p>
+        </div>
+
+        <div class="legal-section" id="urheberrecht">
+          <h2 class="legal-h2"><span class="legal-h2-num">8</span> Urheberrecht</h2>
+          <p class="legal-p">
+            Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+            unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+            Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
+            bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+            Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen
+            Gebrauch gestattet.
+          </p>
+        </div>
+
+        <div class="legal-section" id="streitbeilegung">
+          <h2 class="legal-h2"><span class="legal-h2-num">9</span> Streitbeilegung</h2>
+          <p class="legal-p">
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+            <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>
+          </p>
+          <p class="legal-p">
+            Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren
+            vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</div>
 
 
-<!--Urheberrecht-->
-<p>
-  <strong>Urheberrecht</strong><br>
-  Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
-  unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche
-  gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
-  der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der
-  schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-</p>
-
-
-<!--EU-Streitbeteiligung-->
-<p>
-  <strong>Streitbeilegung</strong><br>
-  Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung
-  (OS) bereit:<br>
-  <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">
-    https://ec.europa.eu/consumers/odr
-  </a><br>
-  Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor
-  einer Verbraucherschlichtungsstelle teilzunehmen.
-</p>
-
-</main>
-
-
-<footer class="bg-light py-4 mt-auto">
-  <div class="container text-center">
-    <small>
-      © 2026 Tobias Meixner ·
-      <a href="/impressum/">Impressum</a> ·
-      <a href="/datenschutz/">Datenschutz</a> ·
-      <a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download="Lebenslauf_Meixner">CV Download (Letzte Aktualisierung: Februar 2026)</a>
-    </small>
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="footer-copy">© 2026 Tobias Meixner</span>
+      <ul class="footer-links">
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz/">Datenschutz</a></li>
+        <li><a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download>Lebenslauf (PDF)</a></li>
+        <li><a href="#" onclick="CookieScript.instance.show(); return false;">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
-
-    <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+function closeDrawer() { drawer.classList.remove('is-open'); burger.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+burger.addEventListener('click', () => { const open = !drawer.classList.contains('is-open'); drawer.classList.toggle('is-open',open); burger.classList.toggle('is-open',open); burger.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':''; });
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
+document.addEventListener('click',e=>{ if(!nav.contains(e.target)&&!drawer.contains(e.target)) closeDrawer(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });
+</script>
+<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
