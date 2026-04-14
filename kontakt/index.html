@@ -29,8 +29,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kontakt - Tobias Meixner</title>
-  <meta name="description" content="Kontakt zu Tobias Meixner - Unverbindlich anfragen fuer Websites, Tracking-Setup und digitale Projekte.">
+  <title>Kontakt – Unverbindlich anfragen | Tobias Meixner Würzburg</title>
+  <meta name="description" content="Projekt anfragen bei Tobias Meixner – Freelancer aus Würzburg für Websites, GTM & GA4 Setup. Antwort innerhalb 24h, kein Verkaufsgespräch, transparent und direkt.">
+  
+    <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://meixner-tobias.com/kontakt/">
+  <meta property="og:title"       content="Kontakt – Unverbindlich anfragen | Tobias Meixner">
+  <meta property="og:description" content="Freelancer aus Würzburg kontaktieren – Websites, GTM & GA4 Setup. Antwort innerhalb 24h, direkt und ohne Overhead.">
+  <meta property="og:image"       content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
+  <meta property="og:locale"      content="de_DE">
+  <meta property="og:site_name"   content="Tobias Meixner">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://meixner-tobias.com/kontakt/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,6 +204,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .form-row { grid-template-columns: 1fr; }
     }
   </style>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://meixner-tobias.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kontakt",
+          "item": "https://meixner-tobias.com/kontakt/"
+        }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://meixner-tobias.com/kontakt/#contactpage",
+      "name": "Kontakt – Tobias Meixner",
+      "url": "https://meixner-tobias.com/kontakt/",
+      "description": "Kontaktseite von Tobias Meixner – Freelancer aus Würzburg für Websites, GTM und GA4 Setup. Unverbindliche Projektanfragen willkommen.",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://meixner-tobias.com/#person",
+        "name": "Tobias Meixner",
+        "email": "contact@meixner-tobias.com",
+        "telephone": "+4915225308491",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Würzburg",
+          "addressRegion": "Bayern",
+          "addressCountry": "DE"
+        }
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -264,31 +323,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2 class="form-title">Projektanfrage</h2>
           <p class="form-subtitle">Alle Felder mit <span style="color:var(--indigo)">*</span> sind Pflichtfelder. Alles andere ist optional &#8211; je mehr du schreibst, desto konkreter kann ich antworten.</p>
 
-          <div id="formErrorMsg" class="form-error-msg">Bitte f&#252;lle alle Pflichtfelder korrekt aus.</div>
+          <div id="formErrorMsg" class="form-error-msg" role="alert">Bitte f&#252;lle alle Pflichtfelder korrekt aus.</div>
 
-          <form id="contactForm" novalidate>
+          <form id="contactForm" novalidate aria-label="Projektanfrage-Formular">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="name">Name <span class="req">*</span></label>
-                <input class="form-input" type="text" id="name" name="name" placeholder="Dein Name" autocomplete="name" required>
-                <span class="field-error" id="nameErr">Bitte gib deinen Namen ein.</span>
+                <input class="form-input" type="text" id="name" name="name"
+                      placeholder="Dein Name" autocomplete="name"
+                      required aria-required="true" aria-describedby="nameErr">
+                <span class="field-error" id="nameErr" role="alert">Bitte gib deinen Namen ein.</span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="email">E-Mail <span class="req">*</span></label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="deine@email.de" autocomplete="email" required>
-                <span class="field-error" id="emailErr">Bitte gib eine g&#252;ltige E-Mail-Adresse ein.</span>
+                <input class="form-input" type="email" id="email" name="email"
+                      placeholder="deine@email.de" autocomplete="email"
+                      required aria-required="true" aria-describedby="emailErr">
+                <span class="field-error" id="emailErr" role="alert">Bitte gib eine g&#252;ltige E-Mail-Adresse ein.</span>
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="company">Unternehmen / Projekt</label>
-              <input class="form-input" type="text" id="company" name="company" placeholder="Optional &#8211; Name deines Unternehmens oder Projekts">
+              <input class="form-input" type="text" id="company" name="company"
+                    placeholder="Optional &#8211; Name deines Unternehmens oder Projekts"
+                    autocomplete="organization">
             </div>
 
             <div class="form-group">
               <label class="form-label" for="topic">Womit kann ich helfen? <span class="req">*</span></label>
               <div class="select-wrap">
-                <select class="form-select" id="topic" name="topic" required>
+                <select class="form-select" id="topic" name="topic"
+                        required aria-required="true" aria-describedby="topicErr">
                   <option value="" disabled selected>Bitte ausw&#228;hlen &#8230;</option>
                   <option value="tracking">Tracking &amp; Analytics (GTM / GA4)</option>
                   <option value="website">Website &#8211; Aufbau oder Betreuung</option>
@@ -297,32 +363,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <option value="other">Anderes / noch unklar</option>
                 </select>
               </div>
-              <span class="field-error" id="topicErr">Bitte w&#228;hle ein Thema aus.</span>
+              <span class="field-error" id="topicErr" role="alert">Bitte w&#228;hle ein Thema aus.</span>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="message">Deine Nachricht <span class="req">*</span></label>
-              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Beschreib kurz, was du brauchst &#8211; was ist dein Ziel, wo stehst du gerade, gibt es einen Zeitrahmen?" required></textarea>
-              <span class="field-error" id="messageErr">Bitte schreib eine kurze Nachricht.</span>
+              <textarea class="form-textarea" id="message" name="message" rows="5"
+                        placeholder="Beschreib kurz, was du brauchst &#8211; was ist dein Ziel, wo stehst du gerade, gibt es einen Zeitrahmen?"
+                        required aria-required="true" aria-describedby="messageErr"></textarea>
+              <span class="field-error" id="messageErr" role="alert">Bitte schreib eine kurze Nachricht.</span>
             </div>
 
             <div class="form-check">
-              <input type="checkbox" id="privacy" name="privacy" required>
+              <input type="checkbox" id="privacy" name="privacy"
+                    required aria-required="true">
               <label class="form-check-label" for="privacy">
                 Ich habe die <a href="/datenschutz/">Datenschutzerkl&#228;rung</a> gelesen und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert werden. <span style="color:var(--indigo)">*</span>
               </label>
             </div>
 
-            <button type="submit" class="form-submit" id="submitBtn">
+            <button type="submit" class="form-submit" id="submitBtn" aria-live="polite">
               Anfrage absenden
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </form>
         </div>
 
         <!-- Success state -->
-        <div class="form-success" id="formSuccess">
-          <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="form-success" id="formSuccess" role="status">
+          <div class="success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
           <div class="success-title">Nachricht gesendet!</div>
           <p class="success-desc">Danke f&#252;r deine Anfrage. Ich melde mich in der Regel innerhalb von 24 Stunden bei dir.</p>
           <a href="/" class="btn btn-outline" style="margin-top:8px;">Zur&#252;ck zur Startseite</a>
