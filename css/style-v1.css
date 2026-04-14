@@ -1,23 +1,3 @@
-/*
- * style.css – meixner-tobias.com
- * Geteilte Styles: index · leistungen · projekte · kontakt · impressum · datenschutz
- *
- * ENTHALTEN: Reset, Variables, Scrollbar, Container, Section-Helpers, Buttons,
- *            bdot/blink, svc-tags/svc-tag, Navbar (komplett), Page Hero (Base),
- *            CTA Box, Footer, Reveal, Legal Layout, Service-Row/Badge, Rights-List,
- *            Responsive (shared breakpoints)
- *
- * NICHT ENTHALTEN (bleibt in der HTML-Datei):
- *   index      → Hero (Three.js, blobs, grid), About-Strip, Stats,
- *                svc-grid/card, proj-grid/card, Why-Box + alle Responsive-Overrides
- *   leistungen → hero-wave, note-banner, pkg-*, svc-block/detail, process-*, faq-*
- *   projekte   → hero-stats, case-*, skills-strip, own-*, timeline-*
- *   kontakt    → page-hero Overrides (::before links, ::after),
- *                contact-grid, form-*, sidebar-*, trust-strip
- *   impressum  → a { color: var(--indigo) }
- *   datenschutz → a { color: var(--indigo) }
- */
-
 /* ═══════════════════════════════════════════════════
    RESET & VARIABLES
 ═══════════════════════════════════════════════════ */
@@ -349,6 +329,8 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 600;
   color: var(--navy);
 }
+
+.drawer a.active { color: var(--indigo); border-bottom-color: var(--indigo-mid); }
 
 .drawer li:last-child a { border-bottom: none; }
 .drawer a svg { color: var(--indigo); flex-shrink: 0; }
@@ -747,6 +729,10 @@ footer { border-top: 1px solid var(--border); padding-block: 26px; }
   .burger    { display: flex; }
 
   .section { padding-block: clamp(40px, 7vw, 68px); }
+
+  /* Footer zentrieren */
+  .footer-row   { flex-direction: column; align-items: center; text-align: center; }
+  .footer-links { justify-content: center; }
 
   .legal-inner { grid-template-columns: 1fr; }
   .legal-toc   { display: none; }

@@ -15,18 +15,17 @@
     'wait_for_update':       500
   });
 </script>
-
 <!-- 2. CookieScript – übernimmt Consent Mode v2 automatisch -->
 <script type="text/javascript" charset="UTF-8"
   src="//cdn.cookie-script.com/s/d261fb8134670358b6795a49b5d04574.js">
 </script>
-
-<!-- 3. GTM (GTM-XXXXXXX ersetzen sobald du eine ID hast) -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+})(window,document,'script','dataLayer','GTM-5QLXDT4T');</script>
+<!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -222,6 +221,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .proj-logo { height: 34px; width: auto; max-width: 130px; object-fit: contain; object-position: left; margin-bottom: 16px; filter: grayscale(1) opacity(.6); transition: filter .3s; }
     .proj-card:hover .proj-logo { filter: none; }
+    @media (hover: none) { .proj-logo { filter: none; } }
 
     .proj-h { font-family: var(--fd); font-size: clamp(.95rem, 1.8vw, 1.12rem); font-weight: 700; color: var(--navy); margin-bottom: 9px; }
     .proj-p { font-size: .875rem; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
@@ -309,9 +309,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
-<!-- GTM noscript -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ═══ NAVBAR ══════════════════════════════════════════════════ -->
 <nav class="nav" id="nav">
@@ -344,10 +345,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="drawer" id="drawer" aria-label="Mobile Navigation">
   <ul>
-    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/" class="active">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-    <li><a href="/kontakt/" style="color:var(--indigo)">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
   </ul>
 </nav>
 
@@ -733,6 +734,5 @@ if (!window.matchMedia('(hover: none)').matches) {
 }
 </script>
 
-<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<!-- 1. Consent Mode v2 Defaults – MUSS zuerst stehen -->
+<!-- 1. Consent Mode v2 Defaults -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -15,28 +15,28 @@
     'wait_for_update':       500
   });
 </script>
-
-<!-- 2. CookieScript – übernimmt Consent Mode v2 automatisch -->
+<!-- 2. CookieScript -->
 <script type="text/javascript" charset="UTF-8"
   src="//cdn.cookie-script.com/s/d261fb8134670358b6795a49b5d04574.js">
 </script>
-
-<!-- 3. GTM (GTM-XXXXXXX ersetzen sobald du eine ID hast) -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-
+})(window,document,'script','dataLayer','GTM-5QLXDT4T');</script>
+<!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leistungen – Tobias Meixner</title>
-  <meta name="description" content="Leistungen von Tobias Meixner – Websites, Tracking-Setup (GTM/GA4), E-Commerce und Automatisierung für kleine Unternehmen und Startups. Pakete auf Anfrage.">
+  <title>Leistungen - Tobias Meixner</title>
+  <meta name="description" content="Leistungen von Tobias Meixner - Websites, Tracking-Setup (GTM/GA4), E-Commerce und Automatisierung fuer kleine Unternehmen und Startups. Pakete auf Anfrage.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style-v1.css">
 
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
@@ -45,806 +45,229 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
   <style>
-    /* ═══════════════════════════════════════════════════
-       RESET & VARIABLES  (identisch mit index.html)
-    ═══════════════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ===================================================
+       PAGE HERO - leistungen-Overrides
+       (Base-Styles kommen aus style.css)
+    =================================================== */
+    .page-hero { padding-bottom: 0; }
+    .page-hero-inner { padding-block: clamp(48px, 7vw, 80px) 0; gap: 0; }
+    .page-hero-desc  { margin-bottom: 32px; max-width: 560px; }
 
-    :root {
-      --bg:          #F5F7FA;
-      --bg-card:     #FFFFFF;
-      --navy:        #0D1B2A;
-      --indigo:      #5B6CF8;
-      --indigo-soft: #EEF0FE;
-      --indigo-mid:  #C7CBFD;
-      --text:        #1A2332;
-      --muted:       #64748B;
-      --border:      #E2E8F0;
-      --sh-md:       0 4px 24px rgba(13,27,42,.10);
-      --sh-lg:       0 12px 40px rgba(13,27,42,.14);
-      --r:           14px;
-      --r-lg:        22px;
-      --fd:          'Manrope', sans-serif;
-      --fb:          'DM Sans', sans-serif;
-      --nav-h:       68px;
-      --mw:          1160px;
-      --px:          clamp(20px, 5vw, 60px);
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--fb);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    a   { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; height: auto; }
-
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--indigo-mid); border-radius: 99px; }
-
-    /* ═══════════════════════════════════════════════════
-       LAYOUT
-    ═══════════════════════════════════════════════════ */
-    .container { width: 100%; max-width: var(--mw); margin-inline: auto; padding-inline: var(--px); }
-    .section   { padding-block: clamp(56px, 8vw, 96px); }
-
-    .sec-label {
-      display: inline-block;
-      font-family: var(--fd); font-size: .72rem; font-weight: 700;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--indigo); margin-bottom: 12px;
-    }
-    .sec-title {
-      font-family: var(--fd);
-      font-size: clamp(1.55rem, 3.5vw, 2.4rem);
-      font-weight: 800; color: var(--navy);
-      line-height: 1.15; letter-spacing: -.022em; margin-bottom: 12px;
-    }
-    .sec-desc {
-      font-size: clamp(.875rem, 1.5vw, 1.05rem);
-      color: var(--muted); max-width: 540px; line-height: 1.72;
-    }
-    .sec-head { margin-bottom: clamp(32px, 5vw, 52px); }
-    .text-center { text-align: center; }
-    .text-center .sec-desc { margin-inline: auto; }
-
-    /* ═══════════════════════════════════════════════════
-       BUTTONS
-    ═══════════════════════════════════════════════════ */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 26px; border-radius: 99px;
-      font-family: var(--fd); font-size: .875rem; font-weight: 700;
-      letter-spacing: .03em; border: none; cursor: pointer; white-space: nowrap;
-      transition: background .2s, transform .2s, box-shadow .2s, border-color .2s, color .2s;
-    }
-    .btn-sm { padding: 10px 22px; font-size: .82rem; }
-    .btn-full { width: 100%; justify-content: center; }
-
-    .btn-primary { background: var(--navy); color: #fff; }
-    .btn-primary:hover { background: var(--indigo); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,108,248,.35); }
-
-    .btn-indigo { background: var(--indigo); color: #fff; }
-    .btn-indigo:hover { background: #4855e8; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,108,248,.4); }
-
-    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
-    .btn-outline:hover { border-color: var(--navy); background: var(--navy); color: #fff; transform: translateY(-2px); }
-
-    .btn-outline-indigo { background: transparent; color: var(--indigo); border: 1.5px solid var(--indigo-mid); }
-    .btn-outline-indigo:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); transform: translateY(-2px); }
-
-    .btn-white { background: #fff; color: var(--navy); }
-    .btn-white:hover { background: var(--indigo-soft); transform: translateY(-2px); }
-
-    .btn-ghost { background: transparent; color: rgba(255,255,255,.7); border: 1.5px solid rgba(255,255,255,.2); }
-    .btn-ghost:hover { border-color: rgba(255,255,255,.55); color: #fff; transform: translateY(-2px); }
-
-    /* ═══════════════════════════════════════════════════
-       NAVBAR  (identisch mit index.html)
-    ═══════════════════════════════════════════════════ */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: var(--nav-h); transition: background .3s, box-shadow .3s;
-    }
-    .nav.scrolled {
-      background: rgba(245,247,250,.92);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 var(--border);
-    }
-    .nav-inner {
-      max-width: var(--mw); margin-inline: auto; padding-inline: var(--px);
-      height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
-    }
-    .nav-logo { height: 64px; width: auto; flex-shrink: 0; }
-    .logo-dot { fill: #72c5e8; }
-    .logo-stroke { stroke: #0c147a; stroke-width: 42; stroke-linecap: round; fill: none; }
-    .logo-t { font-family: var(--fd); font-size: 128px; font-weight: 800; letter-spacing: -0.03em; fill: var(--navy); }
-    .logo-s { font-family: var(--fb); font-size: 24px; font-weight: 600; letter-spacing: 0.22em; text-anchor: middle; fill: #383c41; }
-
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-family: var(--fd); font-size: .84rem; font-weight: 600;
-      letter-spacing: .04em; color: var(--muted);
-      position: relative; transition: color .2s; white-space: nowrap;
-    }
-    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 2px; background: var(--indigo); border-radius: 99px; transition: right .25s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
-    .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
-    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 9px 18px; border-radius: 99px; font-size: .8rem !important; transition: background .2s, transform .2s !important; }
-    .nav-cta:hover { background: var(--indigo) !important; transform: translateY(-1px); }
-    .nav-cta::after { display: none !important; }
-
-    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 10px; cursor: pointer; flex-shrink: 0; }
-    .burger span { display: block; width: 20px; height: 1.5px; background: var(--navy); border-radius: 99px; transition: transform .28s, opacity .28s; transform-origin: center; }
-    .burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .drawer {
-      position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 199;
-      background: rgba(245,247,250,.97);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 6px var(--px) 20px;
-      transform: translateY(-8px); opacity: 0; pointer-events: none;
-      transition: transform .25s, opacity .25s;
-    }
-    .drawer.is-open { transform: none; opacity: 1; pointer-events: all; }
-    .drawer ul { list-style: none; }
-    .drawer a { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-family: var(--fd); font-size: 1rem; font-weight: 600; color: var(--navy); }
-    .drawer li:last-child a { border-bottom: none; }
-    .drawer a svg { color: var(--indigo); flex-shrink: 0; }
-
-    /* ═══════════════════════════════════════════════════
-       PAGE HERO (Leistungen)
-    ═══════════════════════════════════════════════════ */
-    .page-hero {
-      padding-top: var(--nav-h);
-      padding-bottom: 0;
-      background: var(--bg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -60px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(91,108,248,.09) 0%, transparent 70%);
-      filter: blur(60px);
-      pointer-events: none;
-    }
-
-    .page-hero-inner {
-      position: relative; z-index: 1;
-      padding-block: clamp(48px, 7vw, 80px) 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0;
-    }
-
-    .page-hero-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--indigo-soft); border: 1px solid var(--indigo-mid);
-      color: var(--indigo); padding: 5px 14px 5px 10px; border-radius: 99px;
-      font-size: .73rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .page-hero-title {
-      font-family: var(--fd);
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 800; color: var(--navy);
-      line-height: 1.1; letter-spacing: -.025em;
-      margin-bottom: 16px; max-width: 700px;
-    }
-    .page-hero-title em { color: var(--indigo); font-style: normal; }
-
-    .page-hero-desc {
-      font-size: clamp(.9rem, 1.6vw, 1.1rem);
-      color: var(--muted); max-width: 560px;
-      line-height: 1.72; margin-bottom: 32px;
-    }
-
-    /* Divider wave into packages section */
-    .hero-wave {
-      width: 100%; overflow: hidden;
-      line-height: 0; margin-top: 40px;
-    }
+    .hero-wave { width: 100%; overflow: hidden; line-height: 0; margin-top: 40px; }
     .hero-wave svg { display: block; width: 100%; }
 
-    /* ═══════════════════════════════════════════════════
+    /* ===================================================
        NOTE BANNER
-    ═══════════════════════════════════════════════════ */
+    =================================================== */
     .note-banner {
       background: var(--indigo-soft);
       border: 1px solid var(--indigo-mid);
       border-radius: var(--r);
       padding: 14px 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: .875rem;
-      color: var(--navy);
-      line-height: 1.55;
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: .875rem; color: var(--navy); line-height: 1.55;
       margin-bottom: clamp(32px, 5vw, 48px);
     }
-    .note-icon {
-      font-size: 1.1rem; flex-shrink: 0; margin-top: 1px;
-    }
+    .note-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
     .note-banner strong { font-weight: 700; }
 
-    /* ═══════════════════════════════════════════════════
-       PACKAGES SECTION
-    ═══════════════════════════════════════════════════ */
-    .pkg-section {
-      padding-block: clamp(52px, 7vw, 80px);
-      background: var(--navy);
-    }
-
+    /* ===================================================
+       PACKAGES
+    =================================================== */
+    .pkg-section { padding-block: clamp(52px, 7vw, 80px); background: var(--navy); }
     .pkg-section .sec-label { color: rgba(199,203,253,.85); }
     .pkg-section .sec-title { color: #fff; }
     .pkg-section .sec-desc  { color: rgba(255,255,255,.58); }
 
     .pkg-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      align-items: start;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; align-items: start;
     }
 
-    /* Package card */
     .pkg-card {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r-lg);
       padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      display: flex; flex-direction: column; gap: 0;
       transition: transform .3s, box-shadow .3s, border-color .3s, background .3s;
       position: relative;
     }
+    .pkg-card:hover { transform: translateY(-5px); border-color: rgba(199,203,253,.4); background: rgba(255,255,255,.08); }
 
-    .pkg-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(199,203,253,.4);
-      background: rgba(255,255,255,.08);
-    }
-
-    /* Featured / middle card */
     .pkg-card.featured {
-      background: var(--indigo);
-      border-color: transparent;
+      background: var(--indigo); border-color: transparent;
       transform: translateY(-6px);
       box-shadow: 0 20px 60px rgba(91,108,248,.5);
     }
+    .pkg-card.featured:hover { transform: translateY(-10px); box-shadow: 0 24px 70px rgba(91,108,248,.55); background: #4e5fe8; border-color: transparent; }
 
-    .pkg-card.featured:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 24px 70px rgba(91,108,248,.55);
-      background: #4e5fe8;
-      border-color: transparent;
-    }
-
-    /* Featured badge */
     .pkg-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: rgba(255,255,255,.2);
-      color: #fff;
-      font-size: .69rem;
-      font-weight: 700;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 99px;
-      width: fit-content;
-      margin-bottom: 18px;
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,.2); color: #fff;
+      font-size: .69rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 99px;
+      width: fit-content; margin-bottom: 18px;
     }
-
-    .pkg-badge-placeholder {
-      height: 26px;
-      margin-bottom: 18px;
-    }
-
-    .pkg-icon {
-      font-size: 1.8rem;
-      margin-bottom: 14px;
-    }
-
-    .pkg-name {
-      font-family: var(--fd);
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-      letter-spacing: -.01em;
-    }
-
-    .pkg-tagline {
-      font-size: .85rem;
-      color: rgba(255,255,255,.55);
-      margin-bottom: 22px;
-      line-height: 1.5;
-    }
-
+    .pkg-badge-placeholder { height: 26px; margin-bottom: 18px; }
+    .pkg-icon    { font-size: 1.8rem; margin-bottom: 14px; }
+    .pkg-name    { font-family: var(--fd); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -.01em; }
+    .pkg-tagline { font-size: .85rem; color: rgba(255,255,255,.55); margin-bottom: 22px; line-height: 1.5; }
     .pkg-card.featured .pkg-tagline { color: rgba(255,255,255,.75); }
 
-    /* Divider */
-    .pkg-divider {
-      height: 1px;
-      background: rgba(255,255,255,.1);
-      margin-bottom: 20px;
-    }
-
+    .pkg-divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 20px; }
     .pkg-card.featured .pkg-divider { background: rgba(255,255,255,.25); }
 
-    /* Feature list */
-    .pkg-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-bottom: 28px;
-      flex: 1;
-    }
-
-    .pkg-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: .875rem;
-      color: rgba(255,255,255,.7);
-      line-height: 1.45;
-    }
-
+    .pkg-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; flex: 1; }
+    .pkg-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .875rem; color: rgba(255,255,255,.7); line-height: 1.45; }
     .pkg-card.featured .pkg-list li { color: rgba(255,255,255,.9); }
 
-    .pkg-check {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.15);
-      flex-shrink: 0;
-      margin-top: 1px;
-      display: grid;
-      place-items: center;
-    }
-
+    .pkg-check { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,.15); flex-shrink: 0; margin-top: 1px; display: grid; place-items: center; }
     .pkg-card.featured .pkg-check { background: rgba(255,255,255,.25); }
-
     .pkg-check svg { color: #fff; }
 
-    /* Not included */
-    .pkg-list li.na {
-      color: rgba(255,255,255,.3);
-    }
-    .pkg-cross {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.06);
-      flex-shrink: 0;
-      margin-top: 1px;
-      display: grid;
-      place-items: center;
-    }
+    .pkg-list li.na { color: rgba(255,255,255,.3); }
+    .pkg-cross { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,.06); flex-shrink: 0; margin-top: 1px; display: grid; place-items: center; }
     .pkg-cross svg { color: rgba(255,255,255,.3); }
 
-    /* Scope note */
-    .pkg-note {
-      font-size: .78rem;
-      color: rgba(255,255,255,.4);
-      line-height: 1.5;
-      margin-bottom: 20px;
-      padding: 12px 14px;
-      background: rgba(0,0,0,.15);
-      border-radius: 10px;
-    }
+    .pkg-note { font-size: .78rem; color: rgba(255,255,255,.4); line-height: 1.5; margin-bottom: 20px; padding: 12px 14px; background: rgba(0,0,0,.15); border-radius: 10px; }
     .pkg-card.featured .pkg-note { background: rgba(0,0,0,.2); color: rgba(255,255,255,.6); }
 
-    /* "Alles beinhaltet" row */
     .pkg-includes {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r);
       padding: clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 28px);
       margin-top: clamp(28px, 4vw, 40px);
     }
-
-    .pkg-includes-title {
-      font-family: var(--fd);
-      font-size: .875rem;
-      font-weight: 700;
-      color: rgba(255,255,255,.55);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-bottom: 18px;
-      text-align: center;
-    }
-
-    .includes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px 24px;
-    }
-
-    .inc-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: .85rem;
-      color: rgba(255,255,255,.65);
-    }
-
+    .pkg-includes-title { font-family: var(--fd); font-size: .875rem; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 18px; text-align: center; }
+    .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 24px; }
+    .inc-item { display: flex; align-items: center; gap: 9px; font-size: .85rem; color: rgba(255,255,255,.65); }
     .inc-item svg { color: var(--indigo-mid); flex-shrink: 0; }
 
-    /* ═══════════════════════════════════════════════════
-       INDIVIDUAL SERVICES SECTION
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       INDIVIDUAL SERVICES
+    =================================================== */
     .svc-section { padding-block: clamp(56px, 8vw, 96px); }
 
-    /* Service block */
     .svc-block {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: start;
+      display: grid; grid-template-columns: 300px 1fr;
+      gap: clamp(32px, 5vw, 64px); align-items: start;
       padding-block: clamp(40px, 5vw, 60px);
       border-bottom: 1px solid var(--border);
     }
-
     .svc-block:first-child { padding-top: 0; }
     .svc-block:last-child  { border-bottom: none; padding-bottom: 0; }
 
-    .svc-block-icon {
-      width: 52px; height: 52px;
-      border-radius: 15px;
-      background: var(--indigo-soft);
-      display: grid;
-      place-items: center;
-      font-size: 1.4rem;
-      margin-bottom: 14px;
-    }
+    .svc-block-icon  { width: 52px; height: 52px; border-radius: 15px; background: var(--indigo-soft); display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 14px; }
+    .svc-block-title { font-family: var(--fd); font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 800; color: var(--navy); letter-spacing: -.015em; margin-bottom: 8px; }
+    .svc-block-desc  { font-size: .9rem; color: var(--muted); line-height: 1.7; }
 
-    .svc-block-title {
-      font-family: var(--fd);
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      font-weight: 800; color: var(--navy);
-      letter-spacing: -.015em; margin-bottom: 8px;
-    }
+    .svc-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .svc-detail-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px 16px; transition: border-color .25s, box-shadow .25s; }
+    .svc-detail-card:hover { border-color: var(--indigo-mid); box-shadow: var(--sh-md); }
+    .svc-detail-title { font-family: var(--fd); font-size: .875rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .svc-detail-text  { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+    /* margin-top override: 12px statt 15px aus style.css */
+    .svc-detail-card .svc-tags { margin-top: 12px; }
 
-    .svc-block-desc {
-      font-size: .9rem; color: var(--muted); line-height: 1.7;
-    }
-
-    /* Right side: detail cards */
-    .svc-detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .svc-detail-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 18px 16px;
-      transition: border-color .25s, box-shadow .25s;
-    }
-
-    .svc-detail-card:hover {
-      border-color: var(--indigo-mid);
-      box-shadow: var(--sh-md);
-    }
-
-    .svc-detail-title {
-      font-family: var(--fd);
-      font-size: .875rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 6px;
-    }
-
-    .svc-detail-text {
-      font-size: .82rem; color: var(--muted); line-height: 1.6;
-    }
-
-    /* Tags */
-    .svc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
-    .svc-tag  { font-size: .69rem; font-weight: 700; letter-spacing: .04em; color: var(--indigo); background: var(--indigo-soft); padding: 3px 9px; border-radius: 99px; }
-
-    /* ═══════════════════════════════════════════════════
-       PROCESS SECTION
-    ═══════════════════════════════════════════════════ */
-    .process-section {
-      background: var(--navy);
-      padding-block: clamp(52px, 7vw, 80px);
-    }
-
+    /* ===================================================
+       PROCESS
+    =================================================== */
+    .process-section { background: var(--navy); padding-block: clamp(52px, 7vw, 80px); }
     .process-section .sec-label { color: rgba(199,203,253,.85); }
     .process-section .sec-title { color: #fff; }
     .process-section .sec-desc  { color: rgba(255,255,255,.58); }
 
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      margin-top: clamp(32px, 4vw, 48px);
-      position: relative;
-    }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: clamp(32px, 4vw, 48px); position: relative; }
+    .process-grid::before { content: ''; position: absolute; top: 26px; left: calc(12.5% + 20px); right: calc(12.5% + 20px); height: 1px; background: rgba(255,255,255,.12); pointer-events: none; }
 
-    /* Connecting line */
-    .process-grid::before {
-      content: '';
-      position: absolute;
-      top: 26px;
-      left: calc(12.5% + 20px);
-      right: calc(12.5% + 20px);
-      height: 1px;
-      background: rgba(255,255,255,.12);
-      pointer-events: none;
-    }
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; }
 
-    .process-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 16px;
-      position: relative;
-    }
+    .step-num { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-size: 1rem; font-weight: 800; color: var(--indigo-mid); margin-bottom: 16px; position: relative; z-index: 1; flex-shrink: 0; }
+    .step-num.active { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+    .step-title { font-family: var(--fd); font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .step-desc  { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.6; }
 
-    .step-num {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--fd);
-      font-size: 1rem; font-weight: 800;
-      color: var(--indigo-mid);
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-      flex-shrink: 0;
-    }
-
-    .step-num.active {
-      background: var(--indigo);
-      border-color: var(--indigo);
-      color: #fff;
-    }
-
-    .step-title {
-      font-family: var(--fd);
-      font-size: .95rem; font-weight: 700;
-      color: #fff; margin-bottom: 8px;
-    }
-
-    .step-desc {
-      font-size: .82rem; color: rgba(255,255,255,.5);
-      line-height: 1.6;
-    }
-
-    /* ═══════════════════════════════════════════════════
+    /* ===================================================
        FAQ
-    ═══════════════════════════════════════════════════ */
+    =================================================== */
     .faq-section { padding-block: clamp(56px, 8vw, 96px); }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(28px, 4vw, 48px);
-      align-items: start;
-    }
-
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); align-items: start; }
     .faq-list { display: flex; flex-direction: column; gap: 12px; }
 
-    .faq-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      overflow: hidden;
-      transition: border-color .2s;
-    }
-
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; transition: border-color .2s; }
     .faq-item.open { border-color: var(--indigo-mid); }
 
-    .faq-q {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 18px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: var(--fd);
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--navy);
-      text-align: left;
-    }
-
-    .faq-q svg {
-      flex-shrink: 0;
-      color: var(--indigo);
-      transition: transform .25s;
-    }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; background: none; border: none; cursor: pointer; font-family: var(--fd); font-size: .9rem; font-weight: 700; color: var(--navy); text-align: left; }
+    .faq-q svg { flex-shrink: 0; color: var(--indigo); transition: transform .25s; }
     .faq-item.open .faq-q svg { transform: rotate(180deg); }
 
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease, padding .35s;
-      padding: 0 18px;
-    }
-
-    .faq-a-inner {
-      font-size: .875rem;
-      color: var(--muted);
-      line-height: 1.7;
-      padding-bottom: 16px;
-    }
-
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; padding: 0 18px; }
+    .faq-a-inner { font-size: .875rem; color: var(--muted); line-height: 1.7; padding-bottom: 16px; }
     .faq-item.open .faq-a { max-height: 300px; padding: 0 18px; }
 
-    /* Sticky info card */
-    .faq-info-card {
-      background: var(--navy);
-      border-radius: var(--r-lg);
-      padding: clamp(28px, 4vw, 40px);
-      position: sticky;
-      top: calc(var(--nav-h) + 24px);
-    }
-
-    .faq-info-title {
-      font-family: var(--fd);
-      font-size: 1.15rem; font-weight: 700;
-      color: #fff; margin-bottom: 14px;
-    }
-
-    .faq-info-p {
-      font-size: .88rem;
-      color: rgba(255,255,255,.6);
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-
-    .faq-info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .faq-info-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: .84rem;
-      color: rgba(255,255,255,.7);
-    }
+    .faq-info-card { background: var(--navy); border-radius: var(--r-lg); padding: clamp(28px, 4vw, 40px); position: sticky; top: calc(var(--nav-h) + 24px); }
+    .faq-info-title { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+    .faq-info-p { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 24px; }
+    .faq-info-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .faq-info-list li { display: flex; align-items: center; gap: 10px; font-size: .84rem; color: rgba(255,255,255,.7); }
 
     .fii { width: 20px; height: 20px; border-radius: 50%; background: var(--indigo); flex-shrink: 0; display: grid; place-items: center; }
     .fii svg { color: #fff; }
 
-    /* ═══════════════════════════════════════════════════
-       CTA
-    ═══════════════════════════════════════════════════ */
-    .cta-box {
-      background: var(--navy); border-radius: var(--r-lg);
-      padding: clamp(44px, 7vw, 80px) clamp(22px, 6vw, 80px);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .cta-box::before { content: ''; position: absolute; top: -100px; right: -80px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(91,108,248,.28) 0%, transparent 70%); pointer-events: none; }
-    .cta-box::after  { content: ''; position: absolute; bottom: -80px; left: -60px;  width: 340px; height: 340px; background: radial-gradient(circle, rgba(91,108,248,.15) 0%, transparent 70%); pointer-events: none; }
-
-    .cta-lbl  { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--indigo-mid); margin-bottom: 12px; }
-    .cta-h    { font-family: var(--fd); font-size: clamp(1.55rem, 4vw, 2.5rem); font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -.022em; margin-bottom: 12px; position: relative; }
-    .cta-p    { color: rgba(255,255,255,.58); font-size: clamp(.875rem, 1.4vw, 1rem); max-width: 420px; margin-inline: auto; line-height: 1.72; margin-bottom: 32px; position: relative; }
-    .cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; position: relative; }
-
-    /* ═══════════════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════════════ */
-    footer { border-top: 1px solid var(--border); padding-block: 26px; }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-copy { font-size: .79rem; color: var(--muted); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; }
-    .footer-links a { font-size: .79rem; color: var(--muted); transition: color .2s; }
-    .footer-links a:hover { color: var(--navy); }
-
-    /* ═══════════════════════════════════════════════════
-       REVEAL
-    ═══════════════════════════════════════════════════ */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    .reveal[data-d="1"] { transition-delay: .08s; }
-    .reveal[data-d="2"] { transition-delay: .16s; }
-    .reveal[data-d="3"] { transition-delay: .24s; }
-    .reveal[data-d="4"] { transition-delay: .32s; }
-
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 1024px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 1024px
+    =================================================== */
     @media (max-width: 1024px) {
-      :root { --px: clamp(20px, 4vw, 40px); }
-      .pkg-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .pkg-card.featured { transform: translateY(-3px); }
-      .svc-block { grid-template-columns: 240px 1fr; gap: 36px; }
-      .process-grid { grid-template-columns: repeat(4, 1fr); }
-      .faq-grid { gap: 32px; }
+      .pkg-grid           { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .pkg-card.featured  { transform: translateY(-3px); }
+      .svc-block          { grid-template-columns: 240px 1fr; gap: 36px; }
+      .faq-grid           { gap: 32px; }
     }
 
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 768px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 768px
+    =================================================== */
     @media (max-width: 768px) {
-      :root { --nav-h: 60px; }
-
-      .nav-links { display: none; }
-      .burger    { display: flex; }
-
-      /* Packages — stack to 1 column */
-      .pkg-grid { grid-template-columns: 1fr; gap: 16px; }
-      .pkg-card.featured { transform: none; box-shadow: 0 8px 32px rgba(91,108,248,.4); }
-
-      /* Services block — stack */
-      .svc-block { grid-template-columns: 1fr; gap: 22px; }
-      .svc-detail-grid { grid-template-columns: 1fr 1fr; }
-
-      /* Process — 2x2 */
-      .process-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .pkg-grid             { grid-template-columns: 1fr; gap: 16px; }
+      .pkg-card.featured    { transform: none; box-shadow: 0 8px 32px rgba(91,108,248,.4); }
+      .svc-block            { grid-template-columns: 1fr; gap: 22px; }
+      .svc-detail-grid      { grid-template-columns: 1fr 1fr; }
+      .process-grid         { grid-template-columns: 1fr 1fr; gap: 28px; }
       .process-grid::before { display: none; }
-
-      /* FAQ */
-      .faq-grid { grid-template-columns: 1fr; }
-      .faq-info-card { position: static; }
+      .faq-grid             { grid-template-columns: 1fr; }
+      .faq-info-card        { position: static; }
     }
 
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 560px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 560px
+    =================================================== */
     @media (max-width: 560px) {
       .svc-detail-grid { grid-template-columns: 1fr; }
       .includes-grid   { grid-template-columns: 1fr 1fr; }
       .process-grid    { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 390px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 390px
+    =================================================== */
     @media (max-width: 390px) {
-      :root { --px: 16px; }
-      .process-grid    { grid-template-columns: 1fr 1fr; gap: 20px; }
-      .includes-grid   { grid-template-columns: 1fr; }
-      .cta-btns .btn   { width: 100%; justify-content: center; }
-      .footer-row      { flex-direction: column; align-items: center; text-align: center; }
+      .process-grid  { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .includes-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+<!-- NAVBAR -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/" aria-label="Tobias Meixner – Startseite">
+    <a href="/" aria-label="Tobias Meixner - Startseite">
       <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="logo-t">
         <title id="logo-t">Tobias Meixner</title>
         <g transform="translate(8 6)">
@@ -857,12 +280,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </svg>
     </a>
     <ul class="nav-links">
-      <li><a href="/">Über mich</a></li>
+      <li><a href="/">&#220;ber mich</a></li>
       <li><a href="/leistungen/" class="active">Leistungen</a></li>
       <li><a href="/projekte/">Projekte</a></li>
       <li><a href="/kontakt/" class="nav-cta">Kontakt aufnehmen</a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Navigation öffnen" aria-expanded="false">
+    <button class="burger" id="burger" aria-label="Navigation &#246;ffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -870,40 +293,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="drawer" id="drawer" aria-label="Mobile Navigation">
   <ul>
-    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-    <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/">&#220;ber mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/leistungen/" class="active">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-    <li><a href="/kontakt/" style="color:var(--indigo)">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
   </ul>
 </nav>
 
 
-<!-- ═══ PAGE HERO ═════════════════════════════════════════ -->
+<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
     <div class="page-hero-inner">
-
       <div class="page-hero-badge">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         Leistungen &amp; Pakete
       </div>
-
-      <h1 class="page-hero-title">
-        Was ich für dich<br>
-        <em>umsetzen kann.</em>
-      </h1>
-
-      <p class="page-hero-desc">
-        Technische Umsetzung, Tracking-Setups und digitale Systeme für kleine
-        Unternehmen und Startups – direkt, verlässlich, ohne Agentur-Overhead.
-        Alle Preise auf Anfrage.
-      </p>
-
+      <h1 class="page-hero-title">Was ich f&#252;r dich<br><em>umsetzen kann.</em></h1>
+      <p class="page-hero-desc">Technische Umsetzung, Tracking-Setups und digitale Systeme f&#252;r kleine Unternehmen und Startups &#8211; direkt, verl&#228;sslich, ohne Agentur-Overhead. Alle Preise auf Anfrage.</p>
       <a href="/kontakt/" class="btn btn-primary">
         Unverbindlich anfragen
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-
     </div>
   </div>
   <div class="hero-wave">
@@ -914,439 +325,249 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 
-<!-- ═══ PACKAGES ══════════════════════════════════════════ -->
+<!-- PACKAGES -->
 <section class="pkg-section reveal">
   <div class="container">
-
     <div class="sec-head text-center">
       <span class="sec-label">Pakete</span>
-      <h2 class="sec-title">Drei Ausgangspunkte – ein Angebot.</h2>
-      <p class="sec-desc">
-        Die Pakete sind keine starren Tarife, sondern Orientierung.
-        Der genaue Preis richtet sich nach deinem Projekt.
-        Anfragen kostet nichts.
-      </p>
+      <h2 class="sec-title">Drei Ausgangspunkte &#8211; ein Angebot.</h2>
+      <p class="sec-desc">Die Pakete sind keine starren Tarife, sondern Orientierung. Der genaue Preis richtet sich nach deinem Projekt. Anfragen kostet nichts.</p>
     </div>
-
     <div class="note-banner reveal">
-      <span class="note-icon">💡</span>
-      <span>
-        <strong>Keine fixen Preise auf dieser Seite.</strong>
-        Jedes Projekt ist anders – deshalb mache ich dir nach einem kurzen Gespräch ein konkretes,
-        transparentes Angebot. Kein verstecktes Kleingedrucktes.
-      </span>
+      <span class="note-icon">&#128161;</span>
+      <span><strong>Keine fixen Preise auf dieser Seite.</strong> Jedes Projekt ist anders &#8211; deshalb mache ich dir nach einem kurzen Gespr&#228;ch ein konkretes, transparentes Angebot. Kein verstecktes Kleingedrucktes.</span>
     </div>
-
     <div class="pkg-grid">
-
       <!-- PAKET 1: Basis -->
       <div class="pkg-card reveal" data-d="1">
         <div class="pkg-badge-placeholder"></div>
-        <div class="pkg-icon">🌱</div>
+        <div class="pkg-icon">&#127807;</div>
         <div class="pkg-name">Basis</div>
-        <p class="pkg-tagline">Für Solopreneure und Kleinst&shy;unternehmen mit einem konkreten, überschaubaren Bedarf.</p>
+        <p class="pkg-tagline">F&#252;r Solopreneure und Kleinst&shy;unternehmen mit einem konkreten, &#252;berschaubaren Bedarf.</p>
         <div class="pkg-divider"></div>
         <ul class="pkg-list">
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>1 klar definierter Leistungsbereich</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>z.B. einfaches GTM/GA4-Setup oder Landing Page</li>
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Übergabe mit Erklärung</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>&#220;bergabe mit Erkl&#228;rung</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>E-Mail-Support nach Abschluss (2 Wochen)</li>
           <li class="na"><span class="pkg-cross"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Laufende Betreuung</li>
           <li class="na"><span class="pkg-cross"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Mehrere Leistungsbereiche</li>
         </ul>
-        <p class="pkg-note">Geeignet für: Erste Website, einzelnes Tracking-Setup, technische Einzel&shy;aufgabe.</p>
+        <p class="pkg-note">Geeignet f&#252;r: Erste Website, einzelnes Tracking-Setup, technische Einzel&shy;aufgabe.</p>
         <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Anfragen</a>
       </div>
-
       <!-- PAKET 2: Standard (featured) -->
       <div class="pkg-card featured reveal" data-d="2">
         <div class="pkg-badge">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Empfohlen
         </div>
-        <div class="pkg-icon">🚀</div>
+        <div class="pkg-icon">&#128640;</div>
         <div class="pkg-name">Standard</div>
-        <p class="pkg-tagline">Für kleine Unternehmen, die eine solide digitale Basis aufbauen oder verbessern möchten.</p>
+        <p class="pkg-tagline">F&#252;r kleine Unternehmen, die eine solide digitale Basis aufbauen oder verbessern m&#246;chten.</p>
         <div class="pkg-divider"></div>
         <ul class="pkg-list">
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>2–3 kombinierte Leistungsbereiche</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>2&#8211;3 kombinierte Leistungsbereiche</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>z.B. Website + GTM/GA4 + E-Mail-Setup</li>
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Dokumentation &amp; Übergabe</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Dokumentation &amp; &#220;bergabe</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Laufende Betreuung (nach Absprache)</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Direkte Erreichbarkeit via E-Mail / Signal</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Flexibel auf deinen Bedarf anpassbar</li>
         </ul>
-        <p class="pkg-note">Geeignet für: Kleiner Online-Shop, Business mit Website + Tracking + Automatisierung.</p>
+        <p class="pkg-note">Geeignet f&#252;r: Kleiner Online-Shop, Business mit Website + Tracking + Automatisierung.</p>
         <a href="/kontakt/" class="btn btn-white btn-full">Jetzt anfragen</a>
       </div>
-
       <!-- PAKET 3: Individuell -->
       <div class="pkg-card reveal" data-d="3">
         <div class="pkg-badge-placeholder"></div>
-        <div class="pkg-icon">⚡</div>
+        <div class="pkg-icon">&#9889;</div>
         <div class="pkg-name">Individuell</div>
-        <p class="pkg-tagline">Für Startups oder Projekte mit komplexeren Anforderungen und individuell definiertem Umfang.</p>
+        <p class="pkg-tagline">F&#252;r Startups oder Projekte mit komplexeren Anforderungen und individuell definiertem Umfang.</p>
         <div class="pkg-divider"></div>
         <ul class="pkg-list">
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Vollständig individuell definierter Scope</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Vollst&#228;ndig individuell definierter Scope</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Mehrere Bereiche kombinierbar</li>
           <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Erweitertes Tracking-Ecosystem (inkl. Enhanced Conversions)</li>
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Langfristige Zusammenarbeit möglich</li>
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Detailliertes Angebot nach Erstgespräch</li>
-          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ich bin ehrlich, wenn etwas außerhalb meines Bereichs liegt</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Langfristige Zusammenarbeit m&#246;glich</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Detailliertes Angebot nach Erstgespr&#228;ch</li>
+          <li><span class="pkg-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ich bin ehrlich, wenn etwas au&#223;erhalb meines Bereichs liegt</li>
         </ul>
-        <p class="pkg-note">Geeignet für: Startups, komplexe Setups, laufende Zusammenarbeit über mehrere Bereiche.</p>
-        <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Gespräch vereinbaren</a>
+        <p class="pkg-note">Geeignet f&#252;r: Startups, komplexe Setups, laufende Zusammenarbeit &#252;ber mehrere Bereiche.</p>
+        <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Gespr&#228;ch vereinbaren</a>
       </div>
-
-    </div><!-- /pkg-grid -->
-
-    <!-- Included in all -->
+    </div>
     <div class="pkg-includes reveal">
       <div class="pkg-includes-title">In jedem Paket dabei</div>
       <div class="includes-grid">
-        <div class="inc-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Direkter Kontakt – kein Ticketsystem
-        </div>
-        <div class="inc-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Transparente Kalkulation vorab
-        </div>
-        <div class="inc-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          DSGVO-bewusste Umsetzung
-        </div>
-        <div class="inc-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Ehrlichkeit über Machbares &amp; Zeitaufwand
-        </div>
-        <div class="inc-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Übergabe mit Erklärung
-        </div>
-        <div class="inc-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Kein Agentur-Overhead
-        </div>
+        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Direkter Kontakt &#8211; kein Ticketsystem</div>
+        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Transparente Kalkulation vorab</div>
+        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-bewusste Umsetzung</div>
+        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ehrlichkeit &#252;ber Machbares &amp; Zeitaufwand</div>
+        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>&#220;bergabe mit Erkl&#228;rung</div>
+        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kein Agentur-Overhead</div>
       </div>
     </div>
-
   </div>
 </section>
 
 
-<!-- ═══ INDIVIDUAL SERVICES ══════════════════════════════ -->
+<!-- INDIVIDUAL SERVICES -->
 <section class="svc-section">
   <div class="container">
-
     <div class="sec-head reveal">
       <span class="sec-label">Einzelleistungen</span>
       <h2 class="sec-title">Was genau dahintersteckt</h2>
-      <p class="sec-desc">
-        Ein Überblick über alle Leistungsbereiche – damit du weißt,
-        was ich konkret umsetzen kann und was in welches Paket passt.
-      </p>
+      <p class="sec-desc">Ein &#220;berblick &#252;ber alle Leistungsbereiche &#8211; damit du wei&#223;t, was ich konkret umsetzen kann und was in welches Paket passt.</p>
     </div>
-
-    <!-- Block 1: Tracking -->
+    <!-- Block 1 -->
     <div class="svc-block reveal">
       <div>
-        <div class="svc-block-icon">📊</div>
+        <div class="svc-block-icon">&#128202;</div>
         <h3 class="svc-block-title">Tracking &amp; Analytics</h3>
-        <p class="svc-block-desc">
-          Mein stärkstes Gebiet mit echter Praxiserfahrung (Gumb AG).
-          Saubere Datenbasis als Grundlage für alle Marketing-Entscheidungen –
-          DSGVO-konform und zuverlässig.
-        </p>
+        <p class="svc-block-desc">Mein st&#228;rkstes Gebiet mit echter Praxiserfahrung (Gumb AG). Saubere Datenbasis als Grundlage f&#252;r alle Marketing-Entscheidungen &#8211; DSGVO-konform und zuverl&#228;ssig.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Google Tag Manager</div>
-          <p class="svc-detail-text">Aufbau, Konfiguration und Pflege des GTM-Containers. Events, Trigger, Variablen – sauber strukturiert.</p>
-          <div class="svc-tags"><span class="svc-tag">GTM Setup</span><span class="svc-tag">Events</span><span class="svc-tag">DataLayer</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Google Analytics 4</div>
-          <p class="svc-detail-text">GA4-Property einrichten, Events konfigurieren, Conversions definieren und Berichte verstehen.</p>
-          <div class="svc-tags"><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span><span class="svc-tag">Berichte</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Consent Mode v2 &amp; DSGVO</div>
-          <p class="svc-detail-text">Datenschutzkonforme Implementierung inkl. CMP-Integration und Consent Mode v2 nach Google-Standard.</p>
-          <div class="svc-tags"><span class="svc-tag">Consent Mode v2</span><span class="svc-tag">DSGVO</span><span class="svc-tag">CMP</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Ads &amp; Meta Tracking</div>
-          <p class="svc-detail-text">Google Ads Conversion-Tracking und Meta Pixel inkl. Enhanced Conversions für bessere Kampagnendaten.</p>
-          <div class="svc-tags"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Pixel</span><span class="svc-tag">Enhanced Conversions</span></div>
-        </div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Google Tag Manager</div><p class="svc-detail-text">Aufbau, Konfiguration und Pflege des GTM-Containers. Events, Trigger, Variablen &#8211; sauber strukturiert.</p><div class="svc-tags"><span class="svc-tag">GTM Setup</span><span class="svc-tag">Events</span><span class="svc-tag">DataLayer</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Google Analytics 4</div><p class="svc-detail-text">GA4-Property einrichten, Events konfigurieren, Conversions definieren und Berichte verstehen.</p><div class="svc-tags"><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span><span class="svc-tag">Berichte</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Consent Mode v2 &amp; DSGVO</div><p class="svc-detail-text">Datenschutzkonforme Implementierung inkl. CMP-Integration und Consent Mode v2 nach Google-Standard.</p><div class="svc-tags"><span class="svc-tag">Consent Mode v2</span><span class="svc-tag">DSGVO</span><span class="svc-tag">CMP</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Ads &amp; Meta Tracking</div><p class="svc-detail-text">Google Ads Conversion-Tracking und Meta Pixel inkl. Enhanced Conversions f&#252;r bessere Kampagnendaten.</p><div class="svc-tags"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Pixel</span><span class="svc-tag">Enhanced Conversions</span></div></div>
       </div>
     </div>
-
-    <!-- Block 2: Websites -->
+    <!-- Block 2 -->
     <div class="svc-block reveal">
       <div>
-        <div class="svc-block-icon">🌐</div>
+        <div class="svc-block-icon">&#127760;</div>
         <h3 class="svc-block-title">Websites &amp; Technik</h3>
-        <p class="svc-block-desc">
-          Aufbau und Betreuung von Websites – vom technischen Setup bis zur
-          laufenden Pflege. Kein Baukastensystem-Chaos, sondern strukturierte,
-          wartbare Lösungen.
-        </p>
+        <p class="svc-block-desc">Aufbau und Betreuung von Websites &#8211; vom technischen Setup bis zur laufenden Pflege. Kein Baukastensystem-Chaos, sondern strukturierte, wartbare L&#246;sungen.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Website-Aufbau</div>
-          <p class="svc-detail-text">Neue Website von Grund auf – HTML/CSS/JS oder CMS-Lösung je nach Anforderung. Clean, schnell, wartbar.</p>
-          <div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span><span class="svc-tag">CMS</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Hosting &amp; Domain</div>
-          <p class="svc-detail-text">Domain-Registrierung, Hosting-Setup, Wechsel zwischen Anbietern und laufende Verwaltung.</p>
-          <div class="svc-tags"><span class="svc-tag">Hosting</span><span class="svc-tag">Domain</span><span class="svc-tag">Migration</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">DNS-Konfiguration</div>
-          <p class="svc-detail-text">A-Records, MX, CNAME, TXT – korrekte DNS-Einrichtung für Website, E-Mail und externe Dienste.</p>
-          <div class="svc-tags"><span class="svc-tag">DNS</span><span class="svc-tag">SSL</span><span class="svc-tag">E-Mail-DNS</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Laufende Pflege</div>
-          <p class="svc-detail-text">Updates, Anpassungen, Fehlerbehebung und technischer Support für bestehende Websites im Tagesgeschäft.</p>
-          <div class="svc-tags"><span class="svc-tag">Wartung</span><span class="svc-tag">Support</span><span class="svc-tag">Updates</span></div>
-        </div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Website-Aufbau</div><p class="svc-detail-text">Neue Website von Grund auf &#8211; HTML/CSS/JS oder CMS-L&#246;sung je nach Anforderung. Clean, schnell, wartbar.</p><div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span><span class="svc-tag">CMS</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Hosting &amp; Domain</div><p class="svc-detail-text">Domain-Registrierung, Hosting-Setup, Wechsel zwischen Anbietern und laufende Verwaltung.</p><div class="svc-tags"><span class="svc-tag">Hosting</span><span class="svc-tag">Domain</span><span class="svc-tag">Migration</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">DNS-Konfiguration</div><p class="svc-detail-text">A-Records, MX, CNAME, TXT &#8211; korrekte DNS-Einrichtung f&#252;r Website, E-Mail und externe Dienste.</p><div class="svc-tags"><span class="svc-tag">DNS</span><span class="svc-tag">SSL</span><span class="svc-tag">E-Mail-DNS</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Laufende Pflege</div><p class="svc-detail-text">Updates, Anpassungen, Fehlerbehebung und technischer Support f&#252;r bestehende Websites im Tagesgesch&#228;ft.</p><div class="svc-tags"><span class="svc-tag">Wartung</span><span class="svc-tag">Support</span><span class="svc-tag">Updates</span></div></div>
       </div>
     </div>
-
-    <!-- Block 3: E-Commerce -->
+    <!-- Block 3 -->
     <div class="svc-block reveal">
       <div>
-        <div class="svc-block-icon">🛒</div>
+        <div class="svc-block-icon">&#128717;</div>
         <h3 class="svc-block-title">E-Commerce &amp; Shops</h3>
-        <p class="svc-block-desc">
-          Technische Einrichtung und Betreuung von Online-Shops.
-          Schwerpunkt auf sauberem Setup, nicht auf Design-Spielereien.
-        </p>
+        <p class="svc-block-desc">Technische Einrichtung und Betreuung von Online-Shops. Schwerpunkt auf sauberem Setup, nicht auf Design-Spielereien.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Shopify Setup</div>
-          <p class="svc-detail-text">Shop-Einrichtung, Theme-Konfiguration, Zahlungsanbieter und Grundstruktur für einen funktionierenden Store.</p>
-          <div class="svc-tags"><span class="svc-tag">Shopify</span><span class="svc-tag">Theme</span><span class="svc-tag">Payments</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">WooCommerce / WordPress</div>
-          <p class="svc-detail-text">WooCommerce-Installation, Plugin-Konfiguration und technische Grundeinrichtung für WordPress-Shops.</p>
-          <div class="svc-tags"><span class="svc-tag">WooCommerce</span><span class="svc-tag">WordPress</span><span class="svc-tag">Plugins</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Shop-Tracking</div>
-          <p class="svc-detail-text">E-Commerce-Tracking in GA4 und Google Ads – Kaufereignisse, Warenkorbdaten, Produktaufrufe korrekt erfassen.</p>
-          <div class="svc-tags"><span class="svc-tag">E-Commerce Tracking</span><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Technische Betreuung</div>
-          <p class="svc-detail-text">Laufende Pflege, Anpassungen und technischer Support für bestehende Shops im täglichen Betrieb.</p>
-          <div class="svc-tags"><span class="svc-tag">Support</span><span class="svc-tag">Pflege</span><span class="svc-tag">Anpassungen</span></div>
-        </div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Shopify Setup</div><p class="svc-detail-text">Shop-Einrichtung, Theme-Konfiguration, Zahlungsanbieter und Grundstruktur f&#252;r einen funktionierenden Store.</p><div class="svc-tags"><span class="svc-tag">Shopify</span><span class="svc-tag">Theme</span><span class="svc-tag">Payments</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">WooCommerce / WordPress</div><p class="svc-detail-text">WooCommerce-Installation, Plugin-Konfiguration und technische Grundeinrichtung f&#252;r WordPress-Shops.</p><div class="svc-tags"><span class="svc-tag">WooCommerce</span><span class="svc-tag">WordPress</span><span class="svc-tag">Plugins</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Shop-Tracking</div><p class="svc-detail-text">E-Commerce-Tracking in GA4 und Google Ads &#8211; Kaufereignisse, Warenkorbdaten, Produktaufrufe korrekt erfassen.</p><div class="svc-tags"><span class="svc-tag">E-Commerce Tracking</span><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Technische Betreuung</div><p class="svc-detail-text">Laufende Pflege, Anpassungen und technischer Support f&#252;r bestehende Shops im t&#228;glichen Betrieb.</p><div class="svc-tags"><span class="svc-tag">Support</span><span class="svc-tag">Pflege</span><span class="svc-tag">Anpassungen</span></div></div>
       </div>
     </div>
-
-    <!-- Block 4: Automation -->
+    <!-- Block 4 -->
     <div class="svc-block reveal">
       <div>
-        <div class="svc-block-icon">⚙️</div>
+        <div class="svc-block-icon">&#9881;&#65039;</div>
         <h3 class="svc-block-title">Automatisierung &amp; E-Mail</h3>
-        <p class="svc-block-desc">
-          Einfache, strukturierte Prozesse die manuelle Arbeit reduzieren.
-          Kein Over-Engineering – nur was wirklich hilft.
-        </p>
+        <p class="svc-block-desc">Einfache, strukturierte Prozesse die manuelle Arbeit reduzieren. Kein Over-Engineering &#8211; nur was wirklich hilft.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">E-Mail-Automatisierung</div>
-          <p class="svc-detail-text">Automatische E-Mail-Sequenzen nach Käufen, Anmeldungen oder Ereignissen – mit gängigen Tools eingerichtet.</p>
-          <div class="svc-tags"><span class="svc-tag">E-Mail-Flows</span><span class="svc-tag">Trigger</span><span class="svc-tag">Segmentierung</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">CRM-Unterstützung</div>
-          <p class="svc-detail-text">Datenpflege, Struktur und einfache Prozesse im CRM. Kein Chaos in den Kontakten, saubere Segmentierung.</p>
-          <div class="svc-tags"><span class="svc-tag">CRM</span><span class="svc-tag">Datenpflege</span><span class="svc-tag">Segmentierung</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">E-Mail-Kampagnen</div>
-          <p class="svc-detail-text">Setup und Unterstützung bei geplanten Kampagnen – technische Seite, nicht kreative Texterstellung.</p>
-          <div class="svc-tags"><span class="svc-tag">Newsletter</span><span class="svc-tag">Kampagnen-Setup</span></div>
-        </div>
-        <div class="svc-detail-card">
-          <div class="svc-detail-title">Einfache Workflows</div>
-          <p class="svc-detail-text">Strukturierte, automatisierte Abläufe für wiederkehrende digitale Aufgaben – mit sinnvollem Werkzeug.</p>
-          <div class="svc-tags"><span class="svc-tag">Automation</span><span class="svc-tag">Workflows</span></div>
-        </div>
+        <div class="svc-detail-card"><div class="svc-detail-title">E-Mail-Automatisierung</div><p class="svc-detail-text">Automatische E-Mail-Sequenzen nach K&#228;ufen, Anmeldungen oder Ereignissen &#8211; mit g&#228;ngigen Tools eingerichtet.</p><div class="svc-tags"><span class="svc-tag">E-Mail-Flows</span><span class="svc-tag">Trigger</span><span class="svc-tag">Segmentierung</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">CRM-Unterst&#252;tzung</div><p class="svc-detail-text">Datenpflege, Struktur und einfache Prozesse im CRM. Kein Chaos in den Kontakten, saubere Segmentierung.</p><div class="svc-tags"><span class="svc-tag">CRM</span><span class="svc-tag">Datenpflege</span><span class="svc-tag">Segmentierung</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">E-Mail-Kampagnen</div><p class="svc-detail-text">Setup und Unterst&#252;tzung bei geplanten Kampagnen &#8211; technische Seite, nicht kreative Texterstellung.</p><div class="svc-tags"><span class="svc-tag">Newsletter</span><span class="svc-tag">Kampagnen-Setup</span></div></div>
+        <div class="svc-detail-card"><div class="svc-detail-title">Einfache Workflows</div><p class="svc-detail-text">Strukturierte, automatisierte Abl&#228;ufe f&#252;r wiederkehrende digitale Aufgaben &#8211; mit sinnvollem Werkzeug.</p><div class="svc-tags"><span class="svc-tag">Automation</span><span class="svc-tag">Workflows</span></div></div>
       </div>
     </div>
-
   </div>
 </section>
 
 
-<!-- ═══ PROCESS ════════════════════════════════════════════ -->
+<!-- PROCESS -->
 <section class="process-section reveal">
   <div class="container">
-
     <div class="sec-head text-center">
       <span class="sec-label" style="color:rgba(199,203,253,.85)">Ablauf</span>
-      <h2 class="sec-title" style="color:#fff;">Wie läuft die Zusammenarbeit ab?</h2>
-      <p class="sec-desc" style="color:rgba(255,255,255,.58); margin-inline:auto;">
-        Kein komplizierter Prozess. Vier Schritte vom ersten Kontakt
-        bis zur fertigen Lösung.
-      </p>
+      <h2 class="sec-title" style="color:#fff;">Wie l&#228;uft die Zusammenarbeit ab?</h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,.58); margin-inline:auto;">Kein komplizierter Prozess. Vier Schritte vom ersten Kontakt bis zur fertigen L&#246;sung.</p>
     </div>
-
     <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num active">01</div>
-        <div class="step-title">Kurze Anfrage</div>
-        <p class="step-desc">Du beschreibst kurz, was du brauchst – per E-Mail oder Kontaktformular. Kein langer Fragebogen.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num active">02</div>
-        <div class="step-title">Kurzes Gespräch</div>
-        <p class="step-desc">Wir klären in 15–30 Minuten, was du brauchst, was ich machen kann und was es kosten wird.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num active">03</div>
-        <div class="step-title">Angebot &amp; Start</div>
-        <p class="step-desc">Du bekommst ein konkretes, transparentes Angebot. Nach Bestätigung legen wir los.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num active">04</div>
-        <div class="step-title">Übergabe</div>
-        <p class="step-desc">Fertige Lösung mit Erklärung. Du verstehst, was gemacht wurde – und kannst es selbst weiter nutzen.</p>
-      </div>
+      <div class="process-step"><div class="step-num active">01</div><div class="step-title">Kurze Anfrage</div><p class="step-desc">Du beschreibst kurz, was du brauchst &#8211; per E-Mail oder Kontaktformular. Kein langer Fragebogen.</p></div>
+      <div class="process-step"><div class="step-num active">02</div><div class="step-title">Kurzes Gespr&#228;ch</div><p class="step-desc">Wir kl&#228;ren in 15&#8211;30 Minuten, was du brauchst, was ich machen kann und was es kosten wird.</p></div>
+      <div class="process-step"><div class="step-num active">03</div><div class="step-title">Angebot &amp; Start</div><p class="step-desc">Du bekommst ein konkretes, transparentes Angebot. Nach Best&#228;tigung legen wir los.</p></div>
+      <div class="process-step"><div class="step-num active">04</div><div class="step-title">&#220;bergabe</div><p class="step-desc">Fertige L&#246;sung mit Erkl&#228;rung. Du verstehst, was gemacht wurde &#8211; und kannst es selbst weiter nutzen.</p></div>
     </div>
-
   </div>
 </section>
 
 
-<!-- ═══ FAQ ════════════════════════════════════════════════ -->
+<!-- FAQ -->
 <section class="faq-section">
   <div class="container">
-
     <div class="faq-grid">
-
       <div>
         <div class="sec-head reveal">
           <span class="sec-label">FAQ</span>
-          <h2 class="sec-title">Häufige Fragen</h2>
+          <h2 class="sec-title">H&#228;ufige Fragen</h2>
         </div>
-
         <div class="faq-list">
           <div class="faq-item reveal" data-d="1">
-            <button class="faq-q" aria-expanded="false">
-              Warum stehen keine Preise auf der Website?
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a" role="region">
-              <div class="faq-a-inner">Weil jedes Projekt anders ist. Eine einfache Landing Page kostet anders als ein Shop mit Tracking-Setup. Statt Pauschalpreisen, die entweder zu hoch oder unrealistisch niedrig wären, mache ich dir ein konkretes Angebot nach einem kurzen Gespräch – transparent und nachvollziehbar.</div>
-            </div>
+            <button class="faq-q" aria-expanded="false">Warum stehen keine Preise auf der Website?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Weil jedes Projekt anders ist. Eine einfache Landing Page kostet anders als ein Shop mit Tracking-Setup. Statt Pauschalpreisen mache ich dir ein konkretes Angebot nach einem kurzen Gespr&#228;ch &#8211; transparent und nachvollziehbar.</div></div>
           </div>
-
           <div class="faq-item reveal" data-d="2">
-            <button class="faq-q" aria-expanded="false">
-              Ich bin noch Student – kann ich trotzdem professionell arbeiten?
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a" role="region">
-              <div class="faq-a-inner">Ich bin ehrlich: Ich habe keine 10 Jahre Agenturerfahrung. Aber ich habe echte Projekterfahrung (Gumb AG, Stefanie Mischka) und arbeite strukturiert und verlässlich. Meine Kunden bekommen einen direkten Ansprechpartner, faire Preise und ehrliche Kommunikation – das schätzen kleine Unternehmen oft mehr als eine anonyme Agentur.</div>
-            </div>
+            <button class="faq-q" aria-expanded="false">Ich bin noch Student &#8211; kann ich trotzdem professionell arbeiten?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Ich bin ehrlich: Ich habe keine 10 Jahre Agenturerfahrung. Aber ich habe echte Projekterfahrung (Gumb AG, Stefanie Mischka) und arbeite strukturiert und verl&#228;sslich. Meine Kunden bekommen einen direkten Ansprechpartner, faire Preise und ehrliche Kommunikation.</div></div>
           </div>
-
           <div class="faq-item reveal" data-d="3">
-            <button class="faq-q" aria-expanded="false">
-              Was passiert, wenn etwas außerhalb deines Bereichs liegt?
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a" role="region">
-              <div class="faq-a-inner">Dann sage ich das direkt – bevor ich anfange. Ich werde keine Leistungen verkaufen, die ich nicht sauber umsetzen kann. Wenn ich länger brauche oder jemand anderen empfehlen sollte, kommuniziere ich das ehrlich. Keine bösen Überraschungen.</div>
-            </div>
+            <button class="faq-q" aria-expanded="false">Was passiert, wenn etwas au&#223;erhalb deines Bereichs liegt?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Dann sage ich das direkt &#8211; bevor ich anfange. Ich werde keine Leistungen verkaufen, die ich nicht sauber umsetzen kann. Keine b&#246;sen &#220;berraschungen.</div></div>
           </div>
-
           <div class="faq-item reveal" data-d="4">
-            <button class="faq-q" aria-expanded="false">
-              Wie schnell kann es losgehen?
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a" role="region">
-              <div class="faq-a-inner">Nach dem ersten Gespräch und klarem Auftrag in der Regel innerhalb weniger Tage. Ich studiere parallel, daher ist die Kapazität begrenzt – aber ich kommuniziere realistische Zeitrahmen von Anfang an.</div>
-            </div>
+            <button class="faq-q" aria-expanded="false">Wie schnell kann es losgehen?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Nach dem ersten Gespr&#228;ch und klarem Auftrag in der Regel innerhalb weniger Tage. Ich studiere parallel, daher ist die Kapazit&#228;t begrenzt &#8211; aber ich kommuniziere realistische Zeitrahmen von Anfang an.</div></div>
           </div>
-
           <div class="faq-item reveal" data-d="5">
-            <button class="faq-q" aria-expanded="false">
-              Gibt es laufende Betreuung oder nur Einmalprojekte?
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a" role="region">
-              <div class="faq-a-inner">Beides ist möglich. Manche Kunden brauchen einmalig ein sauberes Setup (z.B. GTM/GA4), andere wollen laufende technische Betreuung ihrer Website oder ihres Shops. Das klären wir im Gespräch – es gibt kein Modell, das für alle passt.</div>
-            </div>
+            <button class="faq-q" aria-expanded="false">Gibt es laufende Betreuung oder nur Einmalprojekte?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Beides ist m&#246;glich. Manche Kunden brauchen einmalig ein sauberes Setup, andere wollen laufende technische Betreuung. Das kl&#228;ren wir im Gespr&#228;ch.</div></div>
           </div>
         </div>
       </div>
-
-      <!-- Sticky info card -->
       <div>
         <div class="faq-info-card reveal">
           <div class="faq-info-title">Noch unsicher, was du brauchst?</div>
-          <p class="faq-info-p">
-            Kein Problem. Beschreib mir einfach kurz deine Situation –
-            ich sage dir ehrlich, ob und wie ich helfen kann.
-            Das kostet dich nichts.
-          </p>
+          <p class="faq-info-p">Kein Problem. Beschreib mir einfach kurz deine Situation &#8211; ich sage dir ehrlich, ob und wie ich helfen kann. Das kostet dich nichts.</p>
           <ul class="faq-info-list">
             <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Unverbindlich &amp; kostenlos</li>
             <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Antwort innerhalb von 24h</li>
-            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ehrliche Einschätzung</li>
-            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Kein Verkaufsgespräch</li>
+            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ehrliche Einsch&#228;tzung</li>
+            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Kein Verkaufsgespr&#228;ch</li>
           </ul>
-          <a href="/kontakt/" class="btn btn-indigo btn-full">
-            Jetzt anfragen
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <a href="/kontakt/" class="btn btn-indigo btn-full">Jetzt anfragen <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 
-<!-- ═══ CTA ════════════════════════════════════════════════ -->
+<!-- CTA -->
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="cta-box reveal">
       <p class="cta-lbl">Bereit loszulegen?</p>
-      <h2 class="cta-h">Beschreib mir dein Projekt –<br>ich melde mich schnell.</h2>
+      <h2 class="cta-h">Beschreib mir dein Projekt &#8211;<br>ich melde mich schnell.</h2>
       <p class="cta-p">Unverbindlich, ohne Buzzwords. Einfach kurz schreiben, was du brauchst.</p>
       <div class="cta-btns">
-        <a href="/kontakt/" class="btn btn-white">
-          Kontakt aufnehmen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="/" class="btn btn-ghost">Zurück zur Startseite</a>
+        <a href="/kontakt/" class="btn btn-white">Kontakt aufnehmen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/" class="btn btn-ghost">Zur&#252;ck zur Startseite</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-row">
-      <span class="footer-copy">© 2026 Tobias Meixner</span>
+      <span class="footer-copy">&#169; 2026 Tobias Meixner</span>
       <ul class="footer-links">
         <li><a href="/impressum/">Impressum</a></li>
         <li><a href="/datenschutz/">Datenschutz</a></li>
@@ -1358,13 +579,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 
-<!-- ═══ SCRIPTS ════════════════════════════════════════════ -->
+<!-- SCRIPTS -->
 <script>
-/* ── Navbar ──────────────────────────────────────────────── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
 
-/* ── Burger / Drawer ─────────────────────────────────────── */
 const burger = document.getElementById('burger');
 const drawer = document.getElementById('drawer');
 
@@ -1385,25 +604,19 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawe
 document.addEventListener('click', e => { if (!nav.contains(e.target) && !drawer.contains(e.target)) closeDrawer(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-/* ── Scroll reveal ───────────────────────────────────────── */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ── FAQ accordion ───────────────────────────────────────── */
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item   = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
-
-    /* Close all first */
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('open');
       i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
-
-    /* Toggle current */
     if (!isOpen) {
       item.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
@@ -1412,6 +625,5 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 });
 </script>
 
-<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

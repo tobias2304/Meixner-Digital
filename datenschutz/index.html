@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<!-- 1. Consent Mode v2 Defaults – MUSS zuerst stehen -->
+<!-- 1. Consent Mode v2 Defaults -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -15,19 +15,17 @@
     'wait_for_update':       500
   });
 </script>
-
-<!-- 2. CookieScript – übernimmt Consent Mode v2 automatisch -->
+<!-- 2. CookieScript -->
 <script type="text/javascript" charset="UTF-8"
   src="//cdn.cookie-script.com/s/d261fb8134670358b6795a49b5d04574.js">
 </script>
-
-<!-- 3. GTM (GTM-XXXXXXX ersetzen sobald du eine ID hast) -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-
+})(window,document,'script','dataLayer','GTM-5QLXDT4T');</script>
+<!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,6 +36,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/css/style-v1.css">
+
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
   <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
@@ -45,156 +45,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:          #F5F7FA;
-      --bg-card:     #FFFFFF;
-      --navy:        #0D1B2A;
-      --indigo:      #5B6CF8;
-      --indigo-soft: #EEF0FE;
-      --indigo-mid:  #C7CBFD;
-      --text:        #1A2332;
-      --muted:       #64748B;
-      --border:      #E2E8F0;
-      --fd:          'Manrope', sans-serif;
-      --fb:          'DM Sans', sans-serif;
-      --nav-h:       68px;
-      --mw:          1160px;
-      --px:          clamp(20px, 5vw, 60px);
-    }
-
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--fb); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    a { color: var(--indigo); text-decoration: none; }
+    /* Inhaltliche Links indigo – Nav/Footer explizit zuruecksetzen */
+    a       { color: var(--indigo); }
     a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--indigo-mid); border-radius: 99px; }
-
-    .container { width: 100%; max-width: var(--mw); margin-inline: auto; padding-inline: var(--px); }
-
-    /* ── Navbar ── */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--nav-h); transition: background .3s, box-shadow .3s; }
-    .nav.scrolled { background: rgba(245,247,250,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--border); }
-    .nav-inner { max-width: var(--mw); margin-inline: auto; padding-inline: var(--px); height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .nav-logo { height: 64px; width: auto; flex-shrink: 0; }
-    .logo-dot    { fill: #72c5e8; }
-    .logo-stroke { stroke: #0c147a; stroke-width: 42; stroke-linecap: round; fill: none; }
-    .logo-t      { font-family: var(--fd); font-size: 128px; font-weight: 800; letter-spacing: -0.03em; fill: var(--navy); }
-    .logo-s      { font-family: var(--fb); font-size: 24px; font-weight: 600; letter-spacing: 0.22em; text-anchor: middle; fill: #383c41; }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { font-family: var(--fd); font-size: .84rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); position: relative; transition: color .2s; white-space: nowrap; text-decoration: none; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 2px; background: var(--indigo); border-radius: 99px; transition: right .25s; }
-    .nav-links a:hover { color: var(--navy); }
-    .nav-links a:hover::after { right: 0; }
-    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 9px 18px; border-radius: 99px; font-size: .8rem !important; transition: background .2s, transform .2s !important; }
-    .nav-cta:hover { background: var(--indigo) !important; transform: translateY(-1px); text-decoration: none !important; }
-    .nav-cta::after { display: none !important; }
-    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 10px; cursor: pointer; flex-shrink: 0; }
-    .burger span { display: block; width: 20px; height: 1.5px; background: var(--navy); border-radius: 99px; transition: transform .28s, opacity .28s; transform-origin: center; }
-    .burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    .drawer { position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 199; background: rgba(245,247,250,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 6px var(--px) 20px; transform: translateY(-8px); opacity: 0; pointer-events: none; transition: transform .25s, opacity .25s; }
-    .drawer.is-open { transform: none; opacity: 1; pointer-events: all; }
-    .drawer ul { list-style: none; }
-    .drawer a { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-family: var(--fd); font-size: 1rem; font-weight: 600; color: var(--navy); text-decoration: none; }
-    .drawer li:last-child a { border-bottom: none; }
-    .drawer a svg { color: var(--indigo); flex-shrink: 0; }
-
-    /* ── Legal Page Layout ── */
-    .legal-page { padding-top: var(--nav-h); min-height: 100vh; }
-
-    .legal-inner {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: start;
-      padding-block: clamp(40px, 6vw, 72px);
-    }
-
-    .legal-toc { position: sticky; top: calc(var(--nav-h) + 24px); }
-    .toc-title { font-family: var(--fd); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
-    .toc-list a { display: block; padding: 5px 8px; border-radius: 7px; font-size: .78rem; font-weight: 500; color: var(--muted); transition: background .2s, color .2s; text-decoration: none; line-height: 1.4; }
-    .toc-list a:hover { background: var(--indigo-soft); color: var(--indigo); }
-
-    .legal-content { min-width: 0; }
-
-    .legal-hero { margin-bottom: clamp(32px, 4vw, 48px); padding-bottom: clamp(24px, 3vw, 36px); border-bottom: 1px solid var(--border); }
-    .legal-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--indigo-soft); border: 1px solid var(--indigo-mid); color: var(--indigo); padding: 4px 12px; border-radius: 99px; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
-    .legal-title { font-family: var(--fd); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -.025em; margin-bottom: 10px; }
-    .legal-meta { font-size: .85rem; color: var(--muted); }
-
-    .legal-section { scroll-margin-top: calc(var(--nav-h) + 24px); margin-bottom: clamp(28px, 4vw, 40px); padding-bottom: clamp(28px, 4vw, 40px); border-bottom: 1px solid var(--border); }
-    .legal-section:last-child { border-bottom: none; margin-bottom: 0; }
-
-    .legal-h2 { font-family: var(--fd); font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 700; color: var(--navy); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; scroll-margin-top: calc(var(--nav-h) + 20px); }
-    .legal-h2-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: var(--indigo-soft); color: var(--indigo); font-size: .8rem; font-weight: 800; flex-shrink: 0; }
-
-    .legal-h3 { font-family: var(--fd); font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; margin-top: 18px; }
-
-    .legal-p { font-size: .9375rem; color: var(--text); line-height: 1.75; margin-bottom: 10px; }
-    .legal-p:last-child { margin-bottom: 0; }
-
-    .legal-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-top: 10px; font-size: .9rem; line-height: 1.7; }
-    .legal-block strong { display: block; font-family: var(--fd); font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-
-    /* Service tag */
-    .service-row {
-      display: flex; align-items: flex-start; gap: 14px;
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 18px; margin-bottom: 12px;
-    }
-    .service-badge {
-      font-size: .69rem; font-weight: 700; letter-spacing: .05em;
-      text-transform: uppercase; background: var(--indigo-soft); color: var(--indigo);
-      padding: 3px 9px; border-radius: 99px; flex-shrink: 0; margin-top: 2px;
-      white-space: nowrap;
-    }
-    .service-badge.consent { background: #FEF3C7; color: #92400E; }
-    .service-badge.noConsent { background: #ECFDF5; color: #065F46; }
-
-    .service-info { flex: 1; }
-    .service-name { font-family: var(--fd); font-size: .9rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
-    .service-desc { font-size: .84rem; color: var(--muted); line-height: 1.55; }
-    .service-desc a { color: var(--indigo); }
-
-    /* Rights list */
-    .rights-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-    .rights-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: var(--text); line-height: 1.5; }
-    .rights-list li::before { content: '→'; color: var(--indigo); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-    /* Footer */
-    footer { border-top: 1px solid var(--border); padding-block: 26px; }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-copy { font-size: .79rem; color: var(--muted); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; }
-    .footer-links a { font-size: .79rem; color: var(--muted); transition: color .2s; }
+    .nav-links a          { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover    { color: var(--navy);  text-decoration: none; }
+    .nav-cta              { color: #fff !important; text-decoration: none !important; }
+    .drawer a             { color: var(--navy);  text-decoration: none; }
+    .footer-links a       { color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--navy); }
-
-    @media (max-width: 768px) {
-      :root { --nav-h: 60px; }
-      .nav-links { display: none; }
-      .burger    { display: flex; }
-      .legal-inner { grid-template-columns: 1fr; }
-      .legal-toc { display: none; }
-    }
-    @media (max-width: 390px) {
-      :root { --px: 16px; }
-      .service-row { flex-direction: column; gap: 8px; }
-      .footer-row { flex-direction: column; align-items: center; text-align: center; }
-    }
   </style>
 </head>
 
 <body>
 
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
+<!-- NAVBAR -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" aria-label="Tobias Meixner – Startseite">
@@ -226,7 +97,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-    <li><a href="/kontakt/" style="color:var(--indigo)">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
   </ul>
 </nav>
 
@@ -242,18 +113,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="#verantwortlicher">1. Verantwortlicher</a></li>
           <li><a href="#hosting">2. Hosting</a></li>
           <li><a href="#logfiles">3. Server-Logfiles</a></li>
-          <li><a href="#cookies">4. Cookies & Einwilligung</a></li>
+          <li><a href="#cookies">4. Cookies &amp; Einwilligung</a></li>
           <li><a href="#kontaktformular">5. Kontaktformular</a></li>
-          <li><a href="#goatcounter">6. GoatCounter</a></li>
-          <li><a href="#gtm">7. Google Tag Manager</a></li>
-          <li><a href="#ga4">8. Google Analytics 4</a></li>
-          <li><a href="#gads">9. Google Ads</a></li>
-          <li><a href="#gsc">10. Google Search Console</a></li>
-          <li><a href="#google-fonts">11. Google Fonts</a></li>
-          <li><a href="#usa">12. Drittlandtransfer USA</a></li>
-          <li><a href="#rechte">13. Betroffenenrechte</a></li>
-          <li><a href="#widerruf">14. Widerruf</a></li>
-          <li><a href="#aenderungen">15. Änderungen</a></li>
+          <li><a href="#gtm">6. Google Tag Manager</a></li>
+          <li><a href="#ga4">7. Google Analytics 4</a></li>
+          <li><a href="#gads">8. Google Ads</a></li>
+          <li><a href="#gsc">9. Google Search Console</a></li>
+          <li><a href="#google-fonts">10. Google Fonts</a></li>
+          <li><a href="#usa">11. Drittlandtransfer USA</a></li>
+          <li><a href="#rechte">12. Betroffenenrechte</a></li>
+          <li><a href="#widerruf">13. Widerruf</a></li>
+          <li><a href="#aenderungen">14. Änderungen</a></li>
         </ul>
       </aside>
 
@@ -291,8 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="service-name">GitHub Pages</div>
               <div class="service-desc">
                 Diese Website wird über GitHub Pages gehostet. Anbieter: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.
-                Beim Aufruf werden automatisch Verbindungsdaten durch GitHub verarbeitet. Eine Übermittlung in die USA erfolgt auf Basis von
-                Standardvertragsklauseln (Art. 46 DSGVO).
+                Beim Aufruf werden automatisch Verbindungsdaten durch GitHub verarbeitet. Eine Übermittlung in die USA erfolgt auf Basis von Standardvertragsklauseln (Art. 46 DSGVO).
                 <br>Datenschutz GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">docs.github.com</a>
               </div>
             </div>
@@ -303,28 +172,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- 3 -->
         <div class="legal-section" id="logfiles">
           <h2 class="legal-h2"><span class="legal-h2-num">3</span> Server-Logfiles</h2>
-          <p class="legal-p">
-            Beim Aufruf der Website erfasst der Hosting-Anbieter automatisch folgende Daten in Server-Logfiles:
-            IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp und -version, Betriebssystem, Referrer-URL.
-          </p>
-          <p class="legal-p">
-            Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
-            Das berechtigte Interesse liegt in der Sicherheit und Stabilität der Website.
-          </p>
+          <p class="legal-p">Beim Aufruf der Website erfasst der Hosting-Anbieter automatisch folgende Daten in Server-Logfiles: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp und -version, Betriebssystem, Referrer-URL.</p>
+          <p class="legal-p">Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der Sicherheit und Stabilität der Website.</p>
         </div>
 
         <!-- 4 -->
         <div class="legal-section" id="cookies">
-          <h2 class="legal-h2"><span class="legal-h2-num">4</span> Cookies & Einwilligung (Consent Management)</h2>
-
-          <p class="legal-p">
-            Diese Website setzt Cookies und ähnliche Technologien ein, soweit dies für den Betrieb
-            technisch notwendig ist oder Sie dazu eingewilligt haben. Cookies sind kleine Textdateien,
-            die im Browser gespeichert werden.
-          </p>
-
+          <h2 class="legal-h2"><span class="legal-h2-num">4</span> Cookies &amp; Einwilligung (Consent Management)</h2>
+          <p class="legal-p">Diese Website setzt Cookies und ähnliche Technologien ein, soweit dies für den Betrieb technisch notwendig ist oder Sie dazu eingewilligt haben.</p>
           <h3 class="legal-h3">Kategorien</h3>
-
           <div class="service-row">
             <span class="service-badge noConsent">Technisch notwendig</span>
             <div class="service-info">
@@ -332,151 +188,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="service-desc">Cookies, die für den grundlegenden Betrieb der Website erforderlich sind. Keine Einwilligung erforderlich. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</div>
             </div>
           </div>
-
           <div class="service-row">
             <span class="service-badge consent">Einwilligung erforderlich</span>
             <div class="service-info">
-              <div class="service-name">Analyse- & Marketing-Cookies</div>
+              <div class="service-name">Analyse- &amp; Marketing-Cookies</div>
               <div class="service-desc">Cookies von Google Analytics 4 und Google Ads zur Messung und Optimierung. Diese werden nur nach aktiver Einwilligung gesetzt. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO.</div>
             </div>
           </div>
-
-          <h3 class="legal-h3">Consent Management (Klaro)</h3>
-          <p class="legal-p">
-            Für die Verwaltung von Einwilligungen nutzen wir <strong>Klaro</strong>, ein datenschutzfreundliches,
-            Open-Source-Consent-Management-Tool. Klaro speichert Ihre Einwilligung lokal im Browser
-            (localStorage) – es werden keine personenbezogenen Daten an externe Server übermittelt.
-          </p>
-          <p class="legal-p">
-            Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie auf den Link
-            „Cookie-Einstellungen" im Footer klicken.
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage für die Speicherung Ihrer Einwilligungsentscheidung: Art. 6 Abs. 1 lit. c DSGVO
-            i.V.m. Art. 7 DSGVO (Nachweispflicht für Einwilligungen).
-          </p>
+          <h3 class="legal-h3">Consent Management (CookieScript)</h3>
+          <p class="legal-p">Für die Verwaltung von Einwilligungen wird <strong>CookieScript</strong> eingesetzt. CookieScript speichert Ihre Einwilligungsentscheidung im Browser und übernimmt automatisch den Consent Mode v2 von Google.</p>
+          <p class="legal-p">Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie auf den Link „Cookie-Einstellungen" im Footer klicken.</p>
+          <p class="legal-p">Rechtsgrundlage für die Speicherung Ihrer Einwilligungsentscheidung: Art. 6 Abs. 1 lit. c DSGVO i.V.m. Art. 7 DSGVO (Nachweispflicht für Einwilligungen).</p>
         </div>
 
         <!-- 5 -->
         <div class="legal-section" id="kontaktformular">
           <h2 class="legal-h2"><span class="legal-h2-num">5</span> Kontaktformular (Formspree)</h2>
-
           <div class="service-row">
             <span class="service-badge noConsent">Vertragsbasis</span>
             <div class="service-info">
               <div class="service-name">Formspree, Inc.</div>
-              <div class="service-desc">
-                Formspree Inc., 2261 Market Street #4990, San Francisco, CA 94114, USA.<br>
-                Datenschutz: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a>
-              </div>
+              <div class="service-desc">Formspree Inc., 2261 Market Street #4990, San Francisco, CA 94114, USA.<br>Datenschutz: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a></div>
             </div>
           </div>
-
-          <p class="legal-p" style="margin-top:12px;">
-            Wenn Sie das Kontaktformular auf dieser Website nutzen, werden die von Ihnen eingegebenen Daten
-            (Name, E-Mail-Adresse, optional Unternehmen, Betreff, Nachricht) zur Bearbeitung Ihrer Anfrage
-            an Formspree übermittelt und von dort per E-Mail an mich weitergeleitet.
-          </p>
-          <p class="legal-p">
-            Formspree verarbeitet die Daten auf Servern in den USA. Die Übermittlung erfolgt auf Basis
-            von Standardvertragsklauseln gemäß Art. 46 DSGVO. Mit Formspree besteht ein
-            Datenverarbeitungsvertrag (DPA).
-          </p>
-          <p class="legal-p">
-            Die übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und
-            nach abgeschlossener Bearbeitung gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw.
-            Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Kommunikation).
-          </p>
+          <p class="legal-p" style="margin-top:12px;">Wenn Sie das Kontaktformular nutzen, werden die eingegebenen Daten (Name, E-Mail, optional Unternehmen, Betreff, Nachricht) an Formspree übermittelt und von dort per E-Mail weitergeleitet. Formspree verarbeitet die Daten auf Servern in den USA auf Basis von Standardvertragsklauseln (Art. 46 DSGVO). Mit Formspree besteht ein Datenverarbeitungsvertrag (DPA).</p>
+          <p class="legal-p">Die übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nach abgeschlossener Bearbeitung gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.</p>
+          <p class="legal-p">Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO.</p>
         </div>
 
         <!-- 6 -->
-        <div class="legal-section" id="goatcounter">
-          <h2 class="legal-h2"><span class="legal-h2-num">6</span> Webanalyse (GoatCounter)</h2>
-
-          <div class="service-row">
-            <span class="service-badge noConsent">Kein Consent nötig</span>
-            <div class="service-info">
-              <div class="service-name">GoatCounter</div>
-              <div class="service-desc">
-                GoatCounter – datenschutzfreundliches Open-Source-Analysetool ohne Cookies.
-                Anbieter: Martin Tournoij, Niederlande.<br>
-                Datenschutz: <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">goatcounter.com/help/privacy</a>
-              </div>
-            </div>
-          </div>
-
-          <p class="legal-p" style="margin-top:12px;">
-            Diese Website nutzt GoatCounter zur anonymen statistischen Auswertung der Seitenaufrufe.
-            GoatCounter arbeitet <strong>ohne Cookies</strong> und speichert <strong>keine personenbezogenen Daten</strong>.
-            IP-Adressen werden nur gekürzt verarbeitet und nicht dauerhaft gespeichert.
-            Eine Zusammenführung mit anderen Datenquellen findet nicht statt.
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
-            anonymen statistischen Auswertung). Eine Einwilligung ist aufgrund der
-            cookie-freien, anonymen Verarbeitung nicht erforderlich.
-          </p>
-        </div>
-
-        <!-- 7 -->
         <div class="legal-section" id="gtm">
-          <h2 class="legal-h2"><span class="legal-h2-num">7</span> Google Tag Manager</h2>
-
+          <h2 class="legal-h2"><span class="legal-h2-num">6</span> Google Tag Manager</h2>
           <div class="service-row">
             <span class="service-badge noConsent">Technisch notwendig</span>
             <div class="service-info">
               <div class="service-name">Google Tag Manager</div>
-              <div class="service-desc">
-                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>
-                Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
-              </div>
+              <div class="service-desc">Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
             </div>
           </div>
-
-          <p class="legal-p" style="margin-top:12px;">
-            Diese Website verwendet den Google Tag Manager (GTM). Der GTM ist ein Tag-Management-System,
-            das es ermöglicht, JavaScript-Tags und andere Code-Snippets zentral zu verwalten und
-            auf der Website auszuliefern.
-          </p>
-          <p class="legal-p">
-            Der GTM selbst setzt <strong>keine Cookies</strong> und verarbeitet keine personenbezogenen Daten.
-            Er dient ausschließlich als technische Verwaltungsebene für andere Tags (z.B. Google Analytics,
-            Google Ads). Der GTM wird erst durch die von ihm geladenen Dienste datenschutzrechtlich relevant.
-            Diese Dienste werden separat in den jeweiligen Abschnitten dieser Erklärung beschrieben.
-          </p>
-          <p class="legal-p">
-            Der GTM berücksichtigt den Consent Mode v2 von Google: Tracking-Tags werden nur dann
-            aktiviert, wenn die entsprechende Einwilligung erteilt wurde.
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage für den GTM selbst: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
-            an der technisch effizienten Tag-Verwaltung).
-          </p>
+          <p class="legal-p" style="margin-top:12px;">Der GTM dient der zentralen Verwaltung von JavaScript-Tags. Der GTM selbst setzt <strong>keine Cookies</strong> und verarbeitet keine personenbezogenen Daten. Er wird erst durch die geladenen Dienste datenschutzrechtlich relevant (siehe jeweilige Abschnitte).</p>
+          <p class="legal-p">Der GTM berücksichtigt Consent Mode v2: Tracking-Tags werden nur bei erteilter Einwilligung aktiviert.</p>
+          <p class="legal-p">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technisch effizienten Tag-Verwaltung).</p>
         </div>
 
-        <!-- 8 -->
+        <!-- 7 -->
         <div class="legal-section" id="ga4">
-          <h2 class="legal-h2"><span class="legal-h2-num">8</span> Google Analytics 4 (GA4)</h2>
-
+          <h2 class="legal-h2"><span class="legal-h2-num">7</span> Google Analytics 4 (GA4)</h2>
           <div class="service-row">
             <span class="service-badge consent">Einwilligung erforderlich</span>
             <div class="service-info">
               <div class="service-name">Google Analytics 4</div>
-              <div class="service-desc">
-                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>
-                Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
-              </div>
+              <div class="service-desc">Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
             </div>
           </div>
-
-          <p class="legal-p" style="margin-top:12px;">
-            Diese Website nutzt Google Analytics 4 (GA4), einen Webanalysedienst von Google.
-            GA4 verwendet Cookies und ähnliche Technologien, um Informationen über die Nutzung
-            der Website zu sammeln. Dabei werden unter anderem erhoben:
-          </p>
+          <p class="legal-p" style="margin-top:12px;">GA4 verwendet Cookies und ähnliche Technologien, um u.a. folgende Daten zu erheben:</p>
           <ul style="margin:8px 0 12px 20px; font-size:.9375rem; line-height:1.75; color:var(--text);">
             <li>Seitenaufrufe, Verweildauer und Absprungrate</li>
             <li>Geräteinformationen (Browsertyp, Betriebssystem, Bildschirmauflösung)</li>
@@ -484,135 +249,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Referrer-Informationen (woher Besucher kommen)</li>
             <li>Conversion-Ereignisse (z.B. Formularabsendungen)</li>
           </ul>
-          <p class="legal-p">
-            Die IP-Adresse wird vor der Übermittlung an Google anonymisiert (IP-Anonymisierung aktiv).
-            Die Verarbeitung erfolgt nach Consent Mode v2: GA4 wird nur nach aktiver Einwilligung
-            vollständig aktiviert. Google kann anonymisierte Signaldaten auch ohne Einwilligung
-            erfassen (Modellierung) – dies erfolgt ohne personenbezogene Daten.
-          </p>
-          <p class="legal-p">
-            Zwischen mir und Google besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO.
-            Daten können in die USA übermittelt werden (siehe Abschnitt 12).
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Ihre Einwilligung
-            jederzeit über die Cookie-Einstellungen widerrufen.
-          </p>
-          <p class="legal-p">
-            Weitere Informationen: <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener">support.google.com/analytics</a>
-          </p>
+          <p class="legal-p">Die IP-Adresse wird vor der Übermittlung anonymisiert. GA4 wird nur nach aktiver Einwilligung vollständig aktiviert (Consent Mode v2). Zwischen mir und Google besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). Daten können in die USA übermittelt werden (siehe Abschnitt 12).</p>
+          <p class="legal-p">Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+          <p class="legal-p">Weitere Informationen: <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener">support.google.com/analytics</a></p>
         </div>
 
-        <!-- 9 -->
+        <!-- 8 -->
         <div class="legal-section" id="gads">
-          <h2 class="legal-h2"><span class="legal-h2-num">9</span> Google Ads & Conversion Tracking</h2>
-
+          <h2 class="legal-h2"><span class="legal-h2-num">8</span> Google Ads &amp; Conversion Tracking</h2>
           <div class="service-row">
             <span class="service-badge consent">Einwilligung erforderlich</span>
             <div class="service-info">
               <div class="service-name">Google Ads / Google Ads Conversion Tracking</div>
-              <div class="service-desc">
-                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>
-                Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
-              </div>
+              <div class="service-desc">Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
             </div>
           </div>
-
-          <p class="legal-p" style="margin-top:12px;">
-            Diese Website nutzt Google Ads Conversion Tracking. Wenn Sie über eine Google-Anzeige
-            auf diese Website gelangen und eine definierte Aktion ausführen (z.B. Kontaktformular
-            absenden), wird ein Conversion-Cookie gesetzt. Diese Cookies verlieren nach 30 Tagen
-            ihre Gültigkeit und enthalten keine personenbezogenen Daten.
-          </p>
-          <p class="legal-p">
-            Zusätzlich wird <strong>Enhanced Conversions</strong> eingesetzt: Dabei werden
-            vom Nutzer bereitgestellte Daten (z.B. E-Mail-Adresse) vor der Übermittlung an Google
-            mittels SHA-256-Hash anonymisiert (gehasht). Google kann so Conversions präziser
-            messen, ohne dass personenbezogene Daten im Klartext übertragen werden.
-          </p>
-          <p class="legal-p">
-            Conversion Tracking wird nur nach Einwilligung aktiviert. Der Consent Mode v2 ist
-            implementiert. Daten können in die USA übermittelt werden (siehe Abschnitt 12).
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
-          </p>
+          <p class="legal-p" style="margin-top:12px;">Google Ads Conversion Tracking setzt nach definierten Aktionen (z.B. Formularabsendung) ein Conversion-Cookie (Gültigkeit 30 Tage, keine personenbezogenen Daten).</p>
+          <p class="legal-p">Zusätzlich wird <strong>Enhanced Conversions</strong> eingesetzt: Vom Nutzer bereitgestellte Daten (z.B. E-Mail) werden vor der Übermittlung mittels SHA-256-Hash anonymisiert.</p>
+          <p class="legal-p">Conversion Tracking wird nur nach Einwilligung aktiviert (Consent Mode v2 implementiert). Daten können in die USA übermittelt werden (siehe Abschnitt 12).</p>
+          <p class="legal-p">Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
         </div>
 
-        <!-- 10 -->
+        <!-- 9 -->
         <div class="legal-section" id="gsc">
-          <h2 class="legal-h2"><span class="legal-h2-num">10</span> Google Search Console</h2>
-
+          <h2 class="legal-h2"><span class="legal-h2-num">9</span> Google Search Console</h2>
           <div class="service-row">
             <span class="service-badge noConsent">Kein Consent nötig</span>
             <div class="service-info">
               <div class="service-name">Google Search Console</div>
-              <div class="service-desc">
-                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>
-                Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
-              </div>
+              <div class="service-desc">Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
             </div>
           </div>
-
-          <p class="legal-p" style="margin-top:12px;">
-            Die Google Search Console ist ein Webmaster-Tool von Google, das Informationen zur
-            Sichtbarkeit dieser Website in den Google-Suchergebnissen liefert. Die Search Console
-            setzt keine Cookies auf dieser Website und verarbeitet keine personenbezogenen Daten
-            der Websitebesucher. Es werden aggregierte Suchdaten ausgewertet, aus denen keine
-            Rückschlüsse auf einzelne Personen möglich sind.
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
-            Suchmaschinenoptimierung).
-          </p>
+          <p class="legal-p" style="margin-top:12px;">Die Search Console ist ein Webmaster-Tool und setzt keine Cookies auf dieser Website. Es werden aggregierte Suchdaten ausgewertet, aus denen keine Rückschlüsse auf einzelne Personen möglich sind.</p>
+          <p class="legal-p">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Suchmaschinenoptimierung).</p>
         </div>
 
-        <!-- 11 -->
+        <!-- 10 -->
         <div class="legal-section" id="google-fonts">
-          <h2 class="legal-h2"><span class="legal-h2-num">11</span> Google Fonts</h2>
-
+          <h2 class="legal-h2"><span class="legal-h2-num">10</span> Google Fonts</h2>
           <div class="service-row">
             <span class="service-badge noConsent">Technisch notwendig</span>
             <div class="service-info">
               <div class="service-name">Google Fonts (via Google Fonts API)</div>
-              <div class="service-desc">
-                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>
-                Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
-              </div>
+              <div class="service-desc">Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
             </div>
           </div>
+          <p class="legal-p" style="margin-top:12px;">Diese Website lädt Schriftarten über die Google Fonts API. Dabei wird Ihre IP-Adresse an Google-Server übermittelt. Google Fonts setzt nach aktueller Einschätzung keine Cookies zur Identifikation.</p>
+          <p class="legal-p">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Daten können in die USA übermittelt werden (siehe Abschnitt 12).</p>
+        </div>
 
-          <p class="legal-p" style="margin-top:12px;">
-            Diese Website lädt Schriftarten über die Google Fonts API. Dabei wird beim Seitenaufruf
-            eine Verbindung zu Google-Servern hergestellt und Ihre IP-Adresse übermittelt.
-            Google Fonts setzt nach aktueller Einschätzung keine Cookies zur Identifikation.
-            Google hat erklärt, IP-Adressen nicht für andere Google-Dienste zu nutzen.
-          </p>
-          <p class="legal-p">
-            Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in
-            der einheitlichen und korrekten Darstellung der Website. Daten können in die USA
-            übermittelt werden (siehe Abschnitt 12).
-          </p>
+        <!-- 11 -->
+        <div class="legal-section" id="usa">
+          <h2 class="legal-h2"><span class="legal-h2-num">11</span> Datenübermittlung in die USA</h2>
+          <p class="legal-p">Verschiedene auf dieser Website eingesetzte Dienste (insbesondere Google-Dienste und Formspree) übermitteln Daten in die USA. Die USA gelten seit dem EU-US Data Privacy Framework (DPF, gültig seit Juli 2023) als sicheres Drittland für zertifizierte Unternehmen.</p>
+          <p class="legal-p">Google LLC und GitHub Inc. sind unter dem EU-US Data Privacy Framework zertifiziert. Zusätzlich bestehen Standardvertragsklauseln (SCC) gemäß Art. 46 Abs. 2 lit. c DSGVO als weitere Schutzmaßnahme.</p>
         </div>
 
         <!-- 12 -->
-        <div class="legal-section" id="usa">
-          <h2 class="legal-h2"><span class="legal-h2-num">12</span> Datenübermittlung in die USA</h2>
-          <p class="legal-p">
-            Verschiedene auf dieser Website eingesetzte Dienste (insbesondere Google-Dienste und
-            Formspree) übermitteln Daten in die USA. Die USA gelten seit dem EU-US Data Privacy
-            Framework (DPF, gültig seit Juli 2023) als sicheres Drittland für zertifizierte Unternehmen.
-          </p>
-          <p class="legal-p">
-            Google LLC und GitHub Inc. sind unter dem EU-US Data Privacy Framework zertifiziert.
-            Zusätzlich bestehen Standardvertragsklauseln (SCC) gemäß Art. 46 Abs. 2 lit. c DSGVO
-            als weitere Schutzmaßnahme.
-          </p>
-        </div>
-
-        <!-- 13 -->
         <div class="legal-section" id="rechte">
-          <h2 class="legal-h2"><span class="legal-h2-num">13</span> Ihre Rechte als betroffene Person</h2>
+          <h2 class="legal-h2"><span class="legal-h2-num">12</span> Ihre Rechte als betroffene Person</h2>
           <p class="legal-p">Sie haben gegenüber mir folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
           <ul class="rights-list">
             <li><strong>Auskunft (Art. 15 DSGVO)</strong> – Sie können Auskunft über Ihre bei mir gespeicherten Daten verlangen.</li>
@@ -623,39 +318,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Widerspruch (Art. 21 DSGVO)</strong> – Sie können der Verarbeitung auf Basis berechtigter Interessen widersprechen.</li>
             <li><strong>Beschwerde</strong> – Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, insbesondere beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</li>
           </ul>
-          <p class="legal-p" style="margin-top:14px;">
-            Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:
-            <a href="mailto:contact@meixner-tobias.com">contact@meixner-tobias.com</a>
-          </p>
+          <p class="legal-p" style="margin-top:14px;">Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:contact@meixner-tobias.com">contact@meixner-tobias.com</a></p>
+        </div>
+
+        <!-- 13 -->
+        <div class="legal-section" id="widerruf">
+          <h2 class="legal-h2"><span class="legal-h2-num">13</span> Widerruf von Einwilligungen</h2>
+          <p class="legal-p">Eine erteilte Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden. Dies gilt insbesondere für Einwilligungen zu Analyse- und Marketing-Cookies.</p>
+          <p class="legal-p">Cookie-Einwilligungen können über den Link „Cookie-Einstellungen" im Footer jederzeit angepasst oder widerrufen werden.</p>
+          <p class="legal-p">Für den Widerruf anderer Einwilligungen genügt eine formlose Mitteilung per E-Mail an <a href="mailto:contact@meixner-tobias.com">contact@meixner-tobias.com</a>.</p>
         </div>
 
         <!-- 14 -->
-        <div class="legal-section" id="widerruf">
-          <h2 class="legal-h2"><span class="legal-h2-num">14</span> Widerruf von Einwilligungen</h2>
-          <p class="legal-p">
-            Eine erteilte Einwilligung zur Verarbeitung personenbezogener Daten kann jederzeit
-            mit Wirkung für die Zukunft widerrufen werden. Dies gilt insbesondere für
-            Einwilligungen zu Analyse- und Marketing-Cookies.
-          </p>
-          <p class="legal-p">
-            Cookie-Einwilligungen können über den Link „Cookie-Einstellungen" im Footer dieser
-            Website jederzeit angepasst oder widerrufen werden.
-          </p>
-          <p class="legal-p">
-            Für den Widerruf anderer Einwilligungen genügt eine formlose Mitteilung per E-Mail an
-            <a href="mailto:contact@meixner-tobias.com">contact@meixner-tobias.com</a>.
-          </p>
-        </div>
-
-        <!-- 15 -->
         <div class="legal-section" id="aenderungen">
-          <h2 class="legal-h2"><span class="legal-h2-num">15</span> Änderungen dieser Erklärung</h2>
-          <p class="legal-p">
-            Diese Datenschutzerklärung wird bei Änderungen der Website oder der eingesetzten
-            Dienste sowie bei geänderten gesetzlichen Anforderungen aktualisiert.
-            Der aktuelle Stand ist im Seitenkopf vermerkt. Es empfiehlt sich, diese Erklärung
-            regelmäßig zu prüfen.
-          </p>
+          <h2 class="legal-h2"><span class="legal-h2-num">14</span> Änderungen dieser Erklärung</h2>
+          <p class="legal-p">Diese Datenschutzerklärung wird bei Änderungen der Website oder der eingesetzten Dienste sowie bei geänderten gesetzlichen Anforderungen aktualisiert. Der aktuelle Stand ist im Seitenkopf vermerkt.</p>
         </div>
 
       </main>
@@ -689,6 +366,5 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer))
 document.addEventListener('click',e=>{ if(!nav.contains(e.target)&&!drawer.contains(e.target)) closeDrawer(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });
 </script>
-<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

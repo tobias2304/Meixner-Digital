@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<!-- 1. Consent Mode v2 Defaults – MUSS zuerst stehen -->
+<!-- 1. Consent Mode v2 Defaults -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -15,28 +15,28 @@
     'wait_for_update':       500
   });
 </script>
-
-<!-- 2. CookieScript – übernimmt Consent Mode v2 automatisch -->
+<!-- 2. CookieScript -->
 <script type="text/javascript" charset="UTF-8"
   src="//cdn.cookie-script.com/s/d261fb8134670358b6795a49b5d04574.js">
 </script>
-
-<!-- 3. GTM (GTM-XXXXXXX ersetzen sobald du eine ID hast) -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-
+})(window,document,'script','dataLayer','GTM-5QLXDT4T');</script>
+<!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kontakt – Tobias Meixner</title>
-  <meta name="description" content="Kontakt zu Tobias Meixner – E-Commerce-Student & Freelancer aus Würzburg. Unverbindlich anfragen für Websites, Tracking-Setup und digitale Projekte.">
+  <title>Kontakt - Tobias Meixner</title>
+  <meta name="description" content="Kontakt zu Tobias Meixner - Unverbindlich anfragen fuer Websites, Tracking-Setup und digitale Projekte.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style-v1.css">
 
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
@@ -45,139 +45,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
   <style>
-    /* ═══════════════════════════════════════════════════
-       RESET & VARIABLES
-    ═══════════════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:          #F5F7FA;
-      --bg-card:     #FFFFFF;
-      --navy:        #0D1B2A;
-      --indigo:      #5B6CF8;
-      --indigo-soft: #EEF0FE;
-      --indigo-mid:  #C7CBFD;
-      --text:        #1A2332;
-      --muted:       #64748B;
-      --border:      #E2E8F0;
-      --sh-md:       0 4px 24px rgba(13,27,42,.10);
-      --sh-lg:       0 12px 40px rgba(13,27,42,.14);
-      --r:           14px;
-      --r-lg:        22px;
-      --fd:          'Manrope', sans-serif;
-      --fb:          'DM Sans', sans-serif;
-      --nav-h:       68px;
-      --mw:          1160px;
-      --px:          clamp(20px, 5vw, 60px);
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--fb);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    a   { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; height: auto; }
-
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--indigo-mid); border-radius: 99px; }
-
-    /* ═══════════════════════════════════════════════════
-       LAYOUT
-    ═══════════════════════════════════════════════════ */
-    .container { width: 100%; max-width: var(--mw); margin-inline: auto; padding-inline: var(--px); }
-    .section   { padding-block: clamp(56px, 8vw, 96px); }
-
-    /* ═══════════════════════════════════════════════════
-       BUTTONS
-    ═══════════════════════════════════════════════════ */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 26px; border-radius: 99px;
-      font-family: var(--fd); font-size: .875rem; font-weight: 700;
-      letter-spacing: .03em; border: none; cursor: pointer; white-space: nowrap;
-      transition: background .2s, transform .2s, box-shadow .2s, border-color .2s, color .2s;
-    }
-    .btn-primary { background: var(--navy); color: #fff; }
-    .btn-primary:hover { background: var(--indigo); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,108,248,.35); }
-    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
-    .btn-outline:hover { border-color: var(--navy); background: var(--navy); color: #fff; transform: translateY(-2px); }
-    .btn-ghost { background: transparent; color: rgba(255,255,255,.7); border: 1.5px solid rgba(255,255,255,.2); }
-    .btn-ghost:hover { border-color: rgba(255,255,255,.55); color: #fff; transform: translateY(-2px); }
-
-    /* ═══════════════════════════════════════════════════
-       NAVBAR  — exakt wie projekte.html
-    ═══════════════════════════════════════════════════ */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: var(--nav-h); transition: background .3s, box-shadow .3s;
-    }
-    .nav.scrolled {
-      background: rgba(245,247,250,.92);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 var(--border);
-    }
-    .nav-inner {
-      max-width: var(--mw); margin-inline: auto; padding-inline: var(--px);
-      height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
-    }
-
-    /* ── Logo — unverändert ── */
-    .nav-logo { height: 64px; width: auto; flex-shrink: 0; }
-    .logo-dot    { fill: #72c5e8; }
-    .logo-stroke { stroke: #0c147a; stroke-width: 42; stroke-linecap: round; fill: none; }
-    .logo-t      { font-family: var(--fd); font-size: 128px; font-weight: 800; letter-spacing: -0.03em; fill: var(--navy); }
-    .logo-s      { font-family: var(--fb); font-size: 24px; font-weight: 600; letter-spacing: 0.22em; text-anchor: middle; fill: #383c41; }
-
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-family: var(--fd); font-size: .84rem; font-weight: 600;
-      letter-spacing: .04em; color: var(--muted);
-      position: relative; transition: color .2s; white-space: nowrap;
-    }
-    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 2px; background: var(--indigo); border-radius: 99px; transition: right .25s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
-    .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
-    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 9px 18px; border-radius: 99px; font-size: .8rem !important; transition: background .2s, transform .2s !important; }
-    .nav-cta:hover { background: var(--indigo) !important; transform: translateY(-1px); }
-    .nav-cta::after { display: none !important; }
-
-    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 10px; cursor: pointer; flex-shrink: 0; }
-    .burger span { display: block; width: 20px; height: 1.5px; background: var(--navy); border-radius: 99px; transition: transform .28s, opacity .28s; transform-origin: center; }
-    .burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .drawer {
-      position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 199;
-      background: rgba(245,247,250,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border); padding: 6px var(--px) 20px;
-      transform: translateY(-8px); opacity: 0; pointer-events: none;
-      transition: transform .25s, opacity .25s;
-    }
-    .drawer.is-open { transform: none; opacity: 1; pointer-events: all; }
-    .drawer ul { list-style: none; }
-    .drawer a { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-family: var(--fd); font-size: 1rem; font-weight: 600; color: var(--navy); }
-    .drawer li:last-child a { border-bottom: none; }
-    .drawer a svg { color: var(--indigo); flex-shrink: 0; }
-
-    /* ═══════════════════════════════════════════════════
-       PAGE HERO
-    ═══════════════════════════════════════════════════ */
-    .page-hero {
-      padding-top: var(--nav-h);
-      position: relative; overflow: hidden; background: var(--bg);
-    }
+    /* ===================================================
+       PAGE HERO - kontakt Overrides
+       Base kommt aus style.css.
+       Hier: ::before LINKS (nicht rechts) + ::after neu.
+    =================================================== */
     .page-hero::before {
-      content: ''; position: absolute; top: -80px; left: -60px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(91,108,248,.09) 0%, transparent 70%);
-      filter: blur(60px); pointer-events: none;
+      top: -80px; left: -60px; /* links statt rechts */
     }
     .page-hero::after {
       content: ''; position: absolute; bottom: -40px; right: -40px;
@@ -185,360 +59,152 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: radial-gradient(circle, rgba(91,108,248,.06) 0%, transparent 70%);
       filter: blur(50px); pointer-events: none;
     }
-    .page-hero-inner {
-      position: relative; z-index: 1;
-      padding-block: clamp(52px, 7vw, 84px);
-      text-align: center;
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .page-hero-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--indigo-soft); border: 1px solid var(--indigo-mid); color: var(--indigo);
-      padding: 5px 14px 5px 10px; border-radius: 99px;
-      font-size: .73rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-    .bdot { width: 8px; height: 8px; background: var(--indigo); border-radius: 50%; flex-shrink: 0; animation: blink 2s ease-in-out infinite; }
-    @keyframes blink { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);} }
+    .page-hero-inner { padding-block: clamp(52px, 7vw, 84px); }
+    .page-hero-desc  { max-width: 500px; }
 
-    .page-hero-title {
-      font-family: var(--fd); font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -.025em;
-      margin-bottom: 16px; max-width: 640px;
-    }
-    .page-hero-title em { color: var(--indigo); font-style: normal; }
-    .page-hero-desc {
-      font-size: clamp(.9rem, 1.6vw, 1.1rem); color: var(--muted);
-      max-width: 500px; line-height: 1.72;
-    }
-
-    /* ═══════════════════════════════════════════════════
+    /* ===================================================
        CONTACT LAYOUT
-    ═══════════════════════════════════════════════════ */
+    =================================================== */
     .contact-section { padding-block: clamp(48px, 7vw, 80px); }
-
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: start;
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: clamp(32px, 5vw, 64px); align-items: start;
     }
 
-    /* ═══════════════════════════════════════════════════
-       FORM
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       FORM CARD
+    =================================================== */
     .form-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: clamp(28px, 4vw, 44px);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: clamp(28px, 4vw, 44px);
     }
+    .form-title    { font-family: var(--fd); font-size: 1.35rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; letter-spacing: -.02em; }
+    .form-subtitle { font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
 
-    .form-title {
-      font-family: var(--fd); font-size: 1.35rem; font-weight: 800;
-      color: var(--navy); margin-bottom: 6px; letter-spacing: -.02em;
-    }
-
-    .form-subtitle {
-      font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 28px;
-    }
-
-    .form-row {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-      margin-bottom: 14px;
-    }
-
+    .form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
     .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .form-group:last-of-type { margin-bottom: 0; }
 
-    .form-label {
-      font-family: var(--fd); font-size: .78rem; font-weight: 700;
-      color: var(--text); letter-spacing: .03em;
-    }
-
+    .form-label      { font-family: var(--fd); font-size: .78rem; font-weight: 700; color: var(--text); letter-spacing: .03em; }
     .form-label .req { color: var(--indigo); margin-left: 2px; }
 
     .form-input,
     .form-select,
     .form-textarea {
-      width: 100%;
-      padding: 11px 14px;
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: var(--r);
-      font-family: var(--fb);
-      font-size: .9rem;
-      color: var(--text);
+      width: 100%; padding: 11px 14px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: var(--r); font-family: var(--fb); font-size: .9rem; color: var(--text);
       transition: border-color .2s, box-shadow .2s, background .2s;
-      outline: none;
-      appearance: none;
-      -webkit-appearance: none;
+      outline: none; appearance: none; -webkit-appearance: none;
     }
-
     .form-input::placeholder,
     .form-textarea::placeholder { color: #A0AABA; }
-
     .form-input:focus,
     .form-select:focus,
-    .form-textarea:focus {
-      border-color: var(--indigo);
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(91,108,248,.12);
-    }
+    .form-textarea:focus { border-color: var(--indigo); background: #fff; box-shadow: 0 0 0 3px rgba(91,108,248,.12); }
 
     .form-textarea { resize: vertical; min-height: 130px; line-height: 1.65; }
 
-    /* Select arrow */
     .select-wrap { position: relative; }
-    .select-wrap::after {
-      content: '';
-      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
-      width: 0; height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 6px solid var(--muted);
-      pointer-events: none;
-    }
+    .select-wrap::after { content: ''; position: absolute; right: 14px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid var(--muted); pointer-events: none; }
     .form-select { padding-right: 36px; cursor: pointer; }
 
-    /* Privacy checkbox */
-    .form-check {
-      display: flex; align-items: flex-start; gap: 10px;
-      margin-top: 18px; margin-bottom: 22px;
-    }
-
-    .form-check input[type="checkbox"] {
-      width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px;
-      accent-color: var(--indigo); cursor: pointer;
-    }
-
-    .form-check-label {
-      font-size: .8rem; color: var(--muted); line-height: 1.55;
-    }
-
+    .form-check { display: flex; align-items: flex-start; gap: 10px; margin-top: 18px; margin-bottom: 22px; }
+    .form-check input[type="checkbox"] { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; accent-color: var(--indigo); cursor: pointer; }
+    .form-check-label { font-size: .8rem; color: var(--muted); line-height: 1.55; }
     .form-check-label a { color: var(--indigo); text-decoration: underline; text-underline-offset: 2px; }
 
-    /* Submit */
-    .form-submit {
-      width: 100%; padding: 14px;
-      background: var(--navy); color: #fff;
-      border: none; border-radius: 99px;
-      font-family: var(--fd); font-size: .9rem; font-weight: 700;
-      letter-spacing: .03em; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      transition: background .2s, transform .2s, box-shadow .2s;
-    }
+    .form-submit { width: 100%; padding: 14px; background: var(--navy); color: #fff; border: none; border-radius: 99px; font-family: var(--fd); font-size: .9rem; font-weight: 700; letter-spacing: .03em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .2s, transform .2s, box-shadow .2s; }
     .form-submit:hover { background: var(--indigo); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,108,248,.35); }
     .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 
-    /* Success state */
-    .form-success {
-      display: none;
-      flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: clamp(32px, 5vw, 56px) 24px; gap: 16px;
-    }
-
-    .success-icon {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: #ECFDF5; display: grid; place-items: center;
-    }
-
+    .form-success { display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: clamp(32px, 5vw, 56px) 24px; gap: 16px; }
+    .success-icon { width: 64px; height: 64px; border-radius: 50%; background: #ECFDF5; display: grid; place-items: center; }
     .success-icon svg { color: #10B981; }
+    .success-title { font-family: var(--fd); font-size: 1.3rem; font-weight: 800; color: var(--navy); }
+    .success-desc  { font-size: .9rem; color: var(--muted); line-height: 1.65; max-width: 320px; }
 
-    .success-title {
-      font-family: var(--fd); font-size: 1.3rem; font-weight: 800;
-      color: var(--navy);
-    }
+    .form-error-msg { display: none; background: #FEF2F2; border: 1px solid #FECACA; border-radius: var(--r); padding: 12px 14px; font-size: .84rem; color: #B91C1C; margin-bottom: 16px; }
+    .field-error    { font-size: .75rem; color: #EF4444; margin-top: 4px; display: none; }
+    .form-input.invalid, .form-textarea.invalid, .form-select.invalid { border-color: #EF4444; }
 
-    .success-desc { font-size: .9rem; color: var(--muted); line-height: 1.65; max-width: 320px; }
-
-    /* Error message */
-    .form-error-msg {
-      display: none;
-      background: #FEF2F2; border: 1px solid #FECACA;
-      border-radius: var(--r); padding: 12px 14px;
-      font-size: .84rem; color: #B91C1C; margin-bottom: 16px;
-    }
-
-    /* Field error */
-    .field-error {
-      font-size: .75rem; color: #EF4444; margin-top: 4px; display: none;
-    }
-
-    .form-input.invalid,
-    .form-textarea.invalid,
-    .form-select.invalid { border-color: #EF4444; }
-
-    /* ═══════════════════════════════════════════════════
+    /* ===================================================
        SIDEBAR
-    ═══════════════════════════════════════════════════ */
+    =================================================== */
     .sidebar { display: flex; flex-direction: column; gap: 16px; }
 
-    /* Info card */
-    .info-card {
-      background: var(--navy); border-radius: var(--r-lg);
-      padding: clamp(24px, 3vw, 36px);
-    }
-
-    .info-title {
-      font-family: var(--fd); font-size: 1.05rem; font-weight: 700;
-      color: #fff; margin-bottom: 6px;
-    }
-
-    .info-desc { font-size: .875rem; color: rgba(255,255,255,.58); line-height: 1.65; margin-bottom: 22px; }
+    .info-card  { background: var(--navy); border-radius: var(--r-lg); padding: clamp(24px, 3vw, 36px); }
+    .info-title { font-family: var(--fd); font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .info-desc  { font-size: .875rem; color: rgba(255,255,255,.58); line-height: 1.65; margin-bottom: 22px; }
 
     .info-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-
-    .info-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: .875rem; color: rgba(255,255,255,.75); line-height: 1.5;
-    }
-
-    .info-icon {
-      width: 32px; height: 32px; border-radius: 9px;
-      background: rgba(255,255,255,.08); flex-shrink: 0;
-      display: grid; place-items: center; font-size: 1rem; margin-top: 1px;
-    }
-
+    .info-item { display: flex; align-items: flex-start; gap: 12px; font-size: .875rem; color: rgba(255,255,255,.75); line-height: 1.5; }
+    .info-icon { width: 32px; height: 32px; border-radius: 9px; background: rgba(255,255,255,.08); flex-shrink: 0; display: grid; place-items: center; font-size: 1rem; margin-top: 1px; }
     .info-item-title { font-weight: 600; color: #fff; font-size: .84rem; }
     .info-item-sub   { font-size: .78rem; color: rgba(255,255,255,.5); }
 
-    /* Availability card */
-    .avail-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--r-lg); padding: 22px 24px;
-      display: flex; align-items: center; gap: 14px;
-    }
-
-    .avail-dot-wrap {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: #ECFDF5; flex-shrink: 0;
-      display: grid; place-items: center;
-    }
-
-    .avail-dot {
-      width: 12px; height: 12px; border-radius: 50%;
-      background: #10B981;
-      box-shadow: 0 0 0 3px rgba(16,185,129,.2);
-      animation: pulse-green 2.5s ease-in-out infinite;
-    }
-
+    .avail-card     { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px 24px; display: flex; align-items: center; gap: 14px; }
+    .avail-dot-wrap { width: 40px; height: 40px; border-radius: 50%; background: #ECFDF5; flex-shrink: 0; display: grid; place-items: center; }
+    .avail-dot      { width: 12px; height: 12px; border-radius: 50%; background: #10B981; box-shadow: 0 0 0 3px rgba(16,185,129,.2); animation: pulse-green 2.5s ease-in-out infinite; }
     @keyframes pulse-green {
       0%,100% { box-shadow: 0 0 0 3px rgba(16,185,129,.2); }
       50%      { box-shadow: 0 0 0 6px rgba(16,185,129,.08); }
     }
-
     .avail-text strong { display: block; font-family: var(--fd); font-size: .9rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
     .avail-text span   { font-size: .8rem; color: var(--muted); }
 
-    /* FAQ mini */
-    .faq-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--r-lg); padding: 22px 24px;
-    }
-
-    .faq-card-title {
-      font-family: var(--fd); font-size: .9rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 14px;
-    }
-
-    .faq-mini { display: flex; flex-direction: column; gap: 10px; }
-
-    .faq-mini-item { font-size: .84rem; color: var(--muted); line-height: 1.55; }
+    .faq-card       { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px 24px; }
+    .faq-card-title { font-family: var(--fd); font-size: .9rem; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+    .faq-mini       { display: flex; flex-direction: column; gap: 10px; }
+    .faq-mini-item  { font-size: .84rem; color: var(--muted); line-height: 1.55; }
     .faq-mini-item strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 2px; }
 
-    /* ═══════════════════════════════════════════════════
+    /* ===================================================
        TRUST STRIP
-    ═══════════════════════════════════════════════════ */
-    .trust-strip {
-      background: var(--navy); padding-block: clamp(36px, 5vw, 52px);
-    }
-
-    .trust-inner {
-      display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; gap: 20px 40px;
-    }
-
-    .trust-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: .875rem; color: rgba(255,255,255,.65); font-weight: 500;
-    }
-
+    =================================================== */
+    .trust-strip   { background: var(--navy); padding-block: clamp(36px, 5vw, 52px); }
+    .trust-inner   { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 40px; }
+    .trust-item    { display: flex; align-items: center; gap: 10px; font-size: .875rem; color: rgba(255,255,255,.65); font-weight: 500; }
     .trust-item svg { color: var(--indigo-mid); flex-shrink: 0; }
+    .trust-divider  { width: 1px; height: 20px; background: rgba(255,255,255,.12); }
 
-    .trust-divider { width: 1px; height: 20px; background: rgba(255,255,255,.12); }
-
-    /* ═══════════════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════════════ */
-    footer { border-top: 1px solid var(--border); padding-block: 26px; }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-copy { font-size: .79rem; color: var(--muted); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; }
-    .footer-links a { font-size: .79rem; color: var(--muted); transition: color .2s; }
-    .footer-links a:hover { color: var(--navy); }
-
-    /* ═══════════════════════════════════════════════════
-       REVEAL
-    ═══════════════════════════════════════════════════ */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    .reveal[data-d="1"] { transition-delay: .08s; }
-    .reveal[data-d="2"] { transition-delay: .16s; }
-
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 1024px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 1024px
+    =================================================== */
     @media (max-width: 1024px) {
-      :root { --px: clamp(20px, 4vw, 40px); }
       .contact-grid { grid-template-columns: 1fr 360px; gap: 32px; }
     }
 
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 768px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 768px
+    =================================================== */
     @media (max-width: 768px) {
-      :root { --nav-h: 60px; }
-      .nav-links { display: none; }
-      .burger    { display: flex; }
-
-      .contact-grid { grid-template-columns: 1fr; }
-
-      /* Sidebar comes after form on mobile */
-      .sidebar { order: 2; }
-
+      .contact-grid  { grid-template-columns: 1fr; }
+      .sidebar       { order: 2; }
       .trust-divider { display: none; }
       .trust-inner   { gap: 14px 24px; }
-
-      .section { padding-block: clamp(40px, 7vw, 68px); }
     }
 
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 560px
-    ═══════════════════════════════════════════════════ */
+    /* ===================================================
+       RESPONSIVE - 560px
+    =================================================== */
     @media (max-width: 560px) {
       .form-row { grid-template-columns: 1fr; }
-    }
-
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE — 390px
-    ═══════════════════════════════════════════════════ */
-    @media (max-width: 390px) {
-      :root { --px: 16px; }
-      .footer-row { flex-direction: column; align-items: center; text-align: center; }
     }
   </style>
 </head>
 
 <body>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<!-- ═══ NAVBAR ═══════════════════════════════════════════ -->
+<!-- NAVBAR -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/" aria-label="Tobias Meixner – Startseite">
+    <a href="/" aria-label="Tobias Meixner - Startseite">
       <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="logo-t">
         <title id="logo-t">Tobias Meixner</title>
         <g transform="translate(8 6)">
@@ -551,12 +217,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </svg>
     </a>
     <ul class="nav-links">
-      <li><a href="/">Über mich</a></li>
+      <li><a href="/">&#220;ber mich</a></li>
       <li><a href="/leistungen/">Leistungen</a></li>
       <li><a href="/projekte/">Projekte</a></li>
       <li><a href="/kontakt/" class="nav-cta active">Kontakt aufnehmen</a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Navigation öffnen" aria-expanded="false">
+    <button class="burger" id="burger" aria-label="Navigation &#246;ffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -564,109 +230,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="drawer" id="drawer" aria-label="Mobile Navigation">
   <ul>
-    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/">&#220;ber mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-    <li><a href="/kontakt/" style="color:var(--indigo)">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/" class="active">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
   </ul>
 </nav>
 
 
-<!-- ═══ PAGE HERO ═════════════════════════════════════════ -->
+<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
     <div class="page-hero-inner">
-
       <div class="page-hero-badge">
         <span class="bdot" aria-hidden="true"></span>
-        Verfügbar für neue Projekte
+        Verf&#252;gbar f&#252;r neue Projekte
       </div>
-
-      <h1 class="page-hero-title">
-        Schreib mir –<br>
-        <em>ich antworte schnell.</em>
-      </h1>
-
-      <p class="page-hero-desc">
-        Unverbindlich, kein Verkaufsgespräch, kein Kleingedrucktes.
-        Beschreib kurz dein Projekt – ich melde mich innerhalb von 24 Stunden.
-      </p>
-
+      <h1 class="page-hero-title">Schreib mir &#8211;<br><em>ich antworte schnell.</em></h1>
+      <p class="page-hero-desc">Unverbindlich, kein Verkaufsgespr&#228;ch, kein Kleingedrucktes. Beschreib kurz dein Projekt &#8211; ich melde mich innerhalb von 24 Stunden.</p>
     </div>
   </div>
 </div>
 
 
-<!-- ═══ CONTACT SECTION ══════════════════════════════════ -->
+<!-- CONTACT SECTION -->
 <section class="contact-section">
   <div class="container">
     <div class="contact-grid">
 
       <!-- FORM -->
       <div class="form-card reveal">
-
         <div id="formContent">
           <h2 class="form-title">Projektanfrage</h2>
-          <p class="form-subtitle">
-            Alle Felder mit <span style="color:var(--indigo)">*</span> sind Pflichtfelder.
-            Alles andere ist optional – je mehr du schreibst, desto konkreter kann ich antworten.
-          </p>
+          <p class="form-subtitle">Alle Felder mit <span style="color:var(--indigo)">*</span> sind Pflichtfelder. Alles andere ist optional &#8211; je mehr du schreibst, desto konkreter kann ich antworten.</p>
 
-          <div id="formErrorMsg" class="form-error-msg">
-            Bitte fülle alle Pflichtfelder korrekt aus.
-          </div>
+          <div id="formErrorMsg" class="form-error-msg">Bitte f&#252;lle alle Pflichtfelder korrekt aus.</div>
 
           <form id="contactForm" novalidate>
-
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="name">Name <span class="req">*</span></label>
-                <input class="form-input" type="text" id="name" name="name"
-                       placeholder="Dein Name" autocomplete="name" required>
+                <input class="form-input" type="text" id="name" name="name" placeholder="Dein Name" autocomplete="name" required>
                 <span class="field-error" id="nameErr">Bitte gib deinen Namen ein.</span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="email">E-Mail <span class="req">*</span></label>
-                <input class="form-input" type="email" id="email" name="email"
-                       placeholder="deine@email.de" autocomplete="email" required>
-                <span class="field-error" id="emailErr">Bitte gib eine gültige E-Mail-Adresse ein.</span>
+                <input class="form-input" type="email" id="email" name="email" placeholder="deine@email.de" autocomplete="email" required>
+                <span class="field-error" id="emailErr">Bitte gib eine g&#252;ltige E-Mail-Adresse ein.</span>
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="company">Unternehmen / Projekt</label>
-              <input class="form-input" type="text" id="company" name="company"
-                     placeholder="Optional – Name deines Unternehmens oder Projekts">
+              <input class="form-input" type="text" id="company" name="company" placeholder="Optional &#8211; Name deines Unternehmens oder Projekts">
             </div>
 
             <div class="form-group">
               <label class="form-label" for="topic">Womit kann ich helfen? <span class="req">*</span></label>
               <div class="select-wrap">
                 <select class="form-select" id="topic" name="topic" required>
-                  <option value="" disabled selected>Bitte auswählen …</option>
-                  <option value="tracking">Tracking & Analytics (GTM / GA4)</option>
-                  <option value="website">Website – Aufbau oder Betreuung</option>
-                  <option value="ecommerce">E-Commerce & Shop</option>
-                  <option value="automation">Automatisierung & E-Mail</option>
+                  <option value="" disabled selected>Bitte ausw&#228;hlen &#8230;</option>
+                  <option value="tracking">Tracking &amp; Analytics (GTM / GA4)</option>
+                  <option value="website">Website &#8211; Aufbau oder Betreuung</option>
+                  <option value="ecommerce">E-Commerce &amp; Shop</option>
+                  <option value="automation">Automatisierung &amp; E-Mail</option>
                   <option value="other">Anderes / noch unklar</option>
                 </select>
               </div>
-              <span class="field-error" id="topicErr">Bitte wähle ein Thema aus.</span>
+              <span class="field-error" id="topicErr">Bitte w&#228;hle ein Thema aus.</span>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="message">Deine Nachricht <span class="req">*</span></label>
-              <textarea class="form-textarea" id="message" name="message" rows="5"
-                        placeholder="Beschreib kurz, was du brauchst – was ist dein Ziel, wo stehst du gerade, gibt es einen Zeitrahmen?" required></textarea>
+              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Beschreib kurz, was du brauchst &#8211; was ist dein Ziel, wo stehst du gerade, gibt es einen Zeitrahmen?" required></textarea>
               <span class="field-error" id="messageErr">Bitte schreib eine kurze Nachricht.</span>
             </div>
 
             <div class="form-check">
               <input type="checkbox" id="privacy" name="privacy" required>
               <label class="form-check-label" for="privacy">
-                Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen
-                und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner
-                Anfrage gespeichert werden. <span style="color:var(--indigo)">*</span>
+                Ich habe die <a href="/datenschutz/">Datenschutzerkl&#228;rung</a> gelesen und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert werden. <span style="color:var(--indigo)">*</span>
               </label>
             </div>
 
@@ -674,139 +317,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Anfrage absenden
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
-
           </form>
         </div>
 
-        <!-- Success state (hidden by default) -->
+        <!-- Success state -->
         <div class="form-success" id="formSuccess">
-          <div class="success-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
+          <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="success-title">Nachricht gesendet!</div>
-          <p class="success-desc">
-            Danke für deine Anfrage. Ich melde mich in der Regel innerhalb von
-            24 Stunden bei dir.
-          </p>
-          <a href="/" class="btn btn-outline" style="margin-top:8px;">Zurück zur Startseite</a>
+          <p class="success-desc">Danke f&#252;r deine Anfrage. Ich melde mich in der Regel innerhalb von 24 Stunden bei dir.</p>
+          <a href="/" class="btn btn-outline" style="margin-top:8px;">Zur&#252;ck zur Startseite</a>
         </div>
-
       </div><!-- /form-card -->
 
       <!-- SIDEBAR -->
       <div class="sidebar">
 
-        <!-- Availability -->
         <div class="avail-card reveal" data-d="1">
-          <div class="avail-dot-wrap">
-            <div class="avail-dot"></div>
-          </div>
+          <div class="avail-dot-wrap"><div class="avail-dot"></div></div>
           <div class="avail-text">
-            <strong>Aktuell verfügbar</strong>
-            <span>Neue Projekte ab sofort möglich</span>
+            <strong>Aktuell verf&#252;gbar</strong>
+            <span>Neue Projekte ab sofort m&#246;glich</span>
           </div>
         </div>
 
-        <!-- Info card -->
         <div class="info-card reveal" data-d="1">
           <div class="info-title">Was dich erwartet</div>
           <p class="info-desc">Kein Pitch, kein Druck. Ich schaue mir deine Situation an und sage ehrlich, ob und wie ich helfen kann.</p>
           <ul class="info-list">
-            <li class="info-item">
-              <div class="info-icon">⚡</div>
-              <div>
-                <div class="info-item-title">Antwort innerhalb 24h</div>
-                <div class="info-item-sub">Meistens deutlich schneller</div>
-              </div>
-            </li>
-            <li class="info-item">
-              <div class="info-icon">💬</div>
-              <div>
-                <div class="info-item-title">Kurzes Kennenlerngespräch</div>
-                <div class="info-item-sub">15–30 Min, kein Overhead</div>
-              </div>
-            </li>
-            <li class="info-item">
-              <div class="info-icon">📋</div>
-              <div>
-                <div class="info-item-title">Konkretes Angebot</div>
-                <div class="info-item-sub">Transparent, ohne Kleingedrucktes</div>
-              </div>
-            </li>
-            <li class="info-item">
-              <div class="info-icon">✅</div>
-              <div>
-                <div class="info-item-title">Ehrliche Einschätzung</div>
-                <div class="info-item-sub">Auch wenn ich nicht der Richtige bin</div>
-              </div>
-            </li>
+            <li class="info-item"><div class="info-icon">&#9889;</div><div><div class="info-item-title">Antwort innerhalb 24h</div><div class="info-item-sub">Meistens deutlich schneller</div></div></li>
+            <li class="info-item"><div class="info-icon">&#128172;</div><div><div class="info-item-title">Kurzes Kennenlerngespräch</div><div class="info-item-sub">15–30 Min, kein Overhead</div></div></li>
+            <li class="info-item"><div class="info-icon">&#128203;</div><div><div class="info-item-title">Konkretes Angebot</div><div class="info-item-sub">Transparent, ohne Kleingedrucktes</div></div></li>
+            <li class="info-item"><div class="info-icon">&#9989;</div><div><div class="info-item-title">Ehrliche Einsch&#228;tzung</div><div class="info-item-sub">Auch wenn ich nicht der Richtige bin</div></div></li>
           </ul>
         </div>
 
-        <!-- Mini FAQ -->
         <div class="faq-card reveal" data-d="2">
           <div class="faq-card-title">Kurze Antworten</div>
           <div class="faq-mini">
-            <div class="faq-mini-item">
-              <strong>Wie schnell kannst du starten?</strong>
-              Nach Auftragsbestätigung meist innerhalb weniger Tage – ich kommuniziere realistische Zeitrahmen.
-            </div>
-            <div class="faq-mini-item">
-              <strong>Was kostet das?</strong>
-              Kommt auf den Umfang an. Ich mache dir nach dem Gespräch ein transparentes Angebot.
-            </div>
-            <div class="faq-mini-item">
-              <strong>Was wenn du etwas nicht kannst?</strong>
-              Dann sage ich das direkt – bevor ich anfange.
-            </div>
+            <div class="faq-mini-item"><strong>Wie schnell kannst du starten?</strong>Nach Auftragsbestätigung meist innerhalb weniger Tage &#8211; ich kommuniziere realistische Zeitrahmen.</div>
+            <div class="faq-mini-item"><strong>Was kostet das?</strong>Kommt auf den Umfang an. Ich mache dir nach dem Gespräch ein transparentes Angebot.</div>
+            <div class="faq-mini-item"><strong>Was wenn du etwas nicht kannst?</strong>Dann sage ich das direkt &#8211; bevor ich anfange.</div>
           </div>
         </div>
 
       </div><!-- /sidebar -->
-
     </div>
   </div>
 </section>
 
 
-<!-- ═══ TRUST STRIP ═══════════════════════════════════════ -->
+<!-- TRUST STRIP -->
 <div class="trust-strip reveal">
   <div class="container">
     <div class="trust-inner">
-      <div class="trust-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Unverbindliche Anfrage
-      </div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unverbindliche Anfrage</div>
       <div class="trust-divider"></div>
-      <div class="trust-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Antwort innerhalb 24h
-      </div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Antwort innerhalb 24h</div>
       <div class="trust-divider"></div>
-      <div class="trust-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Kein Agentur-Overhead
-      </div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kein Agentur-Overhead</div>
       <div class="trust-divider"></div>
-      <div class="trust-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        DSGVO-konform
-      </div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-konform</div>
       <div class="trust-divider"></div>
-      <div class="trust-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Google Ads zertifiziert
-      </div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Google Ads zertifiziert</div>
     </div>
   </div>
 </div>
 
 
-<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-row">
-      <span class="footer-copy">© 2026 Tobias Meixner</span>
+      <span class="footer-copy">&#169; 2026 Tobias Meixner</span>
       <ul class="footer-links">
         <li><a href="/impressum/">Impressum</a></li>
         <li><a href="/datenschutz/">Datenschutz</a></li>
@@ -818,13 +400,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 
-<!-- ═══ SCRIPTS ════════════════════════════════════════════ -->
+<!-- SCRIPTS -->
 <script>
-/* ── Navbar ─────────────────────────────────────── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
 
-/* ── Burger / Drawer ────────────────────────────── */
 const burger = document.getElementById('burger');
 const drawer = document.getElementById('drawer');
 
@@ -842,13 +422,12 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawe
 document.addEventListener('click', e => { if (!nav.contains(e.target) && !drawer.contains(e.target)) closeDrawer(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-/* ── Scroll reveal ──────────────────────────────── */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ── Form validation & submit ───────────────────── */
+/* Form */
 const form        = document.getElementById('contactForm');
 const submitBtn   = document.getElementById('submitBtn');
 const formContent = document.getElementById('formContent');
@@ -865,7 +444,6 @@ function showErr(inputId, errId, show) {
 
 function validate() {
   let ok = true;
-
   const name  = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const topic = document.getElementById('topic').value;
@@ -882,11 +460,9 @@ function validate() {
   if (!topic)  ok = false;
   if (msg.length < 10) ok = false;
   if (!priv)   ok = false;
-
   return ok;
 }
 
-/* Live validation on blur */
 ['name','email','topic','message'].forEach(id => {
   const el = document.getElementById(id);
   if (!el) return;
@@ -901,43 +477,36 @@ function validate() {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   formErrMsg.style.display = 'none';
-
   if (!validate()) {
     formErrMsg.style.display = 'block';
     formErrMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     return;
   }
-
-submitBtn.disabled = true;
-submitBtn.textContent = 'Wird gesendet …';
-
-try {
-  const res = await fetch('https://formspree.io/f/xnjlqgyq', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      name:    document.getElementById('name').value.trim(),
-      email:   document.getElementById('email').value.trim(),
-      company: document.getElementById('company').value.trim(),
-      topic:   document.getElementById('topic').value,
-      message: document.getElementById('message').value.trim()
-    })
-  });
-
-  if (!res.ok) throw new Error();
-
-  formContent.style.display = 'none';
-  formSuccess.style.display = 'flex';
-
-} catch {
-  submitBtn.disabled = false;
-  submitBtn.innerHTML = 'Anfrage absenden <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-  formErrMsg.textContent = 'Senden fehlgeschlagen – bitte versuche es erneut.';
-  formErrMsg.style.display = 'block';
-}
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Wird gesendet \u2026';
+  try {
+    const res = await fetch('https://formspree.io/f/xnjlqgyq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name:    document.getElementById('name').value.trim(),
+        email:   document.getElementById('email').value.trim(),
+        company: document.getElementById('company').value.trim(),
+        topic:   document.getElementById('topic').value,
+        message: document.getElementById('message').value.trim()
+      })
+    });
+    if (!res.ok) throw new Error();
+    formContent.style.display = 'none';
+    formSuccess.style.display = 'flex';
+  } catch {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Anfrage absenden <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    formErrMsg.textContent = 'Senden fehlgeschlagen \u2013 bitte versuche es erneut.';
+    formErrMsg.style.display = 'block';
+  }
 });
 </script>
 
-<script data-goatcounter="https://tobiasmeixner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
