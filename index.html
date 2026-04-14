@@ -460,7 +460,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ HERO ═════════════════════════════════════════════════════ -->
-<section class="hero">
+<section class="hero" aria-label="Einführung – Tobias Meixner Freelancer Würzburg">
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="blob blob-1" aria-hidden="true"></div>
   <div class="blob blob-2" aria-hidden="true"></div>
@@ -542,13 +542,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ ABOUT ════════════════════════════════════════════════════ -->
-<div class="about-strip reveal">
+<section class="about-strip reveal" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-grid">
 
       <div>
         <span class="sec-label about-lbl">Wer bin ich</span>
-        <h2 class="about-h2">Student, Freelancer –<br><em>ehrlich &amp; praxisnah.</em></h2>
+        <h2 class="about-h2" id="about-heading">Student, Freelancer –<br><em>ehrlich &amp; praxisnah.</em></h2>
         <p class="about-p">
           Ich studiere E-Commerce und habe mich im Februar 2026 selbstständig gemacht.
           Das bedeutet für dich: <strong>faire Preise ohne Agentur-Aufschlag,
@@ -583,39 +583,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
   </div>
-</div>
+</section>
 
 
 <!-- ═══ SERVICES ═════════════════════════════════════════════════ -->
-<section class="section">
+<section class="section" aria-labelledby="services-heading">
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-label">Was ich mache</span>
-      <h2 class="sec-title">Meine Leistungen</h2>
+      <h2 class="sec-title" id="services-heading">Meine Leistungen</h2>
       <p class="sec-desc">Von der technischen Umsetzung bis zur laufenden Betreuung – ich übernehme die digitalen Aufgaben, die Zeit und Know-how kosten.</p>
     </div>
 
     <div class="svc-grid">
       <div class="svc-card reveal" data-d="1">
-        <div class="svc-icon">📊</div>
+        <div class="svc-icon" aria-hidden="true">📊</div>
         <h3 class="svc-h">Tracking &amp; Analytics</h3>
         <p class="svc-p">Saubere Daten als Grundlage für gute Entscheidungen. Ich richte GTM, GA4, Conversion-Tracking und Consent Mode v2 korrekt ein – DSGVO-konform.</p>
         <div class="svc-tags"><span class="svc-tag">GTM</span><span class="svc-tag">GA4</span><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Pixel</span><span class="svc-tag">Consent Mode v2</span></div>
       </div>
       <div class="svc-card reveal" data-d="2">
-        <div class="svc-icon">🌐</div>
+        <div class="svc-icon" aria-hidden="true">🌐</div>
         <h3 class="svc-h">Websites &amp; Technik</h3>
         <p class="svc-p">Aufbau und Betreuung von Websites – von schlanken HTML-Seiten bis zu CMS-Lösungen. Inklusive Hosting, Domain, DNS und laufender Pflege.</p>
         <div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span><span class="svc-tag">Hosting &amp; DNS</span></div>
       </div>
       <div class="svc-card reveal" data-d="3">
-        <div class="svc-icon">🛒</div>
+        <div class="svc-icon" aria-hidden="true">🛒</div>
         <h3 class="svc-h">E-Commerce &amp; Shops</h3>
         <p class="svc-p">Technische Umsetzung und Betreuung von Online-Shops. Grundkonfiguration, Struktur und laufende Pflege mit ausgewählten Shop-Systemen.</p>
         <div class="svc-tags"><span class="svc-tag">Shopify</span><span class="svc-tag">WooCommerce</span><span class="svc-tag">Shop-Setup</span></div>
       </div>
       <div class="svc-card reveal" data-d="4">
-        <div class="svc-icon">⚙️</div>
+        <div class="svc-icon" aria-hidden="true">⚙️</div>
         <h3 class="svc-h">Automatisierung &amp; E-Mail</h3>
         <p class="svc-p">Einfache Workflows und E-Mail-Prozesse, die manuelle Arbeit abnehmen. CRM-Unterstützung und strukturierte Abläufe.</p>
         <div class="svc-tags"><span class="svc-tag">E-Mail-Automation</span><span class="svc-tag">CRM</span><span class="svc-tag">Workflows</span></div>
@@ -630,17 +630,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ PROJECTS ═════════════════════════════════════════════════ -->
-<section class="section" style="padding-top:0;">
+<section class="section" style="padding-top:0;" aria-labelledby="projects-heading">
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-label">Praxis &amp; Projekte</span>
-      <h2 class="sec-title">Echte Projekte, echte Erfahrung</h2>
+      <h2 class="sec-title" id="projects-heading">Echte Projekte, echte Erfahrung</h2>
       <p class="sec-desc">Kein Testumfeld – ich habe in realen Projekten Verantwortung übernommen und messbare Ergebnisse geliefert.</p>
     </div>
 
     <div class="proj-grid">
       <div class="proj-card reveal" data-d="1">
-        <img src="/assets/img/gumb.png" alt="Gumb App" class="proj-logo">
+        <img src="/assets/img/gumb.png"
+              alt="Gumb App – Vereinsmanagement Software"
+              class="proj-logo"
+              width="130" height="34"
+              loading="lazy">
         <h3 class="proj-h">Gumb App – Tracking-Ecosystem</h3>
         <p class="proj-p">Eigenverantwortliche Konzeption und Implementierung der gesamten Marketing-Technology-Infrastruktur.</p>
         <ul class="proj-list">
@@ -649,10 +653,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Enhanced Conversions &amp; Consent Mode v2</li>
           <li>Sales-Outreach &amp; CRM-Management</li>
         </ul>
-        <a href="/projekte/" class="proj-link">Mehr erfahren <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/projekte/" class="proj-link">Mehr erfahren <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="proj-card reveal" data-d="2">
-        <img src="/assets/img/stefanie-mischka.png" alt="Stefanie Mischka" class="proj-logo">
+        <img src="/assets/img/stefanie-mischka.png"
+              alt="Stefanie Mischka – Raum für Gesundheit"
+              class="proj-logo"
+              width="130" height="34"
+              loading="lazy">
         <h3 class="proj-h">Stefanie Mischka – Website &amp; Technik</h3>
         <p class="proj-p">Vollständige technische Umsetzung und laufende Betreuung der Website eines Online-Business.</p>
         <ul class="proj-list">
@@ -661,7 +669,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>DNS-Konfiguration &amp; technische Einstellungen</li>
           <li>Laufende technische Betreuung</li>
         </ul>
-        <a href="https://www.stefaniemischka.com/" target="_blank" rel="noopener" class="proj-link">Website ansehen <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://www.stefaniemischka.com/" target="_blank" rel="noopener" class="proj-link">Website ansehen <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
@@ -673,20 +681,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ WHY ME ═══════════════════════════════════════════════════ -->
-<section class="section" style="padding-top:0;">
+<section class="section" style="padding-top:0;" aria-labelledby="whyme-heading">
   <div class="container">
     <div class="why-box reveal">
       <div class="why-inner">
         <div>
           <span class="sec-label">Warum mit mir arbeiten?</span>
-          <h2 class="sec-title" style="max-width:320px;">Kein Agentur-Overhead. Direkter Kontakt.</h2>
+          <h2 class="sec-title" id="whyme-heading" style="max-width:320px;">Kein Agentur-Overhead. Direkter Kontakt.</h2>
           <p class="sec-desc">Ich bin Student – das ist kein Nachteil, sondern Transparenz. Du weißt genau, mit wem du arbeitest.</p>
         </div>
         <div>
-          <div class="why-item"><div class="why-n">01</div><div><div class="why-h">Faire Preise, kein Agentur-Markup</div><div class="why-p">Du bezahlst für die Leistung – nicht für ein Büro und fünf Zwischenhändler. <strong>Ehrliche Kalkulation auf Anfrage.</strong></div></div></div>
-          <div class="why-item"><div class="why-n">02</div><div><div class="why-h">Echte Projekterfahrung, kein Lernfeld</div><div class="why-p">Meine Arbeit bei der Gumb AG war kein Schulprojekt – <strong>ich habe echte Systeme gebaut,</strong> die heute produktiv laufen.</div></div></div>
-          <div class="why-item"><div class="why-n">03</div><div><div class="why-h">Ich sage dir, wenn etwas nicht mein Gebiet ist</div><div class="why-p">Ehrlichkeit vor Selbstdarstellung. <strong>Ich kommuniziere direkt.</strong></div></div></div>
-          <div class="why-item"><div class="why-n">04</div><div><div class="why-h">Flexibel &amp; persönlich</div><div class="why-p">Kein Ticket-System. Du erreichst mich direkt – <strong>und ich reagiere schnell.</strong></div></div></div>
+          <div class="why-n" aria-hidden="true">01</div><div><div class="why-h">Faire Preise, kein Agentur-Markup</div><div class="why-p">Du bezahlst für die Leistung – nicht für ein Büro und fünf Zwischenhändler. <strong>Ehrliche Kalkulation auf Anfrage.</strong></div></div></div>
+          <div class="why-n" aria-hidden="true">02</div><div><div class="why-h">Echte Projekterfahrung, kein Lernfeld</div><div class="why-p">Meine Arbeit bei der Gumb AG war kein Schulprojekt – <strong>ich habe echte Systeme gebaut,</strong> die heute produktiv laufen.</div></div></div>
+          <div class="why-n" aria-hidden="true">03</div><div><div class="why-h">Ich sage dir, wenn etwas nicht mein Gebiet ist</div><div class="why-p">Ehrlichkeit vor Selbstdarstellung. <strong>Ich kommuniziere direkt.</strong></div></div></div>
+          <div class="why-n" aria-hidden="true">04</div><div><div class="why-h">Flexibel &amp; persönlich</div><div class="why-p">Kein Ticket-System. Du erreichst mich direkt – <strong>und ich reagiere schnell.</strong></div></div></div>
         </div>
       </div>
     </div>
@@ -695,7 +703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ CTA ═══════════════════════════════════════════════════════ -->
-<section class="section" style="padding-top:0;">
+<section class="section" style="padding-top:0;" aria-label="Kontakt-Aufforderung">
   <div class="container">
     <div class="cta-box reveal">
       <p class="cta-lbl">Lass uns reden</p>
