@@ -84,6 +84,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
+<!-- Skip Navigation Link -->
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -126,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 
-<main class="legal-page" aria-labelledby="legal-heading">
+<main class="legal-page" id="main-content" aria-labelledby="legal-heading">
   <div class="container">
     <div class="legal-inner">
 
@@ -386,6 +389,11 @@ const burger = document.getElementById('burger');
 const drawer = document.getElementById('drawer');
 function closeDrawer() { drawer.classList.remove('is-open'); burger.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
 burger.addEventListener('click', () => { const open = !drawer.classList.contains('is-open'); drawer.classList.toggle('is-open',open); burger.classList.toggle('is-open',open); burger.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':''; });
+  // Focus ins Drawer setzen wenn geöffnet
+  if (open) {
+    const firstLink = drawer.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
 document.addEventListener('click',e=>{ if(!nav.contains(e.target)&&!drawer.contains(e.target)) closeDrawer(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });

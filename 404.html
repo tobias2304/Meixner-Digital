@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seite nicht gefunden – Tobias Meixner</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="/css/style-v1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    .error-page {
+      min-height: 60vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-h) + 60px) var(--px) 60px;
+    }
+    .error-code {
+      font-family: var(--fd); font-size: clamp(5rem, 15vw, 9rem);
+      font-weight: 800; color: var(--indigo-mid);
+      line-height: 1; margin-bottom: 16px; letter-spacing: -.04em;
+    }
+    .error-title {
+      font-family: var(--fd); font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700; color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .error-desc {
+      font-size: 1rem; color: var(--muted);
+      max-width: 400px; line-height: 1.7; margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Tobias Meixner – Startseite">
+      <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="logo-t">
+        <title id="logo-t">Tobias Meixner</title>
+        <g transform="translate(8 6)">
+          <circle class="logo-dot" cx="50" cy="108" r="18"/>
+          <line class="logo-stroke" x1="68" y1="62" x2="98" y2="118"/>
+          <line class="logo-stroke" x1="136" y1="62" x2="166" y2="118"/>
+          <text class="logo-t" x="208" y="136">eixner</text>
+          <text class="logo-s" x="380" y="188">DIGITAL. STRATEGY. EXCELLENCE.</text>
+        </g>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Über mich</a></li>
+      <li><a href="/leistungen/">Leistungen</a></li>
+      <li><a href="/projekte/">Projekte</a></li>
+      <li><a href="/kontakt/" class="nav-cta">Kontakt aufnehmen</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Navigation öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="drawer" id="drawer" aria-label="Mobile Navigation">
+  <ul>
+    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/leistungen/">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/kontakt/">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+  </ul>
+</nav>
+
+<main class="error-page" id="main-content">
+  <div class="error-code" aria-hidden="true">404</div>
+  <h1 class="error-title">Seite nicht gefunden</h1>
+  <p class="error-desc">Diese Seite existiert nicht oder wurde verschoben. Kein Problem – hier geht es zurück.</p>
+  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+    <a href="/" class="btn btn-primary">Zur Startseite</a>
+    <a href="/kontakt/" class="btn btn-outline">Kontakt aufnehmen</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="footer-copy">© 2026 Tobias Meixner</span>
+      <ul class="footer-links">
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz/">Datenschutz</a></li>
+        <li><a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download>Lebenslauf (PDF)</a></li>
+        <li><a href="#" onclick="CookieScript.instance.show(); return false;">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+function closeDrawer() { drawer.classList.remove('is-open'); burger.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+burger.addEventListener('click', () => { const open = !drawer.classList.contains('is-open'); drawer.classList.toggle('is-open',open); burger.classList.toggle('is-open',open); burger.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':''; });
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
+document.addEventListener('click',e=>{ if(!nav.contains(e.target)&&!drawer.contains(e.target)) closeDrawer(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });
+</script>
+
+</body>
+</html>

@@ -41,6 +41,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:locale"      content="de_DE">
   <meta property="og:site_name"   content="Tobias Meixner">
 
+    <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Tobias Meixner – Freelancer für Websites & Tracking | Würzburg">
+  <meta name="twitter:description" content="E-Commerce-Student & Freelancer aus Würzburg. Websites erstellen, GTM & GA4 einrichten – direkt, verlässlich, ohne Agentur-Overhead.">
+  <meta name="twitter:image"       content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
+
   <!-- Canonical -->
   <link rel="canonical" href="https://meixner-tobias.com/kontakt/">
 
@@ -255,6 +261,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
+<!-- Skip Navigation Link -->
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -298,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- PAGE HERO -->
-<section class="page-hero" aria-labelledby="hero-heading">
+<section class="page-hero" id="main-content" aria-labelledby="hero-heading">
   <div class="container">
     <div class="page-hero-inner">
       <div class="page-hero-badge">
@@ -488,6 +497,11 @@ burger.addEventListener('click', () => {
   drawer.classList.toggle('is-open', open); burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', String(open));
   document.body.style.overflow = open ? 'hidden' : '';
+    // Focus ins Drawer setzen wenn geöffnet
+  if (open) {
+    const firstLink = drawer.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
 });
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 document.addEventListener('click', e => { if (!nav.contains(e.target) && !drawer.contains(e.target)) closeDrawer(); });

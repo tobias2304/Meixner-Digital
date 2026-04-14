@@ -41,6 +41,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:locale"      content="de_DE">
   <meta property="og:site_name"   content="Tobias Meixner">
 
+    <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Tobias Meixner – Freelancer für Websites & Tracking | Würzburg">
+  <meta name="twitter:description" content="E-Commerce-Student & Freelancer aus Würzburg. Websites erstellen, GTM & GA4 einrichten – direkt, verlässlich, ohne Agentur-Overhead.">
+  <meta name="twitter:image"       content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
+
   <!-- Canonical -->
   <link rel="canonical" href="https://meixner-tobias.com/">
 
@@ -415,6 +421,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
+<!-- Skip Navigation Link -->
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -460,7 +469,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ HERO ═════════════════════════════════════════════════════ -->
-<section class="hero" aria-label="Einführung – Tobias Meixner Freelancer Würzburg">
+<section class="hero" id="main-content" aria-label="Einführung – Tobias Meixner Freelancer Würzburg">
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="blob blob-1" aria-hidden="true"></div>
   <div class="blob blob-2" aria-hidden="true"></div>
@@ -520,7 +529,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-img-frame">
           <div class="img-blob" aria-hidden="true"></div>
           <img
-            src="/assets/img/Profilbild2.jpg"
+            src="/assets/img/Profilbild2.webp"
             alt="Tobias Meixner – E-Commerce-Student und Freelancer aus Würzburg"
             width="390" height="488"
             loading="eager" fetchpriority="high"
@@ -564,7 +573,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Strukturiert, verlässlich, pragmatisch</li>
         </ul>
         <a href="https://skillshop.credential.net/7c7f49fe-c3ff-481c-b22b-fb7470d94dd5" target="_blank" rel="noopener" class="about-cert">
-          <img src="/assets/img/badge.png" alt="Google Ads Suchmaschinen-Zertifizierung">
+          <img src="/assets/img/badge.webp" alt="Google Ads Suchmaschinen-Zertifizierung">
           <div class="cert-txt">
             <strong>Google Ads Suchmaschinen-Zertifizierung</strong>
             Skillshop · Kampagnenaufbau, Keyword-Strategie &amp; Performance
@@ -640,7 +649,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="proj-grid">
       <div class="proj-card reveal" data-d="1">
-        <img src="/assets/img/gumb.png"
+        <img src="/assets/img/gumb.webp"
               alt="Gumb App – Vereinsmanagement Software"
               class="proj-logo"
               width="130" height="34"
@@ -656,7 +665,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/projekte/" class="proj-link">Mehr erfahren <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="proj-card reveal" data-d="2">
-        <img src="/assets/img/stefanie-mischka.png"
+        <img src="/assets/img/stefanie-mischka.webp"
               alt="Stefanie Mischka – Raum für Gesundheit"
               class="proj-logo"
               width="130" height="34"
@@ -741,6 +750,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas || typeof THREE === 'undefined') return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
@@ -822,6 +832,11 @@ burger.addEventListener('click', () => {
   burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', String(open));
   document.body.style.overflow = open ? 'hidden' : '';
+    // Focus ins Drawer setzen wenn geöffnet
+  if (open) {
+    const firstLink = drawer.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
 });
 
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
