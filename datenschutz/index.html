@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- HTML Meta Tags -->
-  <title>Tobias Meixner – Freelancer Websites & Tracking | Würzburg</title>
+  <title>Datenschutzerklärung | Tobias Meixner</title>
   <meta name="description" content="E-Commerce-Student & Freelancer aus Würzburg. Websites erstellen, GTM & GA4 einrichten – direkt, verlässlich, ohne Agentur-Overhead.">
 
   <meta name="robots" content="noindex, follow">
@@ -378,8 +378,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="footer-links">
         <li><a href="/impressum/">Impressum</a></li>
         <li><a href="/datenschutz/">Datenschutz</a></li>
+        <li><a href="/agb/">AGB</a></li>
         <li><a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download>Lebenslauf (PDF)</a></li>
         <li><a href="#" onclick="CookieScript.instance.show(); return false;">Cookie-Einstellungen</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/meixner-tobias" target="_blank" rel="noopener" aria-label="Tobias Meixner auf LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -391,12 +398,11 @@ window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.
 const burger = document.getElementById('burger');
 const drawer = document.getElementById('drawer');
 function closeDrawer() { drawer.classList.remove('is-open'); burger.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-burger.addEventListener('click', () => { const open = !drawer.classList.contains('is-open'); drawer.classList.toggle('is-open',open); burger.classList.toggle('is-open',open); burger.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':''; });
-  // Focus ins Drawer setzen wenn geöffnet
-  if (open) {
-    const firstLink = drawer.querySelector('a');
-    if (firstLink) firstLink.focus();
-  }
+burger.addEventListener('click', () => { const open = !drawer.classList.contains('is-open'); 
+drawer.classList.toggle('is-open',open); burger.classList.toggle('is-open',open); 
+burger.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':'';
+  if (open) { const firstLink = drawer.querySelector('a'); if (firstLink) firstLink.focus(); }
+});
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
 document.addEventListener('click',e=>{ if(!nav.contains(e.target)&&!drawer.contains(e.target)) closeDrawer(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });

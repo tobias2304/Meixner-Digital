@@ -29,34 +29,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leistungen – Websites, GTM & GA4 Setup | Tobias Meixner Würzburg</title>
+  <meta name="description" content="Freelancer aus Würzburg: Website erstellen ab 350€, GTM & GA4 Setup ab 150€, monatliche Betreuung ab 49€. Direkt, transparent, DSGVO-konform.">
 
-  <!-- HTML Meta Tags -->
-  <title>Tobias Meixner – Freelancer Websites & Tracking | Würzburg</title>
-  <meta name="description" content="E-Commerce-Student & Freelancer aus Würzburg. Websites erstellen, GTM & GA4 einrichten – direkt, verlässlich, ohne Agentur-Overhead.">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://meixner-tobias.com/leistungen/">
+  <meta property="og:title"       content="Leistungen – Websites, GTM & GA4 Setup | Tobias Meixner">
+  <meta property="og:description" content="Website erstellen, GTM & GA4 einrichten, laufende Betreuung – Freelancer aus Würzburg. Direkt, transparent, ohne Overhead.">
+  <meta property="og:image"       content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
+  <meta property="og:locale"      content="de_DE">
+  <meta property="og:site_name"   content="Tobias Meixner">
 
-<!-- Facebook Meta Tags -->
-  <meta property="og:type"          content="website">
-  <meta property="og:locale"        content="de_DE">
-  <meta property="og:site_name"     content="Tobias Meixner">
-  <meta property="og:url"           content="https://meixner-tobias.com/">
-  <meta property="og:type"          content="website">
-  <meta property="og:title"         content="Tobias Meixner – Freelancer für Websites & Tracking | Würzburg">
-  <meta property="og:description"   content="E-Commerce-Student & Freelancer aus Würzburg. Websites erstellen, GTM & GA4 einrichten – direkt, verlässlich, ohne Agentur-Overhead.">
-  <meta property="og:image"         content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
-
-<!-- Twitter Meta Tags -->
-  <meta name="twitter:card"         content="summary_large_image">
-  <meta property="twitter:domain"   content="meixner-tobias.com">
-  <meta property="twitter:url"      content="https://meixner-tobias.com/">
-  <meta name="twitter:title"        content="Tobias Meixner – Freelancer für Websites & Tracking | Würzburg">
-  <meta name="twitter:description"  content="E-Commerce-Student & Freelancer aus Würzburg. Websites erstellen, GTM & GA4 einrichten – direkt, verlässlich, ohne Agentur-Overhead.">
-  <meta name="twitter:image"        content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Leistungen – Websites, GTM & GA4 Setup | Tobias Meixner">
+  <meta name="twitter:description" content="Website erstellen, GTM & GA4 einrichten, laufende Betreuung – Freelancer aus Würzburg.">
+  <meta name="twitter:image"       content="https://meixner-tobias.com/assets/img/Profilbild2.jpg">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://meixner-tobias.com/leistungen/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=DM+Sans:wght@400;500&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/style-v1.css">
@@ -68,107 +64,158 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
   <style>
-    /* ===================================================
-       PAGE HERO - leistungen-Overrides
-       (Base-Styles kommen aus style.css)
-    =================================================== */
+    /* PAGE HERO */
     .page-hero { padding-bottom: 0; }
     .page-hero-inner { padding-block: clamp(48px, 7vw, 80px) 0; gap: 0; }
     .page-hero-desc  { margin-bottom: 32px; max-width: 560px; }
-
     .hero-wave { width: 100%; overflow: hidden; line-height: 0; margin-top: 40px; }
     .hero-wave svg { display: block; width: 100%; }
 
-    /* ===================================================
-       NOTE BANNER
-    =================================================== */
-    .note-banner {
-      background: var(--indigo-soft);
-      border: 1px solid var(--indigo-mid);
-      border-radius: var(--r);
-      padding: 14px 20px;
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: .875rem; color: var(--navy); line-height: 1.55;
-      margin-bottom: clamp(32px, 5vw, 48px);
-    }
-    .note-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
-    .note-banner strong { font-weight: 700; }
+    /* ── LEISTUNGEN KARTEN (3 Hauptleistungen) ── */
+    .svc-main { padding-block: clamp(52px, 7vw, 80px); background: var(--navy); }
+    .svc-main .sec-label { color: rgba(199,203,253,.85); }
+    .svc-main .sec-title { color: #fff; }
+    .svc-main .sec-desc  { color: rgba(255,255,255,.58); }
 
-    /* ===================================================
-       PACKAGES
-    =================================================== */
-    .pkg-section { padding-block: clamp(52px, 7vw, 80px); background: var(--navy); }
-    .pkg-section .sec-label { color: rgba(199,203,253,.85); }
-    .pkg-section .sec-title { color: #fff; }
-    .pkg-section .sec-desc  { color: rgba(255,255,255,.58); }
-
-    .pkg-grid {
+    .svc-main-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 20px; align-items: start;
+      margin-top: clamp(32px, 4vw, 48px);
     }
 
-    .pkg-card {
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    /* Karte */
+    .svc-main-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r-lg);
       padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
-      display: flex; flex-direction: column; gap: 0;
+      display: flex; flex-direction: column;
       transition: transform .3s, box-shadow .3s, border-color .3s, background .3s;
       position: relative;
     }
-    .pkg-card:hover { transform: translateY(-5px); border-color: rgba(199,203,253,.4); background: rgba(255,255,255,.08); }
-
-    .pkg-card.featured {
+    .svc-main-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(199,203,253,.4);
+      background: rgba(255,255,255,.08);
+    }
+    .svc-main-card.featured {
       background: var(--indigo); border-color: transparent;
       transform: translateY(-6px);
       box-shadow: 0 20px 60px rgba(91,108,248,.5);
     }
-    .pkg-card.featured:hover { transform: translateY(-10px); box-shadow: 0 24px 70px rgba(91,108,248,.55); background: #4e5fe8; border-color: transparent; }
+    .svc-main-card.featured:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 70px rgba(91,108,248,.55);
+      background: #4e5fe8;
+    }
 
-    .pkg-badge {
+    /* Badge */
+    .svc-badge {
       display: inline-flex; align-items: center; gap: 5px;
       background: rgba(255,255,255,.2); color: #fff;
       font-size: .69rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-      padding: 4px 10px; border-radius: 99px;
-      width: fit-content; margin-bottom: 18px;
+      padding: 4px 10px; border-radius: 99px; width: fit-content; margin-bottom: 18px;
     }
-    .pkg-badge-placeholder { height: 26px; margin-bottom: 18px; }
-    .pkg-icon    { font-size: 1.8rem; margin-bottom: 14px; }
-    .pkg-name    { font-family: var(--fd); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -.01em; }
-    .pkg-tagline { font-size: .85rem; color: rgba(255,255,255,.55); margin-bottom: 22px; line-height: 1.5; }
-    .pkg-card.featured .pkg-tagline { color: rgba(255,255,255,.75); }
+    .svc-badge-placeholder { height: 26px; margin-bottom: 18px; }
 
-    .pkg-divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 20px; }
-    .pkg-card.featured .pkg-divider { background: rgba(255,255,255,.25); }
+    /* Icon */
+    .svc-main-icon {
+      width: 48px; height: 48px; border-radius: 13px;
+      background: rgba(255,255,255,.1);
+      display: grid; place-items: center;
+      margin-bottom: 18px; flex-shrink: 0;
+      color: #fff;
+    }
+    .svc-main-card.featured .svc-main-icon { background: rgba(255,255,255,.2); }
 
-    .pkg-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; flex: 1; }
-    .pkg-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .875rem; color: rgba(255,255,255,.7); line-height: 1.45; }
-    .pkg-card.featured .pkg-list li { color: rgba(255,255,255,.9); }
+    /* Preis */
+    .svc-price {
+      font-family: var(--fd); font-size: clamp(1.6rem, 3vw, 2rem);
+      font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px;
+    }
+    .svc-price-sub {
+      font-size: .78rem; color: rgba(255,255,255,.45); margin-bottom: 18px;
+    }
 
-    .pkg-check { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,.15); flex-shrink: 0; margin-top: 1px; display: grid; place-items: center; }
-    .pkg-card.featured .pkg-check { background: rgba(255,255,255,.25); }
-    .pkg-check svg { color: #fff; }
+    /* Name & Tagline */
+    .svc-main-name {
+      font-family: var(--fd); font-size: 1.15rem; font-weight: 800;
+      color: #fff; margin-bottom: 6px; letter-spacing: -.01em;
+    }
+    .svc-main-tagline {
+      font-size: .85rem; color: rgba(255,255,255,.55);
+      margin-bottom: 20px; line-height: 1.55;
+    }
+    .svc-main-card.featured .svc-main-tagline { color: rgba(255,255,255,.8); }
 
-    .pkg-list li.na { color: rgba(255,255,255,.3); }
-    .pkg-cross { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,.06); flex-shrink: 0; margin-top: 1px; display: grid; place-items: center; }
-    .pkg-cross svg { color: rgba(255,255,255,.3); }
+    /* Divider */
+    .svc-divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 18px; }
+    .svc-main-card.featured .svc-divider { background: rgba(255,255,255,.25); }
 
-    .pkg-note { font-size: .78rem; color: rgba(255,255,255,.4); line-height: 1.5; margin-bottom: 20px; padding: 12px 14px; background: rgba(0,0,0,.15); border-radius: 10px; }
-    .pkg-card.featured .pkg-note { background: rgba(0,0,0,.2); color: rgba(255,255,255,.6); }
+    /* Feature list */
+    .svc-feat-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; flex: 1; }
+    .svc-feat-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .875rem; color: rgba(255,255,255,.7); line-height: 1.45; }
+    .svc-main-card.featured .svc-feat-list li { color: rgba(255,255,255,.92); }
 
-    .pkg-includes {
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    .svc-chk {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(255,255,255,.15); flex-shrink: 0; margin-top: 1px;
+      display: grid; place-items: center;
+    }
+    .svc-main-card.featured .svc-chk { background: rgba(255,255,255,.3); }
+    .svc-chk svg { color: #fff; }
+
+    /* Add-on Box */
+    .addon-box {
+      background: rgba(0,0,0,.2);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      font-size: .8rem;
+      color: rgba(255,255,255,.55);
+      line-height: 1.55;
+    }
+    .svc-main-card.featured .addon-box {
+      background: rgba(0,0,0,.25);
+      border-color: rgba(255,255,255,.2);
+      color: rgba(255,255,255,.7);
+    }
+    .addon-box strong {
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: .82rem;
+      margin-bottom: 4px;
+    }
+    .addon-price {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border-radius: 99px;
+      padding: 2px 8px;
+      font-size: .72rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 5px;
+    }
+
+    /* "In jeder Leistung dabei" */
+    .svc-includes {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r);
       padding: clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 28px);
       margin-top: clamp(28px, 4vw, 40px);
     }
-    .pkg-includes-title { font-family: var(--fd); font-size: .875rem; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 18px; text-align: center; }
+    .svc-includes-title {
+      font-family: var(--fd); font-size: .875rem; font-weight: 700;
+      color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 18px; text-align: center;
+    }
     .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 24px; }
     .inc-item { display: flex; align-items: center; gap: 9px; font-size: .85rem; color: rgba(255,255,255,.65); }
     .inc-item svg { color: var(--indigo-mid); flex-shrink: 0; }
 
-    /* ===================================================
-       INDIVIDUAL SERVICES
-    =================================================== */
+    /* ── EINZELLEISTUNGEN ── */
     .svc-section { padding-block: clamp(56px, 8vw, 96px); }
 
     .svc-block {
@@ -180,7 +227,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .svc-block:first-child { padding-top: 0; }
     .svc-block:last-child  { border-bottom: none; padding-bottom: 0; }
 
-    .svc-block-icon  { width: 52px; height: 52px; border-radius: 15px; background: var(--indigo-soft); display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 14px; }
+    .svc-block-icon {
+      width: 52px; height: 52px; border-radius: 15px;
+      background: var(--indigo-soft); display: grid; place-items: center;
+      margin-bottom: 14px; color: var(--indigo);
+    }
     .svc-block-title { font-family: var(--fd); font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 800; color: var(--navy); letter-spacing: -.015em; margin-bottom: 8px; }
     .svc-block-desc  { font-size: .9rem; color: var(--muted); line-height: 1.7; }
 
@@ -189,12 +240,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .svc-detail-card:hover { border-color: var(--indigo-mid); box-shadow: var(--sh-md); }
     .svc-detail-title { font-family: var(--fd); font-size: .875rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
     .svc-detail-text  { font-size: .82rem; color: var(--muted); line-height: 1.6; }
-    /* margin-top override: 12px statt 15px aus style.css */
     .svc-detail-card .svc-tags { margin-top: 12px; }
 
-    /* ===================================================
-       PROCESS
-    =================================================== */
+    /* ── PROCESS ── */
     .process-section { background: var(--navy); padding-block: clamp(52px, 7vw, 80px); }
     .process-section .sec-label { color: rgba(199,203,253,.85); }
     .process-section .sec-title { color: #fff; }
@@ -202,77 +250,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: clamp(32px, 4vw, 48px); position: relative; }
     .process-grid::before { content: ''; position: absolute; top: 26px; left: calc(12.5% + 20px); right: calc(12.5% + 20px); height: 1px; background: rgba(255,255,255,.12); pointer-events: none; }
-
-    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; }
-
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; }
     .step-num { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-size: 1rem; font-weight: 800; color: var(--indigo-mid); margin-bottom: 16px; position: relative; z-index: 1; flex-shrink: 0; }
     .step-num.active { background: var(--indigo); border-color: var(--indigo); color: #fff; }
     .step-title { font-family: var(--fd); font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
     .step-desc  { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.6; }
 
-    /* ===================================================
-       FAQ
-    =================================================== */
+    /* ── FAQ ── */
     .faq-section { padding-block: clamp(56px, 8vw, 96px); }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); align-items: start; }
     .faq-list { display: flex; flex-direction: column; gap: 12px; }
-
     .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; transition: border-color .2s; }
     .faq-item.open { border-color: var(--indigo-mid); }
-
     .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; background: none; border: none; cursor: pointer; font-family: var(--fd); font-size: .9rem; font-weight: 700; color: var(--navy); text-align: left; }
     .faq-q svg { flex-shrink: 0; color: var(--indigo); transition: transform .25s; }
     .faq-item.open .faq-q svg { transform: rotate(180deg); }
-
     .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; padding: 0 18px; }
     .faq-a-inner { font-size: .875rem; color: var(--muted); line-height: 1.7; padding-bottom: 16px; }
-    .faq-item.open .faq-a { max-height: 300px; padding: 0 18px; }
-
+    .faq-item.open .faq-a { max-height: 300px; }
     .faq-info-card { background: var(--navy); border-radius: var(--r-lg); padding: clamp(28px, 4vw, 40px); position: sticky; top: calc(var(--nav-h) + 24px); }
     .faq-info-title { font-family: var(--fd); font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
     .faq-info-p { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 24px; }
     .faq-info-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
     .faq-info-list li { display: flex; align-items: center; gap: 10px; font-size: .84rem; color: rgba(255,255,255,.7); }
-
     .fii { width: 20px; height: 20px; border-radius: 50%; background: var(--indigo); flex-shrink: 0; display: grid; place-items: center; }
     .fii svg { color: #fff; }
 
-    /* ===================================================
-       RESPONSIVE - 1024px
-    =================================================== */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .pkg-grid           { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .pkg-card.featured  { transform: translateY(-3px); }
-      .svc-block          { grid-template-columns: 240px 1fr; gap: 36px; }
-      .faq-grid           { gap: 32px; }
+      .svc-main-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .svc-main-card.featured { transform: translateY(-3px); }
+      .svc-block { grid-template-columns: 240px 1fr; gap: 36px; }
     }
-
-    /* ===================================================
-       RESPONSIVE - 768px
-    =================================================== */
     @media (max-width: 768px) {
-      .pkg-grid             { grid-template-columns: 1fr; gap: 16px; }
-      .pkg-card.featured    { transform: none; box-shadow: 0 8px 32px rgba(91,108,248,.4); }
-      .svc-block            { grid-template-columns: 1fr; gap: 22px; }
-      .svc-detail-grid      { grid-template-columns: 1fr 1fr; }
-      .process-grid         { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .svc-main-grid { grid-template-columns: 1fr; gap: 16px; }
+      .svc-main-card.featured { transform: none; box-shadow: 0 8px 32px rgba(91,108,248,.4); }
+      .svc-block { grid-template-columns: 1fr; gap: 22px; }
+      .svc-detail-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
       .process-grid::before { display: none; }
-      .faq-grid             { grid-template-columns: 1fr; }
-      .faq-info-card        { position: static; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-info-card { position: static; }
     }
-
-    /* ===================================================
-       RESPONSIVE - 560px
-    =================================================== */
     @media (max-width: 560px) {
       .svc-detail-grid { grid-template-columns: 1fr; }
       .includes-grid   { grid-template-columns: 1fr 1fr; }
       .process-grid    { grid-template-columns: 1fr 1fr; }
     }
-
-    /* ===================================================
-       RESPONSIVE - 390px
-    =================================================== */
     @media (max-width: 390px) {
       .process-grid  { grid-template-columns: 1fr 1fr; gap: 20px; }
       .includes-grid { grid-template-columns: 1fr; }
@@ -287,18 +311,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Startseite",
-          "item": "https://meixner-tobias.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Leistungen",
-          "item": "https://meixner-tobias.com/leistungen/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meixner-tobias.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://meixner-tobias.com/leistungen/" }
       ]
     },
     {
@@ -307,35 +321,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Freelancer-Leistungen – Web & Tracking",
       "url": "https://meixner-tobias.com/leistungen/",
       "image": "https://meixner-tobias.com/assets/img/Profilbild2.jpg",
-      "description": "Technische Umsetzung digitaler Projekte für kleine Unternehmen und Startups: Website-Erstellung, Google Tag Manager Setup, GA4-Implementierung, E-Commerce-Lösungen und Conversion Tracking.",
-      "founder": {
-        "@type": "Person",
-        "@id": "https://meixner-tobias.com/#person",
-        "name": "Tobias Meixner"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Würzburg"
-      },
+      "description": "Website erstellen, GTM & GA4 Setup, DSGVO-konformes Tracking und monatliche technische Betreuung für kleine Unternehmen in Würzburg.",
+      "founder": { "@type": "Person", "@id": "https://meixner-tobias.com/#person", "name": "Tobias Meixner" },
+      "areaServed": { "@type": "City", "name": "Würzburg" },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Leistungspakete",
+        "name": "Leistungen",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Basis-Paket",
-            "description": "Ein klar definierter Leistungsbereich, z.B. einfaches GTM/GA4-Setup oder Landing Page. Übergabe mit Erklärung, E-Mail-Support 2 Wochen."
-          },
-          {
-            "@type": "Offer",
-            "name": "Standard-Paket",
-            "description": "2–3 kombinierte Leistungsbereiche, z.B. Website + GTM/GA4 + E-Mail-Setup. Dokumentation, Übergabe, laufende Betreuung nach Absprache."
-          },
-          {
-            "@type": "Offer",
-            "name": "Individuell-Paket",
-            "description": "Vollständig individuell definierter Scope für Startups und komplexere Anforderungen. Langfristige Zusammenarbeit möglich."
-          }
+          { "@type": "Offer", "name": "GTM & GA4 Setup", "description": "Google Tag Manager und GA4 einrichten, Conversion-Events tracken, Consent Mode v2 und DSGVO-konforme CMP-Integration. Ab 150€ einmalig.", "priceSpecification": { "@type": "PriceSpecification", "price": "150", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "name": "Website erstellen", "description": "Moderne Website mit SSL, Impressum, Datenschutz, Kontaktformular, SEO-Grundstruktur, Schema.org, Sitemap und Hosting-Setup. Ab 350€ einmalig.", "priceSpecification": { "@type": "PriceSpecification", "price": "350", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "name": "Sorglos-Betreuung", "description": "Monatliche technische Betreuung: Hosting, SSL, Anpassungen, Ansprechpartner. Ab 49€ monatlich." }
         ]
       }
     },
@@ -343,46 +338,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "FAQPage",
       "@id": "https://meixner-tobias.com/leistungen/#faq",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Warum stehen keine Preise auf der Website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Weil jedes Projekt anders ist. Eine einfache Landing Page kostet anders als ein Shop mit Tracking-Setup. Statt Pauschalpreisen mache ich nach einem kurzen Gespräch ein konkretes, transparentes Angebot – nachvollziehbar und ohne Kleingedrucktes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kann ein Student professionelle Freelancer-Arbeit liefern?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ich habe keine 10 Jahre Agenturerfahrung, aber echte Projekterfahrung bei der Gumb AG und Stefanie Mischka. Meine Kunden bekommen einen direkten Ansprechpartner, faire Preise und ehrliche Kommunikation – das schätzen kleine Unternehmen oft mehr als eine anonyme Agentur."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was passiert wenn etwas außerhalb deines Bereichs liegt?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dann sage ich das direkt – bevor ich anfange. Ich verkaufe keine Leistungen, die ich nicht sauber umsetzen kann. Keine bösen Überraschungen."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Wie schnell kann es losgehen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nach dem ersten Gespräch und klarem Auftrag in der Regel innerhalb weniger Tage. Ich studiere parallel, daher ist die Kapazität begrenzt – aber ich kommuniziere realistische Zeitrahmen von Anfang an."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gibt es laufende Betreuung oder nur Einmalprojekte?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Beides ist möglich. Manche Kunden brauchen einmalig ein sauberes Setup wie GTM/GA4, andere wollen laufende technische Betreuung ihrer Website oder ihres Shops. Das klären wir im Gespräch."
-          }
-        }
+        { "@type": "Question", "name": "Was ist im GTM & GA4 Setup enthalten?", "acceptedAnswer": { "@type": "Answer", "text": "GTM Container aufsetzen, GA4 Property konfigurieren, die wichtigsten Conversion-Events einrichten (Formular, Klicks, Scroll), Consent Mode v2 nach Google-Standard und eine datenschutzkonforme CMP-Integration. Übergabe mit Erklärung was getrackt wird und warum." } },
+        { "@type": "Question", "name": "Was kostet eine Website?", "acceptedAnswer": { "@type": "Answer", "text": "Eine einfache Website für Solopreneure oder Vereine startet ab 350€ einmalig. Darin enthalten: Design, Hosting-Setup, SSL, Kontaktformular, Impressum und Datenschutz, SEO-Grundstruktur und Sitemap. Der genaue Preis hängt vom Umfang ab – nach einem kurzen Gespräch bekommst du ein konkretes Angebot." } },
+        { "@type": "Question", "name": "Was ist die Sorglos-Betreuung?", "acceptedAnswer": { "@type": "Answer", "text": "Monatlich kümmere ich mich um deine Website: Hosting läuft, SSL-Zertifikat ist aktiv, kleine Anpassungen werden zeitnah umgesetzt. Du hast immer einen direkten Ansprechpartner – kein Ticket-System, kein Overhead. Ab 49€ pro Monat." } },
+        { "@type": "Question", "name": "Kann man Website und Tracking kombinieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja – und das macht Sinn. Wer eine neue Website bekommt, sollte von Anfang an wissen was darauf passiert. Als Add-on zur Website richte ich GTM und GA4 direkt mit ein. Das spart Zeit und du startest mit sauberer Datenbasis." } },
+        { "@type": "Question", "name": "Wie schnell kann es losgehen?", "acceptedAnswer": { "@type": "Answer", "text": "Nach dem ersten Gespräch und klarem Auftrag in der Regel innerhalb weniger Tage. Ich studiere parallel, daher ist die Kapazität begrenzt – aber ich kommuniziere realistische Zeitrahmen von Anfang an." } }
       ]
     }
   ]
@@ -399,12 +359,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QLXDT4T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAVBAR -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/" aria-label="Tobias Meixner - Startseite">
+    <a href="/" aria-label="Tobias Meixner – Startseite" style="display:flex; align-items:center; padding-top:6px;">
       <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" role="img" aria-labelledby="logo-t">
         <title id="logo-t">Tobias Meixner</title>
         <g transform="translate(8 6)">
@@ -416,12 +375,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </svg>
     </a>
     <ul class="nav-links">
-      <li><a href="/">&#220;ber mich</a></li>
+      <li><a href="/">Über mich</a></li>
       <li><a href="/leistungen/" class="active">Leistungen</a></li>
       <li><a href="/projekte/">Projekte</a></li>
       <li><a href="/kontakt/" class="nav-cta">Kontakt aufnehmen</a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Navigation &#246;ffnen" aria-expanded="false">
+    <button class="burger" id="burger" aria-label="Navigation öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -429,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="drawer" id="drawer" aria-label="Mobile Navigation">
   <ul>
-    <li><a href="/">&#220;ber mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    <li><a href="/">Über mich <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/leistungen/" class="active">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/projekte/">Projekte <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     <li><a href="/kontakt/">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
@@ -442,11 +401,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="page-hero-inner">
       <div class="page-hero-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Leistungen &amp; Pakete
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Leistungen &amp; Preise
       </div>
-      <h1 class="page-hero-title" id="hero-heading">Was ich f&#252;r dich<br><em>umsetzen kann.</em></h1>
-      <p class="page-hero-desc">Technische Umsetzung, Tracking-Setups und digitale Systeme f&#252;r kleine Unternehmen und Startups &#8211; direkt, verl&#228;sslich, ohne Agentur-Overhead. Alle Preise auf Anfrage.</p>
+      <h1 class="page-hero-title" id="hero-heading">
+        Was ich umsetze –<br><em>und was es kostet.</em>
+      </h1>
+      <p class="page-hero-desc">
+        Drei klare Leistungen für kleine Unternehmen, Selbstständige und Vereine.
+        Kein Agentur-Overhead, kein Kleingedrucktes.
+        Direkt mit mir.
+      </p>
       <a href="/kontakt/" class="btn btn-primary">
         Unverbindlich anfragen
         <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -461,161 +426,283 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
-<!-- PACKAGES -->
-<section class="pkg-section reveal" aria-labelledby="packages-heading">
+<!-- HAUPTLEISTUNGEN -->
+<section class="svc-main reveal" aria-labelledby="main-services-heading">
   <div class="container">
+
     <div class="sec-head text-center">
-      <span class="sec-label">Pakete</span>
-      <h2 class="sec-title" id="packages-heading">Drei Ausgangspunkte &#8211; ein Angebot.</h2>
-      <p class="sec-desc">Die Pakete sind keine starren Tarife, sondern Orientierung. Der genaue Preis richtet sich nach deinem Projekt. Anfragen kostet nichts.</p>
+      <span class="sec-label">Leistungen</span>
+      <h2 class="sec-title" id="main-services-heading">Drei Leistungen. Klare Preise.</h2>
+      <p class="sec-desc">
+        Keine versteckten Kosten, keine Überraschungen.
+        Du weißt vorher was du bekommst und was es kostet.
+      </p>
     </div>
-    <div class="note-banner reveal">
-      <span class="note-icon" aria-hidden="true">&#128161;</span>
-      <span><strong>Keine fixen Preise auf dieser Seite.</strong> Jedes Projekt ist anders &#8211; deshalb mache ich dir nach einem kurzen Gespr&#228;ch ein konkretes, transparentes Angebot. Kein verstecktes Kleingedrucktes.</span>
-    </div>
-    <div class="pkg-grid">
-      <!-- PAKET 1: Basis -->
-      <div class="pkg-card reveal" data-d="1">
-        <div class="pkg-badge-placeholder"></div>
-        <div class="pkg-name">Basis</div>
-        <p class="pkg-tagline">F&#252;r Solopreneure und Kleinst&shy;unternehmen mit einem konkreten, &#252;berschaubaren Bedarf.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list">
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>1 klar definierter Leistungsbereich</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>z.B. einfaches GTM/GA4-Setup oder Landing Page</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>&#220;bergabe mit Erkl&#228;rung</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>E-Mail-Support nach Abschluss (2 Wochen)</li>
-          <li class="na"><span class="pkg-cross" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Laufende Betreuung</li>
-          <li class="na"><span class="pkg-cross" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Mehrere Leistungsbereiche</li>
-        </ul>
-        <p class="pkg-note">Geeignet f&#252;r: Erste Website, einzelnes Tracking-Setup, technische Einzel&shy;aufgabe.</p>
-        <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Anfragen</a>
-      </div>
-      <!-- PAKET 2: Standard (featured) -->
-      <div class="pkg-card featured reveal" data-d="2">
-        <div class="pkg-badge">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Empfohlen
+
+    <div class="svc-main-grid">
+
+      <!-- LEISTUNG 1: GTM & GA4 Setup -->
+      <div class="svc-main-card reveal" data-d="1">
+        <div class="svc-badge-placeholder"></div>
+        <div class="svc-main-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h8"/><path d="M7 11h12"/><path d="M7 6h3"/></svg>
         </div>
-        <div class="pkg-name">Standard</div>
-        <p class="pkg-tagline">F&#252;r kleine Unternehmen, die eine solide digitale Basis aufbauen oder verbessern m&#246;chten.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list">
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>2&#8211;3 kombinierte Leistungsbereiche</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>z.B. Website + GTM/GA4 + E-Mail-Setup</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Dokumentation &amp; &#220;bergabe</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Laufende Betreuung (nach Absprache)</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Direkte Erreichbarkeit via E-Mail / Signal</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Flexibel auf deinen Bedarf anpassbar</li>
+        <div class="svc-price">ab 150 €</div>
+        <div class="svc-price-sub">einmalig · kein Abo</div>
+        <div class="svc-main-name">GTM &amp; GA4 Setup</div>
+        <p class="svc-main-tagline">Du willst wissen was auf deiner Website passiert – ohne Datenschutzprobleme und ohne technisches Chaos.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-feat-list">
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Google Tag Manager sauber eingerichtet</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>GA4 Property konfiguriert</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Wichtigste Conversion-Events eingerichtet</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Consent Mode v2 – DSGVO-konform</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>CMP-Integration (Cookie-Banner)</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Übergabe mit Erklärung</li>
         </ul>
-        <p class="pkg-note">Geeignet f&#252;r: Kleiner Online-Shop, Business mit Website + Tracking + Automatisierung.</p>
+        <div class="addon-box">
+          <strong>+ Google Ads &amp; Meta Pixel</strong>
+          Conversion-Tracking für Werbekampagnen inkl. Enhanced Conversions auf Anfrage.
+          <span class="addon-price">auf Anfrage</span>
+        </div>
+        <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Jetzt anfragen</a>
+      </div>
+
+      <!-- LEISTUNG 2: Website (FEATURED) -->
+      <div class="svc-main-card featured reveal" data-d="2">
+        <div class="svc-badge">
+          <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Meist gebucht
+        </div>
+        <div class="svc-main-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </div>
+        <div class="svc-price">ab 350 €</div>
+        <div class="svc-price-sub">einmalig · kein Abo</div>
+        <div class="svc-main-name">Website erstellen</div>
+        <p class="svc-main-tagline">Du brauchst eine professionelle Website – schnell, sicher, rechtlich sauber und ohne Technik-Kopfschmerzen.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-feat-list">
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Modernes Design, mobil optimiert</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>SSL-Zertifikat (HTTPS) inklusive</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Hosting &amp; Domain-Einrichtung</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Kontaktformular, Impressum &amp; Datenschutz</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>SEO-Grundstruktur, Schema.org, Sitemap</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Übergabe mit vollständiger Erklärung</li>
+        </ul>
+        <div class="addon-box">
+          <strong>+ Tracking direkt mit dazu – ab 100 € Aufpreis</strong>
+          GTM &amp; GA4 sofort einrichten wenn die Website live geht. Du startest von Tag 1 mit sauberen Daten.
+          <span class="addon-price">+ ab 100 €</span>
+        </div>
         <a href="/kontakt/" class="btn btn-white btn-full">Jetzt anfragen</a>
       </div>
-      <!-- PAKET 3: Individuell -->
-      <div class="pkg-card reveal" data-d="3">
-        <div class="pkg-badge-placeholder"></div>
-        <div class="pkg-name">Individuell</div>
-        <p class="pkg-tagline">F&#252;r Startups oder Projekte mit komplexeren Anforderungen und individuell definiertem Umfang.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list">
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Vollst&#228;ndig individuell definierter Scope</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Mehrere Bereiche kombinierbar</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Erweitertes Tracking-Ecosystem (inkl. Enhanced Conversions)</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Langfristige Zusammenarbeit m&#246;glich</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Detailliertes Angebot nach Erstgespr&#228;ch</li>
-          <li><span class="pkg-check" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ich bin ehrlich, wenn etwas au&#223;erhalb meines Bereichs liegt</li>
+
+      <!-- LEISTUNG 3: Sorglos-Betreuung -->
+      <div class="svc-main-card reveal" data-d="3">
+        <div class="svc-badge-placeholder"></div>
+        <div class="svc-main-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="svc-price">ab 49 €</div>
+        <div class="svc-price-sub">pro Monat · monatlich kündbar</div>
+        <div class="svc-main-name">Sorglos-Betreuung</div>
+        <p class="svc-main-tagline">Deine Website läuft – und du hast immer jemanden, der sich darum kümmert. Kein Ticket-System, kein Overhead.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-feat-list">
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Hosting &amp; SSL läuft zuverlässig</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Kleine Anpassungen zeitnah umgesetzt</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Direkter Ansprechpartner – ich, persönlich</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Technischer Support bei Problemen</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Monatlich kündbar – keine Bindung</li>
+          <li><span class="svc-chk" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Transparente Abrechnung</li>
         </ul>
-        <p class="pkg-note">Geeignet f&#252;r: Startups, komplexe Setups, laufende Zusammenarbeit &#252;ber mehrere Bereiche.</p>
-        <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Gespr&#228;ch vereinbaren</a>
+        <div class="addon-box">
+          <strong>Ideal als Ergänzung zur Website</strong>
+          Nach dem Launch einfach weiterbuchen – ich bleibe dran und du musst dich um nichts kümmern.
+        </div>
+        <a href="/kontakt/" class="btn btn-outline-indigo btn-full">Jetzt anfragen</a>
       </div>
+
     </div>
-    <div class="pkg-includes reveal">
-      <div class="pkg-includes-title">In jedem Paket dabei</div>
+
+    <!-- In jeder Leistung dabei -->
+    <div class="svc-includes reveal">
+      <div class="svc-includes-title">In jeder Leistung dabei</div>
       <div class="includes-grid">
-        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Direkter Kontakt &#8211; kein Ticketsystem</div>
-        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Transparente Kalkulation vorab</div>
-        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-bewusste Umsetzung</div>
-        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ehrlichkeit &#252;ber Machbares &amp; Zeitaufwand</div>
-        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>&#220;bergabe mit Erkl&#228;rung</div>
-        <div class="inc-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kein Agentur-Overhead</div>
+        <div class="inc-item">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Direkter Kontakt – kein Ticketsystem
+        </div>
+        <div class="inc-item">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Transparente Kalkulation vorab
+        </div>
+        <div class="inc-item">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          DSGVO-bewusste Umsetzung
+        </div>
+        <div class="inc-item">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Ehrlichkeit über Machbares &amp; Aufwand
+        </div>
+        <div class="inc-item">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Übergabe mit Erklärung
+        </div>
+        <div class="inc-item">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Kein Agentur-Overhead
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
 
-<!-- INDIVIDUAL SERVICES -->
+<!-- EINZELLEISTUNGEN -->
 <section class="svc-section" aria-labelledby="services-heading">
   <div class="container">
+
     <div class="sec-head reveal">
-      <span class="sec-label">Einzelleistungen</span>
-      <h2 class="sec-title" id="services-heading">Was genau dahintersteckt</h2>
-      <p class="sec-desc">Ein &#220;berblick &#252;ber alle Leistungsbereiche &#8211; damit du wei&#223;t, was ich konkret umsetzen kann und was in welches Paket passt.</p>
+      <span class="sec-label">Was steckt dahinter</span>
+      <h2 class="sec-title" id="services-heading">Was ich konkret umsetze</h2>
+      <p class="sec-desc">Ein Überblick über alle Leistungsbereiche – damit du genau weißt womit ich helfen kann.</p>
     </div>
-    <!-- Block 1 -->
+
+    <!-- Block 1: Tracking -->
     <div class="svc-block reveal">
       <div>
         <div class="svc-block-icon" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h8"/><path d="M7 11h12"/><path d="M7 6h3"/></svg>
         </div>
         <h3 class="svc-block-title">Tracking &amp; Analytics</h3>
-        <p class="svc-block-desc">Mein st&#228;rkstes Gebiet mit echter Praxiserfahrung (Gumb AG). Saubere Datenbasis als Grundlage f&#252;r alle Marketing-Entscheidungen &#8211; DSGVO-konform und zuverl&#228;ssig.</p>
+        <p class="svc-block-desc">Mein stärkstes Gebiet – mit echter Praxiserfahrung aus der Gumb AG. Saubere Datenbasis für gute Entscheidungen, DSGVO-konform und zuverlässig.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card"><div class="svc-detail-title">Google Tag Manager</div><p class="svc-detail-text">Aufbau, Konfiguration und Pflege des GTM-Containers. Events, Trigger, Variablen &#8211; sauber strukturiert.</p><div class="svc-tags"><span class="svc-tag">GTM Setup</span><span class="svc-tag">Events</span><span class="svc-tag">DataLayer</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Google Analytics 4</div><p class="svc-detail-text">GA4-Property einrichten, Events konfigurieren, Conversions definieren und Berichte verstehen.</p><div class="svc-tags"><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span><span class="svc-tag">Berichte</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Consent Mode v2 &amp; DSGVO</div><p class="svc-detail-text">Datenschutzkonforme Implementierung inkl. CMP-Integration und Consent Mode v2 nach Google-Standard.</p><div class="svc-tags"><span class="svc-tag">Consent Mode v2</span><span class="svc-tag">DSGVO</span><span class="svc-tag">CMP</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Ads &amp; Meta Tracking</div><p class="svc-detail-text">Google Ads Conversion-Tracking und Meta Pixel inkl. Enhanced Conversions f&#252;r bessere Kampagnendaten.</p><div class="svc-tags"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Pixel</span><span class="svc-tag">Enhanced Conversions</span></div></div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Google Tag Manager</div>
+          <p class="svc-detail-text">Aufbau, Konfiguration und Pflege des GTM-Containers. Events, Trigger, Variablen – sauber strukturiert und dokumentiert.</p>
+          <div class="svc-tags"><span class="svc-tag">GTM Setup</span><span class="svc-tag">Events</span><span class="svc-tag">DataLayer</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Google Analytics 4</div>
+          <p class="svc-detail-text">GA4 Property einrichten, Events konfigurieren, Conversions definieren – und verstehen was die Daten sagen.</p>
+          <div class="svc-tags"><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span><span class="svc-tag">Berichte</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Consent Mode v2 &amp; DSGVO</div>
+          <p class="svc-detail-text">Datenschutzkonforme Implementierung mit CMP-Integration nach Google-Standard. Tracking das rechtlich sauber ist.</p>
+          <div class="svc-tags"><span class="svc-tag">Consent Mode v2</span><span class="svc-tag">DSGVO</span><span class="svc-tag">CMP</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Ads &amp; Meta Tracking</div>
+          <p class="svc-detail-text">Google Ads Conversion-Tracking und Meta Pixel inkl. Enhanced Conversions für präzisere Kampagnendaten.</p>
+          <div class="svc-tags"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Pixel</span><span class="svc-tag">Enhanced Conversions</span></div>
+        </div>
       </div>
     </div>
-    <!-- Block 2 -->
+
+    <!-- Block 2: Websites -->
     <div class="svc-block reveal">
       <div>
         <div class="svc-block-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
         </div>
         <h3 class="svc-block-title">Websites &amp; Technik</h3>
-        <p class="svc-block-desc">Aufbau und Betreuung von Websites &#8211; vom technischen Setup bis zur laufenden Pflege. Kein Baukastensystem-Chaos, sondern strukturierte, wartbare L&#246;sungen.</p>
+        <p class="svc-block-desc">Aufbau und Betreuung von Websites – vom technischen Setup bis zur laufenden Pflege. Mit allem was dazugehört: SSL, DSGVO, SEO-Grundstruktur.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card"><div class="svc-detail-title">Website-Aufbau</div><p class="svc-detail-text">Neue Website von Grund auf &#8211; HTML/CSS/JS oder CMS-L&#246;sung je nach Anforderung. Clean, schnell, wartbar.</p><div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span><span class="svc-tag">CMS</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Hosting &amp; Domain</div><p class="svc-detail-text">Domain-Registrierung, Hosting-Setup, Wechsel zwischen Anbietern und laufende Verwaltung.</p><div class="svc-tags"><span class="svc-tag">Hosting</span><span class="svc-tag">Domain</span><span class="svc-tag">Migration</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">DNS-Konfiguration</div><p class="svc-detail-text">A-Records, MX, CNAME, TXT &#8211; korrekte DNS-Einrichtung f&#252;r Website, E-Mail und externe Dienste.</p><div class="svc-tags"><span class="svc-tag">DNS</span><span class="svc-tag">SSL</span><span class="svc-tag">E-Mail-DNS</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Laufende Pflege</div><p class="svc-detail-text">Updates, Anpassungen, Fehlerbehebung und technischer Support f&#252;r bestehende Websites im Tagesgesch&#228;ft.</p><div class="svc-tags"><span class="svc-tag">Wartung</span><span class="svc-tag">Support</span><span class="svc-tag">Updates</span></div></div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Website-Aufbau</div>
+          <p class="svc-detail-text">Neue Website von Grund auf – modern, mobil optimiert, schnell ladend. Mit Kontaktformular, Impressum und Datenschutz.</p>
+          <div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span><span class="svc-tag">CMS</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">SEO &amp; Sichtbarkeit</div>
+          <p class="svc-detail-text">Title Tags, Meta Descriptions, Schema.org JSON-LD, Sitemap, robots.txt – die technische Grundlage damit Google dich findet.</p>
+          <div class="svc-tags"><span class="svc-tag">SEO</span><span class="svc-tag">Schema.org</span><span class="svc-tag">Sitemap</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Hosting, Domain &amp; SSL</div>
+          <p class="svc-detail-text">Domain-Registrierung, Hosting-Setup, SSL-Zertifikat (HTTPS), DNS-Konfiguration – alles damit deine Website sicher und erreichbar ist.</p>
+          <div class="svc-tags"><span class="svc-tag">Hosting</span><span class="svc-tag">SSL</span><span class="svc-tag">DNS</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Laufende Pflege</div>
+          <p class="svc-detail-text">Updates, Textanpassungen, Fehlerbehebung und technischer Support – damit deine Website immer aktuell und funktionsfähig bleibt.</p>
+          <div class="svc-tags"><span class="svc-tag">Wartung</span><span class="svc-tag">Support</span><span class="svc-tag">Updates</span></div>
+        </div>
       </div>
     </div>
-    <!-- Block 3 -->
+
+    <!-- Block 3: E-Commerce -->
     <div class="svc-block reveal">
       <div>
         <div class="svc-block-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
         </div>
         <h3 class="svc-block-title">E-Commerce &amp; Shops</h3>
-        <p class="svc-block-desc">Technische Einrichtung und Betreuung von Online-Shops. Schwerpunkt auf sauberem Setup, nicht auf Design-Spielereien.</p>
+        <p class="svc-block-desc">Technische Einrichtung von Online-Shops. Schwerpunkt auf sauberem Setup und funktionierender Infrastruktur – kein Design-Spielzeug.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card"><div class="svc-detail-title">Shopify Setup</div><p class="svc-detail-text">Shop-Einrichtung, Theme-Konfiguration, Zahlungsanbieter und Grundstruktur f&#252;r einen funktionierenden Store.</p><div class="svc-tags"><span class="svc-tag">Shopify</span><span class="svc-tag">Theme</span><span class="svc-tag">Payments</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">WooCommerce / WordPress</div><p class="svc-detail-text">WooCommerce-Installation, Plugin-Konfiguration und technische Grundeinrichtung f&#252;r WordPress-Shops.</p><div class="svc-tags"><span class="svc-tag">WooCommerce</span><span class="svc-tag">WordPress</span><span class="svc-tag">Plugins</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Shop-Tracking</div><p class="svc-detail-text">E-Commerce-Tracking in GA4 und Google Ads &#8211; Kaufereignisse, Warenkorbdaten, Produktaufrufe korrekt erfassen.</p><div class="svc-tags"><span class="svc-tag">E-Commerce Tracking</span><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Technische Betreuung</div><p class="svc-detail-text">Laufende Pflege, Anpassungen und technischer Support f&#252;r bestehende Shops im t&#228;glichen Betrieb.</p><div class="svc-tags"><span class="svc-tag">Support</span><span class="svc-tag">Pflege</span><span class="svc-tag">Anpassungen</span></div></div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Shopify Setup</div>
+          <p class="svc-detail-text">Shop-Einrichtung, Theme-Konfiguration, Zahlungsanbieter und technische Grundstruktur. Auf Anfrage möglich.</p>
+          <div class="svc-tags"><span class="svc-tag">Shopify</span><span class="svc-tag">Theme</span><span class="svc-tag">Payments</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">WooCommerce / WordPress</div>
+          <p class="svc-detail-text">WooCommerce-Installation, Plugin-Konfiguration und technische Grundeinrichtung für WordPress-Shops.</p>
+          <div class="svc-tags"><span class="svc-tag">WooCommerce</span><span class="svc-tag">WordPress</span><span class="svc-tag">Plugins</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Shop-Tracking</div>
+          <p class="svc-detail-text">E-Commerce-Tracking in GA4 und Google Ads – Kaufereignisse, Warenkorbdaten, Produktaufrufe korrekt erfassen.</p>
+          <div class="svc-tags"><span class="svc-tag">E-Commerce Tracking</span><span class="svc-tag">GA4</span><span class="svc-tag">Conversions</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Technische Betreuung</div>
+          <p class="svc-detail-text">Laufende Pflege, Anpassungen und Support für bestehende Shops im täglichen Betrieb.</p>
+          <div class="svc-tags"><span class="svc-tag">Support</span><span class="svc-tag">Pflege</span><span class="svc-tag">Anpassungen</span></div>
+        </div>
       </div>
     </div>
-    <!-- Block 4 -->
+
+    <!-- Block 4: Automatisierung -->
     <div class="svc-block reveal">
       <div>
         <div class="svc-block-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
         <h3 class="svc-block-title">Automatisierung &amp; E-Mail</h3>
-        <p class="svc-block-desc">Einfache, strukturierte Prozesse die manuelle Arbeit reduzieren. Kein Over-Engineering &#8211; nur was wirklich hilft.</p>
+        <p class="svc-block-desc">Einfache, strukturierte Prozesse die manuelle Arbeit reduzieren. Kein Over-Engineering – nur was wirklich hilft und Zeit spart.</p>
       </div>
       <div class="svc-detail-grid">
-        <div class="svc-detail-card"><div class="svc-detail-title">E-Mail-Automatisierung</div><p class="svc-detail-text">Automatische E-Mail-Sequenzen nach K&#228;ufen, Anmeldungen oder Ereignissen &#8211; mit g&#228;ngigen Tools eingerichtet.</p><div class="svc-tags"><span class="svc-tag">E-Mail-Flows</span><span class="svc-tag">Trigger</span><span class="svc-tag">Segmentierung</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">CRM-Unterst&#252;tzung</div><p class="svc-detail-text">Datenpflege, Struktur und einfache Prozesse im CRM. Kein Chaos in den Kontakten, saubere Segmentierung.</p><div class="svc-tags"><span class="svc-tag">CRM</span><span class="svc-tag">Datenpflege</span><span class="svc-tag">Segmentierung</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">E-Mail-Kampagnen</div><p class="svc-detail-text">Setup und Unterst&#252;tzung bei geplanten Kampagnen &#8211; technische Seite, nicht kreative Texterstellung.</p><div class="svc-tags"><span class="svc-tag">Newsletter</span><span class="svc-tag">Kampagnen-Setup</span></div></div>
-        <div class="svc-detail-card"><div class="svc-detail-title">Einfache Workflows</div><p class="svc-detail-text">Strukturierte, automatisierte Abl&#228;ufe f&#252;r wiederkehrende digitale Aufgaben &#8211; mit sinnvollem Werkzeug.</p><div class="svc-tags"><span class="svc-tag">Automation</span><span class="svc-tag">Workflows</span></div></div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">E-Mail-Automatisierung</div>
+          <p class="svc-detail-text">Automatische E-Mail-Sequenzen nach Käufen, Anmeldungen oder Ereignissen – mit gängigen Tools eingerichtet.</p>
+          <div class="svc-tags"><span class="svc-tag">E-Mail-Flows</span><span class="svc-tag">Trigger</span><span class="svc-tag">Segmentierung</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">CRM-Unterstützung</div>
+          <p class="svc-detail-text">Datenpflege, Struktur und einfache Prozesse im CRM. Saubere Segmentierung statt Chaos in den Kontakten.</p>
+          <div class="svc-tags"><span class="svc-tag">CRM</span><span class="svc-tag">Datenpflege</span><span class="svc-tag">Segmentierung</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">E-Mail-Kampagnen</div>
+          <p class="svc-detail-text">Technisches Setup für geplante Kampagnen – ich übernehme die technische Seite, nicht die kreative Texterstellung.</p>
+          <div class="svc-tags"><span class="svc-tag">Newsletter</span><span class="svc-tag">Kampagnen-Setup</span></div>
+        </div>
+        <div class="svc-detail-card">
+          <div class="svc-detail-title">Einfache Workflows</div>
+          <p class="svc-detail-text">Strukturierte, automatisierte Abläufe für wiederkehrende digitale Aufgaben – mit dem richtigen Werkzeug für den Bedarf.</p>
+          <div class="svc-tags"><span class="svc-tag">Automation</span><span class="svc-tag">Workflows</span></div>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -625,14 +712,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="sec-head text-center">
       <span class="sec-label" style="color:rgba(199,203,253,.85)">Ablauf</span>
-      <h2 class="sec-title" id="process-heading" style="color:#fff;">Wie l&#228;uft die Zusammenarbeit ab?</h2>
-      <p class="sec-desc" style="color:rgba(255,255,255,.58); margin-inline:auto;">Kein komplizierter Prozess. Vier Schritte vom ersten Kontakt bis zur fertigen L&#246;sung.</p>
+      <h2 class="sec-title" id="process-heading" style="color:#fff;">Wie läuft das ab?</h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,.58); margin-inline:auto;">Vier Schritte – vom ersten Kontakt bis zur fertigen Lösung. Kein langer Fragebogen, kein Overhead.</p>
     </div>
     <div class="process-grid">
-      <div class="process-step"><div class="step-num active" aria-hidden="true">01</div><div class="step-title">Kurze Anfrage</div><p class="step-desc">Du beschreibst kurz, was du brauchst &#8211; per E-Mail oder Kontaktformular. Kein langer Fragebogen.</p></div>
-      <div class="process-step"><div class="step-num active" aria-hidden="true">02</div><div class="step-title">Kurzes Gespr&#228;ch</div><p class="step-desc">Wir kl&#228;ren in 15&#8211;30 Minuten, was du brauchst, was ich machen kann und was es kosten wird.</p></div>
-      <div class="process-step"><div class="step-num active" aria-hidden="true">03</div><div class="step-title">Angebot &amp; Start</div><p class="step-desc">Du bekommst ein konkretes, transparentes Angebot. Nach Best&#228;tigung legen wir los.</p></div>
-      <div class="process-step"><div class="step-num active" aria-hidden="true">04</div><div class="step-title">&#220;bergabe</div><p class="step-desc">Fertige L&#246;sung mit Erkl&#228;rung. Du verstehst, was gemacht wurde &#8211; und kannst es selbst weiter nutzen.</p></div>
+      <div class="process-step">
+        <div class="step-num active" aria-hidden="true">01</div>
+        <div class="step-title">Kurz schreiben</div>
+        <p class="step-desc">Beschreib in zwei Sätzen was du brauchst – per Kontaktformular oder E-Mail.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num active" aria-hidden="true">02</div>
+        <div class="step-title">Kurzes Gespräch</div>
+        <p class="step-desc">15–30 Minuten. Wir klären was du willst, was ich machen kann und was es kosten wird.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num active" aria-hidden="true">03</div>
+        <div class="step-title">Konkretes Angebot</div>
+        <p class="step-desc">Du bekommst ein klares, transparentes Angebot. Nach Bestätigung legen wir los.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num active" aria-hidden="true">04</div>
+        <div class="step-title">Übergabe</div>
+        <p class="step-desc">Fertige Lösung mit Erklärung. Du verstehst was gemacht wurde und kannst es selbst weiternutzen.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -642,47 +745,84 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="faq-section" aria-labelledby="faq-heading">
   <div class="container">
     <div class="faq-grid">
+
       <div>
         <div class="sec-head reveal">
           <span class="sec-label">FAQ</span>
-          <h2 class="sec-title" id="faq-heading">H&#228;ufige Fragen</h2>
+          <h2 class="sec-title" id="faq-heading">Häufige Fragen</h2>
         </div>
         <div class="faq-list">
+
           <div class="faq-item reveal" data-d="1">
-            <button class="faq-q" id="faq-q-1" aria-expanded="false">Warum stehen keine Preise auf der Website?<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a" role="region" aria-labelledby="faq-q-1"><div class="faq-a-inner">Weil jedes Projekt anders ist. Eine einfache Landing Page kostet anders als ein Shop mit Tracking-Setup. Statt Pauschalpreisen mache ich dir ein konkretes Angebot nach einem kurzen Gespr&#228;ch &#8211; transparent und nachvollziehbar.</div></div>
+            <button class="faq-q" id="faq-q-1" aria-expanded="false">
+              Was ist im GTM &amp; GA4 Setup enthalten?
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a" role="region" aria-labelledby="faq-q-1">
+              <div class="faq-a-inner">GTM Container aufsetzen, GA4 Property konfigurieren, die wichtigsten Conversion-Events einrichten (Formular, Klicks, Scroll), Consent Mode v2 nach Google-Standard und eine datenschutzkonforme CMP-Integration. Übergabe mit Erklärung was getrackt wird und warum.</div>
+            </div>
           </div>
+
           <div class="faq-item reveal" data-d="2">
-            <button class="faq-q" id="faq-q-2" aria-expanded="false">Ich bin noch Student &#8211; kann ich trotzdem professionell arbeiten?<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a" role="region" aria-labelledby="faq-q-2"><div class="faq-a-inner">Ich bin ehrlich: Ich habe keine 10 Jahre Agenturerfahrung. Aber ich habe echte Projekterfahrung (Gumb AG, Stefanie Mischka) und arbeite strukturiert und verl&#228;sslich. Meine Kunden bekommen einen direkten Ansprechpartner, faire Preise und ehrliche Kommunikation.</div></div>
+            <button class="faq-q" id="faq-q-2" aria-expanded="false">
+              Was kostet eine Website genau?
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a" role="region" aria-labelledby="faq-q-2">
+              <div class="faq-a-inner">Eine einfache Website für Solopreneure oder Vereine startet ab 350€ einmalig. Mehr Seiten, komplexere Anforderungen oder ein Online-Shop kosten entsprechend mehr. Nach einem kurzen Gespräch bekommst du ein konkretes Angebot – transparent und ohne Überraschungen.</div>
+            </div>
           </div>
+
           <div class="faq-item reveal" data-d="3">
-            <button class="faq-q" id="faq-q-3" aria-expanded="false">Was passiert, wenn etwas au&#223;erhalb deines Bereichs liegt?<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a" role="region" aria-labelledby="faq-q-3"><div class="faq-a-inner">Dann sage ich das direkt &#8211; bevor ich anfange. Ich werde keine Leistungen verkaufen, die ich nicht sauber umsetzen kann. Keine b&#246;sen &#220;berraschungen.</div></div>
+            <button class="faq-q" id="faq-q-3" aria-expanded="false">
+              Was genau ist die Sorglos-Betreuung?
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a" role="region" aria-labelledby="faq-q-3">
+              <div class="faq-a-inner">Monatlich kümmere ich mich darum dass deine Website läuft: Hosting ist aktiv, SSL-Zertifikat ist gültig, kleine Textanpassungen werden zeitnah umgesetzt. Du hast immer einen direkten Ansprechpartner – mich, persönlich. Kein Ticketsystem, kein Overhead. Ab 49€/Monat, monatlich kündbar.</div>
+            </div>
           </div>
+
           <div class="faq-item reveal" data-d="4">
-            <button class="faq-q" id="faq-q-4" aria-expanded="false">Wie schnell kann es losgehen?<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a" role="region" aria-labelledby="faq-q-4"><div class="faq-a-inner">Nach dem ersten Gespr&#228;ch und klarem Auftrag in der Regel innerhalb weniger Tage. Ich studiere parallel, daher ist die Kapazit&#228;t begrenzt &#8211; aber ich kommuniziere realistische Zeitrahmen von Anfang an.</div></div>
+            <button class="faq-q" id="faq-q-4" aria-expanded="false">
+              Kann man Website und Tracking kombinieren?
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a" role="region" aria-labelledby="faq-q-4">
+              <div class="faq-a-inner">Ja – und das empfehle ich. Wer eine neue Website bekommt, sollte von Anfang an wissen was darauf passiert. Als Add-on zur Website richte ich GTM und GA4 direkt mit ein. Das spart Zeit, du startest von Tag 1 mit sauberen Daten und zahlst ab 100€ Aufpreis statt dem vollen Setup-Preis.</div>
+            </div>
           </div>
+
           <div class="faq-item reveal" data-d="5">
-            <button class="faq-q" id="faq-q-5" aria-expanded="false">Gibt es laufende Betreuung oder nur Einmalprojekte?<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a" role="region" aria-labelledby="faq-q-5"><div class="faq-a-inner">Beides ist m&#246;glich. Manche Kunden brauchen einmalig ein sauberes Setup, andere wollen laufende technische Betreuung. Das kl&#228;ren wir im Gespr&#228;ch.</div></div>
+            <button class="faq-q" id="faq-q-5" aria-expanded="false">
+              Wie schnell kann es losgehen?
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a" role="region" aria-labelledby="faq-q-5">
+              <div class="faq-a-inner">Nach dem ersten Gespräch und klarem Auftrag in der Regel innerhalb weniger Tage. Ich studiere parallel, daher ist die Kapazität begrenzt – aber ich kommuniziere realistische Zeitrahmen von Anfang an. Lieber ehrlich als zu schnell und schlecht.</div>
+            </div>
           </div>
+
         </div>
       </div>
+
       <div>
         <div class="faq-info-card reveal">
-          <div class="faq-info-title">Noch unsicher, was du brauchst?</div>
-          <p class="faq-info-p">Kein Problem. Beschreib mir einfach kurz deine Situation &#8211; ich sage dir ehrlich, ob und wie ich helfen kann. Das kostet dich nichts.</p>
+          <div class="faq-info-title">Noch unsicher welche Leistung passt?</div>
+          <p class="faq-info-p">Kein Problem. Schreib mir kurz deine Situation – ich sage dir direkt was Sinn macht und was es kostet. Das Gespräch ist kostenlos.</p>
           <ul class="faq-info-list">
             <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Unverbindlich &amp; kostenlos</li>
             <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Antwort innerhalb von 24h</li>
-            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Ehrliche Einsch&#228;tzung</li>
-            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Kein Verkaufsgespr&#228;ch</li>
+            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Klare Empfehlung ohne Verkaufsdruck</li>
+            <li><span class="fii"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Direkter Kontakt – ich, persönlich</li>
           </ul>
-          <a href="/kontakt/" class="btn btn-indigo btn-full">Jetzt anfragen <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="/kontakt/" class="btn btn-indigo btn-full">
+            Jetzt anfragen
+            <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -693,11 +833,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="cta-box reveal">
       <p class="cta-lbl">Bereit loszulegen?</p>
-      <h2 class="cta-h">Beschreib mir dein Projekt &#8211;<br>ich melde mich schnell.</h2>
-      <p class="cta-p">Unverbindlich, ohne Buzzwords. Einfach kurz schreiben, was du brauchst.</p>
+      <h2 class="cta-h">Schreib mir kurz –<br>ich melde mich schnell.</h2>
+      <p class="cta-p">Zwei Sätze reichen. Was brauchst du, bis wann, welches Budget hast du ungefähr. Den Rest klären wir im Gespräch.</p>
       <div class="cta-btns">
-        <a href="/kontakt/" class="btn btn-white">Kontakt aufnehmen <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="/" class="btn btn-ghost">Zur&#252;ck zur Startseite</a>
+        <a href="/kontakt/" class="btn btn-white">
+          Kontakt aufnehmen
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/" class="btn btn-ghost">Zurück zur Startseite</a>
       </div>
     </div>
   </div>
@@ -708,12 +851,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div class="container">
     <div class="footer-row">
-      <span class="footer-copy">&#169; 2026 Tobias Meixner</span>
+      <span class="footer-copy">© 2026 Tobias Meixner</span>
       <ul class="footer-links">
         <li><a href="/impressum/">Impressum</a></li>
         <li><a href="/datenschutz/">Datenschutz</a></li>
+        <li><a href="/agb/">AGB</a></li>
         <li><a href="/assets/lebenslauf/Lebenslauf_personalSite.pdf" target="_blank" download>Lebenslauf (PDF)</a></li>
         <li><a href="#" onclick="CookieScript.instance.show(); return false;">Cookie-Einstellungen</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/meixner-tobias" target="_blank" rel="noopener" aria-label="Tobias Meixner auf LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -740,11 +890,7 @@ burger.addEventListener('click', () => {
   burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', String(open));
   document.body.style.overflow = open ? 'hidden' : '';
-    // Focus ins Drawer setzen wenn geöffnet
-  if (open) {
-    const firstLink = drawer.querySelector('a');
-    if (firstLink) firstLink.focus();
-  }
+  if (open) { const firstLink = drawer.querySelector('a'); if (firstLink) firstLink.focus(); }
 });
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 document.addEventListener('click', e => { if (!nav.contains(e.target) && !drawer.contains(e.target)) closeDrawer(); });
@@ -763,10 +909,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       i.classList.remove('open');
       i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
-    if (!isOpen) {
-      item.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
+    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
   });
 });
 </script>
