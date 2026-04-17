@@ -24,6 +24,224 @@
   --px:          clamp(20px, 5vw, 60px);
 }
 
+/* ═══════════════════════════════════════════════════
+   Dark Mode
+═══════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  /* Hintergründe */
+  --bg:            #111827;
+  --bg-card:       #1F2937;
+
+  /* Dunkle Sektionen (about-strip, pkg-section, process-section etc.) */
+  --bg-dark:       #0D1B2A;
+
+  /* Typografie */
+  --navy:          #F1F5F9;
+  --text:          #E2E8F0;
+  --muted:         #94A3B8;
+
+  /* Rahmen */
+  --border:        #374151;
+
+  /* Indigo bleibt gleich, nur Soft/Mid anpassen */
+  --indigo-soft:   rgba(91,108,248,.15);
+  --indigo-mid:    rgba(91,108,248,.45);
+
+  /* Shadows */
+  --sh-md:         0 4px 24px rgba(0,0,0,.3);
+  --sh-lg:         0 12px 40px rgba(0,0,0,.4);
+}
+
+
+/* ── Dark Mode: Dunkle Sektionen ── */
+[data-theme="dark"] .about-strip,
+[data-theme="dark"] .pkg-section,
+[data-theme="dark"] .process-section,
+[data-theme="dark"] .skills-strip,
+[data-theme="dark"] .trust-strip,
+[data-theme="dark"] .faq-info-card,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .cta-box {
+  background: #0D1B2A !important;
+}
+
+/* ── Dark Mode: Navbar ── */
+[data-theme="dark"] .nav {
+  background: rgba(17,24,39,.95);
+  border-bottom: 1px solid #374151;
+}
+[data-theme="dark"] .nav.scrolled {
+  background: rgba(17,24,39,.98);
+  box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+
+/* ── Dark Mode: Kontakt Button in Nav ── */
+[data-theme="dark"] .nav-cta {
+  background: var(--indigo) !important;
+  color: #fff !important;
+}
+
+/* ── Dark Mode: Buttons ── */
+[data-theme="dark"] .btn-primary {
+  background: var(--indigo);
+  color: #fff;
+}
+[data-theme="dark"] .btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+}
+[data-theme="dark"] .btn-ghost {
+  color: var(--muted);
+}
+
+/* ── Dark Mode: Hero ── */
+[data-theme="dark"] .hero {
+  background: #111827;
+}
+
+/* ── Dark Mode: Drawer ── */
+[data-theme="dark"] .drawer {
+  background: #1F2937;
+  border-color: #374151;
+}
+[data-theme="dark"] .drawer a {
+  color: #F1F5F9;
+}
+
+/* ── Dark Mode: Form ── */
+[data-theme="dark"] .form-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background: #111827;
+  border-color: #374151;
+  color: #F1F5F9;
+}
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-textarea::placeholder {
+  color: #6B7280;
+}
+
+/* ── Dark Mode: Legal Pages ── */
+[data-theme="dark"] .legal-page {
+  background: #111827;
+}
+[data-theme="dark"] .legal-toc {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+/* ── Buttons hover ── */
+[data-theme="dark"] .btn-outline:hover,
+[data-theme="dark"] .btn-ghost:hover {
+  background: rgba(255,255,255,.08) !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .btn-white {
+  background: rgba(255,255,255,.1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.2) !important;
+}
+[data-theme="dark"] .btn-white:hover {
+  background: rgba(255,255,255,.18) !important;
+  color: #fff !important;
+}
+
+/* ── About Cert Kästchen (Gumb AG etc.) ── */
+[data-theme="dark"] .about-cert {
+  background: rgba(255,255,255,.06) !important;
+  border-color: rgba(255,255,255,.1) !important;
+}
+
+/* ── Why Box ── */
+[data-theme="dark"] .why-box {
+  background: #1F2937 !important;
+  border-color: #374151 !important;
+}
+[data-theme="dark"] .why-item {
+  border-color: rgba(255,255,255,.08) !important;
+}
+
+/* ── Pkg Cards (Leistungen) ── */
+[data-theme="dark"] .svc-main-card {
+  background: rgba(255,255,255,.05) !important;
+  border-color: rgba(255,255,255,.1) !important;
+}
+[data-theme="dark"] .svc-main-card.featured {
+  background: var(--indigo) !important;
+}
+[data-theme="dark"] .svc-main {
+  background: #0D1B2A !important;
+}
+
+/* ── Case Icon Cards (Projekte) ── */
+[data-theme="dark"] .case-icon-card {
+  background: #1F2937 !important;
+  border-color: #374151 !important;
+}
+[data-theme="dark"] .case-icon-card .ico-label,
+[data-theme="dark"] .case-icon-card .ico-sub {
+  color: #E2E8F0 !important;
+}
+
+/* ── Metric Cards (Projekte) ── */
+[data-theme="dark"] .metric {
+  background: #1F2937 !important;
+  box-shadow: none !important;
+}
+[data-theme="dark"] .metric-l {
+  color: #94A3B8 !important;
+}
+
+/* ── Form Submit Button (Kontakt) ── */
+[data-theme="dark"] .form-submit {
+  background: #1E3A5F !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .form-submit:hover {
+  background: var(--indigo) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(91,108,248,.35);
+}
+
+/* ── Alle Projekt ansehen / proj-link ── */
+[data-theme="dark"] .proj-link {
+  color: var(--indigo) !important;
+}
+
+/* ── Case Visual Background ── */
+[data-theme="dark"] .case-visual {
+  background: linear-gradient(145deg, rgba(91,108,248,.15) 0%, rgba(91,108,248,.05) 100%) !important;
+}
+
+/* ── Homepage Cards of projects background ── */
+[data-theme="dark"] .fc {
+  background: #1F2937 !important;
+  border-color: #374151 !important;
+}
+
+[data-theme="dark"] .fi-ind,
+[data-theme="dark"] .fi-grn {
+  background: rgba(91,108,248,.25) !important;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(255,255,255,.15) !important;
+  color: #fff;
+}
+
+[data-theme="dark"] .burger:focus-visible {
+  outline-color: rgba(255,255,255,.4);
+}
+
+
+
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -127,9 +345,9 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .btn-outline {
-  background: transparent;
+  background: rgba(13,27,42,.04);
   color: var(--navy);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #C4CDD8;
 }
 .btn-outline:hover {
   border-color: var(--navy);
@@ -267,9 +485,14 @@ img { display: block; max-width: 100%; height: auto; }
   padding: 9px 18px;
   border-radius: 99px;
   font-size: .8rem !important;
-  transition: background .2s, transform .2s !important;
+  transition: background .2s, transform .2s, box-shadow .2s !important;
 }
-.nav-cta:hover  { background: var(--indigo) !important; transform: translateY(-1px); }
+.nav-cta:hover {
+  background: var(--indigo) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(91,108,248,.4) !important;
+  color: #fff !important;
+}
 .nav-cta::after { display: none !important; }
 
 /* ── Burger ── */
@@ -284,6 +507,11 @@ img { display: block; max-width: 100%; height: auto; }
   padding: 8px 10px;
   cursor: pointer;
   flex-shrink: 0;
+}
+
+.burger:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
 }
 
 .burger span {
@@ -334,6 +562,27 @@ img { display: block; max-width: 100%; height: auto; }
 
 .drawer li:last-child a { border-bottom: none; }
 .drawer a svg { color: var(--indigo); flex-shrink: 0; }
+
+.drawer .theme-toggle {
+  height: 34px;
+  width: auto;
+  margin-top: 8px;
+  border-radius: var(--r);
+  padding: 0 12px;
+  justify-content: flex-start;
+  gap: 10px;
+  font-family: var(--fd);
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+[data-theme="dark"] .drawer .theme-toggle {
+  color: #F1F5F9;
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.1);
+}
+
 
 /* ═══════════════════════════════════════════════════
    PAGE HERO BASE (leistungen · projekte · kontakt)
@@ -519,7 +768,14 @@ footer { border-top: 1px solid var(--border); padding-block: 26px; }
   padding-block: clamp(40px, 6vw, 72px);
 }
 
-.legal-toc { position: sticky; top: calc(var(--nav-h) + 24px); }
+.legal-toc {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 20px;
+}
 
 .toc-title {
   font-family: var(--fd);
@@ -734,6 +990,15 @@ footer { border-top: 1px solid var(--border); padding-block: 26px; }
   border-radius: 4px;
 }
 
+.burger:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] .burger:focus-visible {
+  outline: 2px solid rgba(255,255,255,.3);
+}
+
 /* Buttons und Links explizit */
 a:focus-visible,
 button:focus-visible,
@@ -743,6 +1008,40 @@ textarea:focus-visible {
   outline: 2px solid var(--indigo);
   outline-offset: 3px;
 }
+
+
+/* ═══════════════════════════════════════════════════
+   Dark Mode Toggle
+═══════════════════════════════════════════════════ */
+
+.theme-toggle {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--indigo-soft);
+  border: 1px solid var(--indigo-mid);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--indigo);
+  transition: background .2s, border-color .2s, transform .2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Welches Icon anzeigen */
+.icon-moon { display: none; }
+.icon-sun  { display: block; }
+
+[data-theme="dark"] .icon-moon { display: block; }
+[data-theme="dark"] .icon-sun  { display: none; }
+
+/* Sanfte Übergänge */
+body, .nav, .svc-card, .proj-card, .faq-item, .form-card, .about-strip {
+  transition: background-color .3s, color .3s, border-color .3s;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -780,6 +1079,7 @@ textarea:focus-visible {
 
   .legal-inner { grid-template-columns: 1fr; }
   .legal-toc   { display: none; }
+  .nav-inner .theme-toggle { display: none; }
 }
 
 /* ═══════════════════════════════════════════════════
