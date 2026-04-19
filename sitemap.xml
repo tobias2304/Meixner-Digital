@@ -5,7 +5,7 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-
+<!-- Hauptseiten -->
 <url>
   <loc>https://meixner-tobias.com/</loc>
   <lastmod>2026-04-19T00:00:00+00:00</lastmod>
@@ -32,5 +32,26 @@
   <priority>0.80</priority>
 </url>
 
+<!-- Blog -->
+<url>
+  <loc>https://meixner-tobias.com/blog/</loc>
+  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://meixner-tobias.com/blog/answer-engine-optimization/</loc>
+  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://meixner-tobias.com/blog/server-side-tracking/</loc>
+  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://meixner-tobias.com/blog/performance-max-vs-advantage-plus/</loc>
+  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
 
 </urlset>

@@ -243,7 +243,9 @@
   background: #0D1B2A !important;
 }
 
-
+[data-theme="dark"] .nav {
+  background: #0D1B2A !important;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -424,6 +426,7 @@ img { display: block; max-width: 100%; height: auto; }
   z-index: 200;
   height: var(--nav-h);
   transition: background .3s, box-shadow .3s;
+  background: #fff !important;
 }
 
 .nav.scrolled {
@@ -1067,6 +1070,76 @@ body, .nav, .svc-card, .proj-card, .faq-item, .form-card, .about-strip {
 }
 
 
+/* ── Nav Dropdown ── */
+.nav-dropdown { position: relative; }
+
+.nav-drop-menu {
+  position: absolute; top: calc(100% + 4px);
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--sh-lg);
+  list-style: none;
+  min-width: 240px;
+  padding: 6px;
+  opacity: 0; pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+  transition: opacity .2s, transform .2s;
+  z-index: 300;
+}
+
+.nav-drop-menu::before {
+  content: '';
+  position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+  width: 10px; height: 10px;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  rotate: 45deg;
+}
+
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  height: 12px;
+}
+
+.nav-dropdown:hover .nav-drop-menu,
+.nav-dropdown:focus-within .nav-drop-menu {
+  opacity: 1; pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-drop-menu a {
+  display: block; padding: 9px 12px;
+  border-radius: 8px;
+  font-size: .82rem; font-weight: 600;
+  color: var(--muted) !important;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.nav-drop-menu a:hover { background: var(--indigo-soft); color: var(--indigo) !important; }
+.nav-drop-menu a::after { display: none !important; }
+
+.nav-drop-menu a.active {
+  background: var(--indigo-soft);
+  color: var(--indigo) !important;
+  font-weight: 700;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .nav-drop-menu {
+  background: #1F2937;
+  border-color: #374151;
+}
+[data-theme="dark"] .nav-drop-menu::before {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+
 
 /* ═══════════════════════════════════════════════════
    RESPONSIVE — 1024px
@@ -1117,6 +1190,9 @@ body, .nav, .svc-card, .proj-card, .faq-item, .form-card, .about-strip {
   .about-fact-pill { flex: 0 1 calc(50% - 5px); justify-content: center; font-size: .7rem; }
   .about-fact-pill svg { width: 12px; height: 12px; }
   .about-grid .btn { display: flex; margin-inline: auto; width: fit-content; }
+  
+  
+  .nav-drop-menu { display: none; }
 }
 
 
