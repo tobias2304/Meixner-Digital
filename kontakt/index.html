@@ -400,8 +400,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <span class="field-error" id="topicErr" role="alert">Bitte w&#228;hle ein Thema aus.</span>
             </div>
+            <input type="hidden" id="addon_tracking_val" name="addon_tracking" value="Nein">
             <div id="addonBox" style="display:none; margin-top:12px; background:var(--indigo-soft); border:1px solid var(--indigo-mid); border-radius:var(--r); padding:14px 16px;">
-              <input type="hidden" id="addon_tracking_val" name="addon_tracking" value="Nein">
               <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:.875rem; color:var(--text);">
                 <input type="checkbox" id="addon_tracking" style="margin-top:2px; accent-color:var(--indigo); flex-shrink:0;"
                   onchange="document.getElementById('addon_tracking_val').value = this.checked ? 'Ja – GTM & GA4 Add-on gewünscht' : 'Nein'">
