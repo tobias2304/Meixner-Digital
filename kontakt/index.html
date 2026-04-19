@@ -379,9 +379,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="company">Unternehmen / Projekt</label>
+              <label class="form-label" for="phone">Telefon</label>
+              <input class="form-input" type="tel" id="phone" name="phone"
+                    placeholder="+49 152 ..."
+                    autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Unternehmen</label>
               <input class="form-input" type="text" id="company" name="company"
-                    placeholder="Optional &#8211; Name deines Unternehmens oder Projekts"
+                    placeholder="Name deines Unternehmens"
                     autocomplete="organization">
             </div>
 
@@ -665,6 +672,7 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify({
         name:           document.getElementById('name').value.trim(),
         email:          document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
         company:        document.getElementById('company').value.trim(),
         topic:          document.getElementById('topic').value,
         message:        document.getElementById('message').value.trim(),
