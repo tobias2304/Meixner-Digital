@@ -1095,6 +1095,37 @@ body, .nav, .svc-card, .proj-card, .faq-item, .form-card, .about-strip {
   .legal-inner { grid-template-columns: 1fr; }
   .legal-toc   { display: none; }
   .nav-inner .theme-toggle { display: none; }
+  
+  /* Wie alles anfing zentriert */
+  .about-hero-inner { text-align: center; }
+  .about-facts { justify-content: center; }
+  .about-hero-inner .hero-btns,
+  .about-hero-inner > div > div[style] { justify-content: center; }
+  .about-hero-inner > div > a,
+  .about-hero-inner > div > div > a { margin-inline: auto; }
+
+  /* ab Story wieder links */
+  .story-section,
+  .story-section * { text-align: left; }
+  .personal-section,
+  .personal-section * { text-align: left; }
+  .why-section,
+  .why-section * { text-align: left; }
+
+  /* Wer steck dahinter Cards zentrieren */
+  .about-facts-row { justify-content: center; }
+  .about-fact-pill { flex: 0 1 calc(50% - 5px); justify-content: center; font-size: .7rem; }
+  .about-fact-pill svg { width: 12px; height: 12px; }
+  .about-grid .btn { display: flex; margin-inline: auto; width: fit-content; }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — 560px
+═══════════════════════════════════════════════════ */
+@media (max-width: 560px) {
+  .hobby-list { justify-content: center; }
+  .cta-btns .btn { width: 100%; justify-content: center; }
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1102,10 +1133,6 @@ body, .nav, .svc-card, .proj-card, .faq-item, .form-card, .about-strip {
 ═══════════════════════════════════════════════════ */
 @media (max-width: 390px) {
   :root { --px: 16px; }
-
-  .cta-btns .btn { width: 100%; justify-content: center; }
-
-  .footer-row { flex-direction: column; align-items: center; text-align: center; }
 
   .service-row { flex-direction: column; gap: 8px; }
 }
