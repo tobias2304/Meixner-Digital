@@ -247,6 +247,10 @@
   background: #0D1B2A !important;
 }
 
+[data-theme="dark"] .stats-bar {
+  background: #0D1B2A !important;
+}
+
 html { scroll-behavior: smooth; }
 
 body {

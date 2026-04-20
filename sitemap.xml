@@ -8,50 +8,62 @@
 <!-- Hauptseiten -->
 <url>
   <loc>https://meixner-tobias.com/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/ueber-mich/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/leistungen/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/projekte/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/kontakt/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <!-- Blog -->
 <url>
   <loc>https://meixner-tobias.com/blog/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/blog/answer-engine-optimization/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/blog/server-side-tracking/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://meixner-tobias.com/blog/performance-max-vs-advantage-plus/</loc>
-  <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
+</url>
+
+<!-- Produkte -->
+<url>
+  <loc>https://meixner-tobias.com/produkte/</loc>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://meixner-tobias.com/blog/schema-markup-template-pack/</loc>
+  <lastmod>2026-04-20T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 </urlset>
