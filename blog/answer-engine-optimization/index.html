@@ -195,7 +195,9 @@
     .stat-card-source { font-size: .72rem; color: var(--muted); }
 
     /* ── COMPARE TABLE ── */
-    .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: .875rem; overflow: hidden; border-radius: var(--r); }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0; border-radius: var(--r); }
+    .table-wrap .compare-table { margin: 0; border-radius: 0; }
+    .compare-table { width:100%; border-collapse:collapse; font-size: .875rem; overflow: hidden; border-radius: var(--r); }
     .compare-table thead tr { background: var(--navy); }
     .compare-table th { color: #fff; font-family: var(--fd); font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 12px 16px; text-align: left; }
     .compare-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; line-height: 1.55; }
@@ -611,20 +613,21 @@
         <h2 id="aeo-vs-seo">3. AEO vs. SEO – Was ist der Unterschied?</h2>
         <p>Viele verwechseln die beiden oder setzen sie gleich. Hier ist der konkrete Unterschied:</p>
 
-        <table class="compare-table" aria-label="Vergleich AEO vs klassisches SEO">
-          <thead>
-            <tr><th>Merkmal</th><th>Klassisches SEO</th><th>Answer Engine Optimization (AEO)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Ziel</td><td>Ranking auf Seite 1 bei Google</td><td>Zitiert werden in KI-Antworten</td></tr>
-            <tr><td>Optimiert für</td><td>Keywords &amp; Backlinks</td><td>Entitäten, Fakten &amp; Struktur</td></tr>
-            <tr><td>Erfolgsmessung</td><td>Rankings, organischer Traffic</td><td>AI-Zitierungen, Brand Mentions</td></tr>
-            <tr><td>Inhalt</td><td>Keyword-Dichte, interne Verlinkung</td><td>Frage-Antwort-Strukturen, Faktendichte</td></tr>
-            <tr><td>Technische Basis</td><td>On-Page SEO, Ladegeschwindigkeit</td><td>Schema Markup, strukturierte Daten</td></tr>
-            <tr><td>Hauptsignal</td><td>Backlinks</td><td>Autorität, E-E-A-T, Quellglaubwürdigkeit</td></tr>
-          </tbody>
-        </table>
-
+        <div class="table-wrap">
+          <table class="compare-table" aria-label="Vergleich AEO vs klassisches SEO">
+            <thead>
+              <tr><th>Merkmal</th><th>Klassisches SEO</th><th>Answer Engine Optimization (AEO)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ziel</td><td>Ranking auf Seite 1 bei Google</td><td>Zitiert werden in KI-Antworten</td></tr>
+              <tr><td>Optimiert für</td><td>Keywords &amp; Backlinks</td><td>Entitäten, Fakten &amp; Struktur</td></tr>
+              <tr><td>Erfolgsmessung</td><td>Rankings, organischer Traffic</td><td>AI-Zitierungen, Brand Mentions</td></tr>
+              <tr><td>Inhalt</td><td>Keyword-Dichte, interne Verlinkung</td><td>Frage-Antwort-Strukturen, Faktendichte</td></tr>
+              <tr><td>Technische Basis</td><td>On-Page SEO, Ladegeschwindigkeit</td><td>Schema Markup, strukturierte Daten</td></tr>
+              <tr><td>Hauptsignal</td><td>Backlinks</td><td>Autorität, E-E-A-T, Quellglaubwürdigkeit</td></tr>
+            </tbody>
+          </table>
+        </div>
         <p><strong>Wichtig:</strong> AEO und SEO schließen sich nicht aus. Im Gegenteil – viele AEO-Maßnahmen helfen gleichzeitig beim klassischen SEO. Du machst nicht entweder-oder. Du machst beides.</p>
         <p>Der Unterschied ist der Fokus: SEO fragt „Wie komme ich auf Seite 1?" – AEO fragt „Was muss stimmen, damit eine KI mich als Quelle auswählt?"</p>
 

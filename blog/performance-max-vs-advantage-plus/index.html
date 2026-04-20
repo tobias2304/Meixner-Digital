@@ -224,7 +224,9 @@
     .stat-card-source { font-size:.72rem; color:var(--muted); }
 
     /* ── COMPARE TABLE ── */
-    .compare-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:.875rem; overflow:hidden; border-radius:var(--r); }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0; border-radius: var(--r); }
+    .table-wrap .compare-table { margin: 0; border-radius: 0; }
+    .compare-table { width:100%; border-collapse:collapse; font-size:.875rem; overflow:hidden; border-radius:var(--r); }
     .compare-table thead tr { background:var(--navy); }
     .compare-table th { color:#fff; font-family:var(--fd); font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:12px 16px; text-align:left; }
     .compare-table td { padding:11px 16px; border-bottom:1px solid var(--border); color:var(--text); vertical-align:top; line-height:1.55; }
@@ -643,19 +645,21 @@
         <p>Zahlen ohne Kontext sind wertlos. Hier die wichtigsten Benchmarks – mit dem, was sie wirklich bedeuten.</p>
 
         <h3>Durchschnittlicher ROAS 2026</h3>
-        <table class="compare-table" aria-label="ROAS Benchmarks 2026">
-          <thead>
-            <tr><th>Plattform / Kampagnentyp</th><th>Median ROAS</th><th>Top-Performer</th><th>Quelle</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Google Ads gesamt</td><td class="ok">3,31x</td><td>4–10x</td><td>Segwise, 2025/2026</td></tr>
-            <tr><td>Meta Ads gesamt (E-Commerce)</td><td>2,79x</td><td>3,5–5x</td><td>AdAmigo, 2026</td></tr>
-            <tr><td>Google Performance Max</td><td class="ok">3,5–6x</td><td>bis 9,93x</td><td>SEO Design Chicago / Triple Whale</td></tr>
-            <tr><td>Meta Advantage+ Shopping</td><td class="ok">4,52x</td><td>3,5–6x</td><td>AdAmigo, 2026</td></tr>
-            <tr><td>Meta Manual Campaigns</td><td>3,70x</td><td>–</td><td>AdAmigo, 2026</td></tr>
-          </tbody>
-        </table>
-
+        <div class="table-wrap">
+          <table class="compare-table" aria-label="ROAS Benchmarks 2026">
+            <thead>
+              <tr><th>Plattform / Kampagnentyp</th><th>Median ROAS</th><th>Top-Performer</th><th>Quelle</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Google Ads gesamt</td><td class="ok">3,31x</td><td>4–10x</td><td>Segwise, 2025/2026</td></tr>
+              <tr><td>Meta Ads gesamt (E-Commerce)</td><td>2,79x</td><td>3,5–5x</td><td>AdAmigo, 2026</td></tr>
+              <tr><td>Google Performance Max</td><td class="ok">3,5–6x</td><td>bis 9,93x</td><td>SEO Design Chicago / Triple Whale</td></tr>
+              <tr><td>Meta Advantage+ Shopping</td><td class="ok">4,52x</td><td>3,5–6x</td><td>AdAmigo, 2026</td></tr>
+              <tr><td>Meta Manual Campaigns</td><td>3,70x</td><td>–</td><td>AdAmigo, 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
         <div class="warn-box">
           <div class="warn-box-title">
             <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -767,24 +771,26 @@
         <!-- 7 -->
         <h2 id="vergleich">7. Der direkte Vergleich: 10 entscheidende Kriterien</h2>
 
-        <table class="compare-table" aria-label="Direktvergleich Performance Max vs Meta Advantage+ in 10 Kriterien">
-          <thead>
-            <tr><th>Kriterium</th><th>Google Performance Max</th><th>Meta Advantage+</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Fundament</td><td class="g">Suchintention (aktiver Kaufwunsch)</td><td class="m">Interesse und Verhalten (Impulskauf)</td></tr>
-            <tr><td>Kanäle</td><td class="g">Search, Shopping, YouTube, Display, Discover, Gmail, Maps</td><td class="m">Facebook, Instagram, Messenger, WhatsApp, Reels, Audience Network</td></tr>
-            <tr><td>Lernphase</td><td class="g">6–8 Wochen, min. 50 Conv./Monat</td><td class="m">Kürzer, flexibler mit CAPI-Daten</td></tr>
-            <tr><td>Mindestbudget (DACH)</td><td class="g">~1.200–2.400 €/Monat</td><td class="m">~500–1.000 €/Monat</td></tr>
-            <tr><td>Creative-Anforderung</td><td class="g">Diverse Assets (Texte, Bilder, Videos)</td><td class="m">Video-First, min. 12 Creatives</td></tr>
-            <tr><td>Transparenz</td><td class="g">Mittel (Channel+Asset Reporting neu)</td><td class="m">Mittel (ASC zeigt wenig Zielgruppen-Details)</td></tr>
-            <tr><td>Stärke nach Produkttyp</td><td class="g">Intent-getrieben: Suche, B2B, Nischen</td><td class="m">Visual: Fashion, Beauty, Lifestyle, Food</td></tr>
-            <tr><td>Eignung für Neustart</td><td class="g">Braucht Conversion-History</td><td class="m">Funktioniert auch ohne</td></tr>
-            <tr><td>Attribution</td><td class="g">Google-zentriert, oft zu optimistisch</td><td class="m">Meta-zentriert, eigene Daten</td></tr>
-            <tr><td>Update-Rhythmus 2026</td><td class="g">Stark (Reporting, Negative KW, Experiments)</td><td class="m">Stark (ASC Standard, Andromeda, Reels)</td></tr>
-          </tbody>
-        </table>
-
+        <div class="table-wrap">
+          <table class="compare-table" aria-label="Direktvergleich Performance Max vs Meta Advantage+ in 10 Kriterien">
+            <thead>
+              <tr><th>Kriterium</th><th>Google Performance Max</th><th>Meta Advantage+</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Fundament</td><td class="g">Suchintention (aktiver Kaufwunsch)</td><td class="m">Interesse und Verhalten (Impulskauf)</td></tr>
+              <tr><td>Kanäle</td><td class="g">Search, Shopping, YouTube, Display, Discover, Gmail, Maps</td><td class="m">Facebook, Instagram, Messenger, WhatsApp, Reels, Audience Network</td></tr>
+              <tr><td>Lernphase</td><td class="g">6–8 Wochen, min. 50 Conv./Monat</td><td class="m">Kürzer, flexibler mit CAPI-Daten</td></tr>
+              <tr><td>Mindestbudget (DACH)</td><td class="g">~1.200–2.400 €/Monat</td><td class="m">~500–1.000 €/Monat</td></tr>
+              <tr><td>Creative-Anforderung</td><td class="g">Diverse Assets (Texte, Bilder, Videos)</td><td class="m">Video-First, min. 12 Creatives</td></tr>
+              <tr><td>Transparenz</td><td class="g">Mittel (Channel+Asset Reporting neu)</td><td class="m">Mittel (ASC zeigt wenig Zielgruppen-Details)</td></tr>
+              <tr><td>Stärke nach Produkttyp</td><td class="g">Intent-getrieben: Suche, B2B, Nischen</td><td class="m">Visual: Fashion, Beauty, Lifestyle, Food</td></tr>
+              <tr><td>Eignung für Neustart</td><td class="g">Braucht Conversion-History</td><td class="m">Funktioniert auch ohne</td></tr>
+              <tr><td>Attribution</td><td class="g">Google-zentriert, oft zu optimistisch</td><td class="m">Meta-zentriert, eigene Daten</td></tr>
+              <tr><td>Update-Rhythmus 2026</td><td class="g">Stark (Reporting, Negative KW, Experiments)</td><td class="m">Stark (ASC Standard, Andromeda, Reels)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
         <!-- 8 -->
         <h2 id="marktanteile">8. Marktanteile und Werbeausgaben 2026</h2>
         <p>Zum Kontext: Wo fließt das Geld, und was sagt das über die Plattformen?</p>
@@ -856,13 +862,15 @@
         </ul>
 
         <p><strong>Die Budgetverteilungsempfehlung für 3.000 €/Monat:</strong></p>
-        <table class="compare-table" aria-label="Budgetverteilung Empfehlung 3000 Euro pro Monat">
-          <thead><tr><th>Plattform</th><th>Budget</th><th>Kampagnentyp</th><th>Ziel</th></tr></thead>
-          <tbody>
-            <tr><td>Meta</td><td>1.800 € (60 %)</td><td>Advantage+ Shopping</td><td>Demand Creation, Neukundengewinnung</td></tr>
-            <tr><td>Google</td><td>1.200 € (40 %)</td><td>Performance Max</td><td>Intent Capture, Retargeting</td></tr>
-          </tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="compare-table" aria-label="Budgetverteilung Empfehlung 3000 Euro pro Monat">
+            <thead><tr><th>Plattform</th><th>Budget</th><th>Kampagnentyp</th><th>Ziel</th></tr></thead>
+            <tbody>
+              <tr><td>Meta</td><td>1.800 € (60 %)</td><td>Advantage+ Shopping</td><td>Demand Creation, Neukundengewinnung</td></tr>
+              <tr><td>Google</td><td>1.200 € (40 %)</td><td>Performance Max</td><td>Intent Capture, Retargeting</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <!-- 10 -->
         <h2 id="setups">10. Praktische Setups für verschiedene Budgetgrößen</h2>
